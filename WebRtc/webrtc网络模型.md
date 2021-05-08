@@ -9,7 +9,7 @@
   * 转换规则：NAT网关会把ip包中的源ip换成NAT网关的公网IP，把tcp包或者udp包的源端口换成一个NAT机器上新分配的端口nat_port_x（NAPT），并且记录转换规则。这样NAT网关内部就维护了一条规则：```源IP（client）+端口 <-> NAT IP+nat_port_x <-> 目的IP（server）+端口 ```，意味着server端发给NAT IP+nat_port_x的数据包会被NAT转发给内网的那台机器
 - NAT穿透（打洞）
 从上面NAT网关的转换过程可以看到，外网的机器想要与内网的机器通信，首先需要在NAT网关上建立一条类似的转换规则，NAT才会对相应的数据包进行路由转发，也即在内网上打了一个洞，打洞的动作是由内网的机器发起，并且其他外部IP不能利用这个洞。
-除此之外，NAT穿透也多见于其他场合，多是屏蔽内部细节，统一暴露出口，比如K8s集群中service-pod之间，不同node下的pod之间通信，由kube-proxy维护iptable表实现NAT穿透。
+除此之外，NAT穿透也多见于其他场合，多是屏蔽内部细节，统一暴露出口，比如K8s集群中service-pod之间，不同node下的pod之间通信，由kube-proxy维护iptable表实现NAT穿透。                             
 ### STUN(Simple Traversal of UDP over NATs)
 这个协议主要作用就是可以用来在两个处于NAT路由器之后的主机之间建立UDP通信，也即实现p2p通信，在学习STUN之前先思考一下建立p2p连接需要哪些条件。
 不同内网之间的机器想要通信，首先通信双方需要知道对端的NAT公网IP+port，然后有一方要主动进行NAT打洞，实现```local_peer IP+port <->local_NAT IP+prot <-> remote_NAT IP+port```的路由规则，这样另一方remote_peer向local_NAT IP+port发送数据时就可以走这条通道，进而建立p2p连接，也即```local_peer IP+port <->local_NAT IP+prot <-> remote_NAT IP+port <-> remote_peer IP+port```。
