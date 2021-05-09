@@ -1,13 +1,21 @@
 ## 基础知识
-### 框架设计理念
+### 框架设计理念（转）
 好的基础架构的方式
+
 1) 底层的组件都是开源的,不是自研的,例如RPC组件,日志组件,监控组件等,最好不要自研
+
 2) 基础架构系统整体是自研的,即把RPC组件,日志组件和监控组件等组合在一起的系统是自研的,运维的主要工作在这个系统上
+
 说下这样的好处
+
 1) 基础架构的主要矛盾是可持续性和可迭代性,底层组件开源在很大程度上缓解了这个问题
+
 2) 底层组件开源,对于新人和老人的融入几乎就是无缝的,可以很快衔接进来,可以极大的降低人才融入成本,这部分隐层的成本降低非常有价值
+
 3) 基础架构在实际使用中的主要问题,也基本都是开源组件的使用和配置问题,这个在开源世界中几乎都有答案,这样就避免了闭源系统的1对多的难题,会极大缓解运维的压力
+
 总体的设计原则是：在稳定的前提下，首先保证易用性，然后尽可能地提高性能。
+
 ### 基于 Go 的 I/O 多路复用 netpoller
 Go 基于 I/O multiplexing 和 goroutine scheduler 构建了一个简洁而高性能的原生网络模型(基于 Go 的 I/O 多路复用 netpoller )，提供了 goroutine-per-connection 这样简单的网络编程模式。实现了让 开发者使用的是同步的模式去编写异步的逻辑
 比如
@@ -16,6 +24,9 @@ Go 基于 I/O multiplexing 和 goroutine scheduler 构建了一个简洁而高�
 - 底层用的是epoll + 非阻塞IO +ET
 文章外网开源地址：[https://strikefreedom.top/go-netpoll-io-multiplexing-reactor](https://strikefreedom.top/go-netpoll-io-multiplexing-reactor)
 [https://cloud.tencent.com/developer/article/1536759](https://cloud.tencent.com/developer/article/1536759)
+
+###
+
 ### edu-mod 大致流程图
 ![https://www.processon.com/view/link/5f1671f45653bb7fd245a441](https://www.processon.com/view/link/5f1671f45653bb7fd245a441)
 部门的框架是edu-mod + api-gateway 支撑起来的 属于大网关架构
@@ -82,6 +93,8 @@ goroutine 协程的优势:
   * 内存占用少：
     + 线程：单个线程的栈空间通常是2M
     + goroutine：单个goroutine栈空间最小2K(可变)
+####
+
 #### 2、并发模式
 - 技术背景：
 网络库的特点：IO密集型任务
@@ -94,11 +107,15 @@ goroutine 协程的优势:
   * one goroutine-per-connection 
     + 缺点：虽然goroutine能够避免线程切换，但是避免不了线程创建、销毁的消耗，虽然Go scheduler内部做了的goroutine缓存链表(相当于线程池)，但是对于海量连接的瞬间暴涨的长连接场景无能为力
     goroutine 虽然非常轻量，它的自定义栈内存初始值仅为 2KB，后面按需扩容；海量连接的业务场景下， goroutine-per-connection ，此时 goroutine 数量以及消耗的资源就会呈线性趋势暴涨，虽然 Go scheduler 内部做了 g 的缓存链表，可以一定程度上缓解高频创建销毁 goroutine 的压力，但是对于瞬时性暴涨的长连接场景就无能为力了，大量的 goroutines 会被不断创建出来，从而对 Go runtime scheduler 造成极大的调度压力和侵占系统资源，然后资源被侵占又反过来影响 Go scheduler 的调度，进而导致性能下降。
+####
+
 #### 技术选型:
 由于这里的网络库不仅要支持服务端还要支持客户端，而对于客户端来说无法实现epoll管理多连接，所以必须要使用多线程（线程池）无法避免线程的切换开销，所以还是使用协程实现比较好
   * 设想 ：服务端 one loop per goroutine 客户端 goroutine连接池
     + 优点：使用goroutine会使各个eventloop切换开销更小（只涉及几个eventloop切换 优势不会很明显）
     + 缺点：epoll异步回调机制 + goroutine 丧失了后者one goroutine-per-connection编程上直观性的优势
+###
+
 ### 微服务框架技术选型
 微服务框架应有的能力：
 RPC框架的基础能力：callID映射（服务调用方式） 协议编解码  网络传输
@@ -173,7 +190,11 @@ message嵌套类型会根据里面字段的数据类型选择 具体见图片：
 - 如果某个字段有负数 类型使用sint32/sint64 这样就会使用ZigZag编码
 - 字段的标识号 尽量只使用1-15，因为如果标识符大于4位（msb1bit+标识符4bit+wire_type3bit），tag就会占用多个字节
   * 标识符尽量连续递增（原因不太清楚）
+## 
 ##### TODO：需对比json得到优势 对比gogprotobuf得到劣势 对比维度（编解码 序列化流程）
+
+###
+
 #### 中间件
 ##### 分布式链路追踪
 起源于google论文 Dapper, a Large-Scale Distributed Systems Tracing Infrastructure https://storage.googleapis.com/pub-tools-public-publication-data/pdf/36356.pdf
