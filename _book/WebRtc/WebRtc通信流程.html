@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>WebrRtc通信流程 · GitBook</title>
+        <title>WebRtc通信流程 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -129,7 +129,7 @@
                 <a href="WebRtc通信流程.html">
             
                     
-                    WebrRtc通信流程
+                    WebRtc通信流程
             
                 </a>
             
@@ -156,6 +156,19 @@
             
                     
                     WebRtc线程模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="WebRtc传输协议.html">
+            
+                <a href="WebRtc传输协议.html">
+            
+                    
+                    WebRtc传输协议
             
                 </a>
             
@@ -275,7 +288,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >WebrRtc通信流程</a>
+        <a href=".." >WebRtc通信流程</a>
     </h1>
 </div>
 
@@ -290,8 +303,8 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="webrtc&#x901A;&#x4FE1;&#x5EFA;&#x7ACB;&#x65F6;&#x5E8F;&#x56FE;&#xFF1A;">WebRtc&#x901A;&#x4FE1;&#x5EFA;&#x7ACB;&#x65F6;&#x5E8F;&#x56FE;&#xFF1A;</h1>
-<p><div class="mermaid">
+                                <h1 id="1-webrtc&#x901A;&#x4FE1;&#x5EFA;&#x7ACB;&#x65F6;&#x5E8F;&#x56FE;&#xFF1A;">1 WebRtc&#x901A;&#x4FE1;&#x5EFA;&#x7ACB;&#x65F6;&#x5E8F;&#x56FE;&#xFF1A;</h1>
+<div class="mermaid">
 sequenceDiagram
 participant local_peer as &#x672C;&#x5730;peer
 participant  ice_server as ICE&#x670D;&#x52A1;&#x5668;
@@ -324,8 +337,10 @@ local_peer -&gt;&gt; local_peer:&#x628A;&#x5BF9;&#x7AEF;iceCandidate&#x8BBE;&#x7
 local_peer -&gt;&gt; remote_peer:&#x6839;&#x636E;&#x53CC;&#x65B9;iceCandidate&#x505A;&#x8FDE;&#x901A;&#x6027;&#x6D4B;&#x8BD5;
 remote_peer -&gt;&gt; local_peer:&#x6839;&#x636E;&#x53CC;&#x65B9;iceCandidate&#x505A;&#x8FDE;&#x901A;&#x6027;&#x6D4B;&#x8BD5;
 local_peer -&gt; remote_peer:&#x534F;&#x5546;&#x901A;&#x4FE1;&#x5BC6;&#x94A5;&#xFF0C;&#x5B8C;&#x6210;&#x540E;p2p&#x8FDE;&#x63A5;&#x5EFA;&#x7ACB;&#xFF0C;&#x6570;&#x636E;&#x4F20;&#x8F93;...
-</div></p>
-<h1 id="&#x521B;&#x5EFA;peerconnection">&#x521B;&#x5EFA;PeerConnection</h1>
+</div>
+
+<h1 id="&#x5404;&#x6B65;&#x9AA4;&#x4EE3;&#x7801;&#x8D70;&#x8BFB;">&#x5404;&#x6B65;&#x9AA4;&#x4EE3;&#x7801;&#x8D70;&#x8BFB;</h1>
+<h2 id="&#x521B;&#x5EFA;peerconnect">&#x521B;&#x5EFA;PeerConnect</h2>
 
                                 
                                 </section>
@@ -369,7 +384,7 @@ local_peer -&gt; remote_peer:&#x534F;&#x5546;&#x901A;&#x4FE1;&#x5BC6;&#x94A5;&#x
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"WebrRtc通信流程","level":"1.2.1","depth":2,"next":{"title":"WebRtc网络模型","level":"1.2.2","depth":2,"path":"WebRtc/WebRtc网络模型.md","ref":"WebRtc/WebRtc网络模型.md","articles":[]},"previous":{"title":"WebRtc","level":"1.2","depth":1,"path":"WebRtc/README.md","ref":"WebRtc/README.md","articles":[{"title":"WebrRtc通信流程","level":"1.2.1","depth":2,"path":"WebRtc/WebRtc通信流程.md","ref":"WebRtc/WebRtc通信流程.md","articles":[]},{"title":"WebRtc网络模型","level":"1.2.2","depth":2,"path":"WebRtc/WebRtc网络模型.md","ref":"WebRtc/WebRtc网络模型.md","articles":[]},{"title":"WebRtc线程模型","level":"1.2.3","depth":2,"path":"WebRtc/WebRtc线程模型.md","ref":"WebRtc/WebRtc线程模型.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid-gb3","livereload"],"pluginsConfig":{"mermaid-gb3":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"WebRtc/WebRtc通信流程.md","mtime":"2021-05-08T03:36:27.363Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-08T06:50:40.633Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"WebRtc通信流程","level":"1.2.1","depth":2,"next":{"title":"WebRtc网络模型","level":"1.2.2","depth":2,"path":"WebRtc/WebRtc网络模型.md","ref":"WebRtc/WebRtc网络模型.md","articles":[]},"previous":{"title":"WebRtc","level":"1.2","depth":1,"path":"WebRtc/README.md","ref":"WebRtc/README.md","articles":[{"title":"WebRtc通信流程","level":"1.2.1","depth":2,"path":"WebRtc/WebRtc通信流程.md","ref":"WebRtc/WebRtc通信流程.md","articles":[]},{"title":"WebRtc网络模型","level":"1.2.2","depth":2,"path":"WebRtc/WebRtc网络模型.md","ref":"WebRtc/WebRtc网络模型.md","articles":[]},{"title":"WebRtc线程模型","level":"1.2.3","depth":2,"path":"WebRtc/WebRtc线程模型.md","ref":"WebRtc/WebRtc线程模型.md","articles":[]},{"title":"WebRtc传输协议","level":"1.2.4","depth":2,"path":"WebRtc/WebRtc传输协议.md","ref":"WebRtc/WebRtc传输协议.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid-gb3","livereload"],"pluginsConfig":{"mermaid-gb3":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"WebRtc/WebRtc通信流程.md","mtime":"2021-05-09T09:54:49.162Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-09T10:11:45.496Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
