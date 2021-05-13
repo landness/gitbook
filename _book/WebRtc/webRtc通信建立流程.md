@@ -1,4 +1,6 @@
-# 1 WebRtc通信建立时序图：
+# 1 前言
+webrtc建立p2p连接与以往的CS模式下的tcp udp建立连接有很大不同，所以有必要先了解一下[webrtc通信建立相关的协议原理](./WebRtc网络相关.md)，比如UDP打洞原理，Stun,Turn,ICE等协议以及多对多环境下的网络拓扑。
+# 2 WebRtc通信建立时序图：
 ```mermaid
 sequenceDiagram
 participant local_peer as 本地peer
@@ -33,6 +35,3 @@ local_peer ->> remote_peer:根据双方iceCandidate做连通性测试
 remote_peer ->> local_peer:根据双方iceCandidate做连通性测试
 local_peer -> remote_peer:协商通信密钥，完成后p2p连接建立，数据传输...
 ```
-
-# 各步骤代码走读
-## 创建PeerConnect

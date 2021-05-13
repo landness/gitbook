@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>WebRtc通信流程 · GitBook</title>
+        <title>RPC · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="WebRtc网络模型.html" />
+    <link rel="next" href="自研网络库+RPC框架.html" />
     
     
-    <link rel="prev" href="README.md" />
+    <link rel="prev" href="../K8S/K8S网络模型.html" />
     
 
     </head>
@@ -110,9 +110,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="README.md">
+        <li class="chapter " data-level="1.2" data-path="../WebRtc/">
             
-                <span>
+                <a href="../WebRtc/">
             
                     
                     WebRtc
@@ -124,12 +124,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.1" data-path="WebRtc通信流程.html">
+        <li class="chapter " data-level="1.2.1" data-path="../WebRtc/WebRtc通信建立流程.html">
             
-                <a href="WebRtc通信流程.html">
+                <a href="../WebRtc/WebRtc通信建立流程.html">
             
                     
-                    WebRtc通信流程
+                    WebRtc通信建立流程
             
                 </a>
             
@@ -137,12 +137,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="WebRtc网络模型.html">
+        <li class="chapter " data-level="1.2.2" data-path="../WebRtc/WebRtc网络相关.html">
             
-                <a href="WebRtc网络模型.html">
+                <a href="../WebRtc/WebRtc网络相关.html">
             
                     
-                    WebRtc网络模型
+                    WebRtc网络相关
             
                 </a>
             
@@ -150,9 +150,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="WebRtc线程模型.html">
+        <li class="chapter " data-level="1.2.3" data-path="../WebRtc/WebRtc线程模型.html">
             
-                <a href="WebRtc线程模型.html">
+                <a href="../WebRtc/WebRtc线程模型.html">
             
                     
                     WebRtc线程模型
@@ -163,12 +163,38 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="WebRtc传输协议.html">
+        <li class="chapter " data-level="1.2.4" data-path="../WebRtc/WebRtc传输协议.html">
             
-                <a href="WebRtc传输协议.html">
+                <a href="../WebRtc/WebRtc传输协议.html">
             
                     
                     WebRtc传输协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../WebRtc/webRtc音视频数据接收发送流程.html">
+            
+                <a href="../WebRtc/webRtc音视频数据接收发送流程.html">
+            
+                    
+                    webrtc音视频数据接收发送流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../WebRtc/webRtc中的Qos方法.html">
+            
+                <a href="../WebRtc/webRtc中的Qos方法.html">
+            
+                    
+                    webRtc中的Qos方法
             
                 </a>
             
@@ -181,9 +207,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../K8S/README.md">
+        <li class="chapter " data-level="1.3" data-path="../K8S/">
             
-                <span>
+                <a href="../K8S/">
             
                     
                     K8S
@@ -226,9 +252,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../RPC/README.md">
+        <li class="chapter active" data-level="1.4" data-path="./">
             
-                <span>
+                <a href="./">
             
                     
                     RPC
@@ -240,9 +266,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../RPC/自研网络库+RPC框架.html">
+        <li class="chapter " data-level="1.4.1" data-path="自研网络库+RPC框架.html">
             
-                <a href="../RPC/自研网络库+RPC框架.html">
+                <a href="自研网络库+RPC框架.html">
             
                     
                     自研网络库+RPC框架
@@ -288,7 +314,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >WebRtc通信流程</a>
+        <a href=".." >RPC</a>
     </h1>
 </div>
 
@@ -303,44 +329,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="1-webrtc&#x901A;&#x4FE1;&#x5EFA;&#x7ACB;&#x65F6;&#x5E8F;&#x56FE;&#xFF1A;">1 WebRtc&#x901A;&#x4FE1;&#x5EFA;&#x7ACB;&#x65F6;&#x5E8F;&#x56FE;&#xFF1A;</h1>
-<div class="mermaid">
-sequenceDiagram
-participant local_peer as &#x672C;&#x5730;peer
-participant  ice_server as ICE&#x670D;&#x52A1;&#x5668;
-participant signal_server as &#x4FE1;&#x4EE4;&#x670D;&#x52A1;&#x5668;
-participant remote_peer as &#x8FDC;&#x7A0B;peer
-local_peer -&gt;&gt; signal_server: connect
-remote_peer -&gt;&gt; signal_server:connect
-local_peer -&gt;&gt; local_peer:&#x521B;&#x5EFA;PeerConnection 
-local_peer -&gt;&gt; local_peer:add streams add track
-local_peer -&gt;&gt; local_peer:&#x521B;&#x5EFA;&#x672C;&#x5730;SDP CreatOffer
-local_peer -&gt;&gt; signal_server: &#x53D1;&#x9001;SDP SendOffer
-signal_server -&gt;&gt; remote_peer: &#x63A8;&#x9001; offer SDP
-remote_peer -&gt;&gt; remote_peer:&#x521B;&#x5EFA;PeerConnection 
-remote_peer -&gt;&gt; remote_peer:add streams add track
-remote_peer -&gt;&gt; remote_peer:&#x628A;&#x5BF9;&#x7AEF;SDP offer&#x8BBE;&#x7F6E;&#x7ED9;&#x672C;&#x5730;PC setRemoteSdp
-remote_peer -&gt;&gt; remote_peer:&#x521B;&#x5EFA;&#x672C;&#x5730;SDP CreatOffer
-remote_peer -&gt;&gt; signal_server:&#x53D1;&#x9001;&#x672C;&#x5730;SDP SendAnswer
-signal_server -&gt;&gt; local_peer:&#x63A8;&#x9001;&#x8FDC;&#x7A0B;SDP offer
-local_peer -&gt;&gt; local_peer:&#x628A;&#x5BF9;&#x7AEF;SDP answer&#x8BBE;&#x7F6E;&#x7ED9;&#x672C;&#x5730;PC setRemoteSdp
-local_peer -&gt;&gt; ice_server:&#x8BF7;&#x6C42;&#x516C;&#x7F51;&#x5730;&#x5740;
-ice_server -&gt;&gt; local_peer:&#x63A8;&#x9001;IceCandidate
-local_peer -&gt;&gt; signal_server:&#x53D1;&#x9001;&#x672C;&#x5730;iceCandidate
-signal_server -&gt;&gt; remote_peer:&#x63A8;&#x9001;iceCandidate
-remote_peer -&gt;&gt; remote_peer:&#x628A;&#x5BF9;&#x7AEF;iceCandidate&#x8BBE;&#x7F6E;&#x7ED9;&#x672C;&#x5730;PC
-remote_peer -&gt;&gt; ice_server: &#x8BF7;&#x6C42;&#x516C;&#x7F51;&#x5730;&#x5740;
-ice_server -&gt;&gt; remote_peer: &#x63A8;&#x9001;IceCandidate
-remote_peer -&gt;&gt; signal_server:&#x53D1;&#x9001;&#x672C;&#x5730;iceCandidate
-signal_server -&gt;&gt; local_peer: &#x63A8;&#x9001;IceCandidate
-local_peer -&gt;&gt; local_peer:&#x628A;&#x5BF9;&#x7AEF;iceCandidate&#x8BBE;&#x7F6E;&#x7ED9;&#x672C;&#x5730;PC
-local_peer -&gt;&gt; remote_peer:&#x6839;&#x636E;&#x53CC;&#x65B9;iceCandidate&#x505A;&#x8FDE;&#x901A;&#x6027;&#x6D4B;&#x8BD5;
-remote_peer -&gt;&gt; local_peer:&#x6839;&#x636E;&#x53CC;&#x65B9;iceCandidate&#x505A;&#x8FDE;&#x901A;&#x6027;&#x6D4B;&#x8BD5;
-local_peer -&gt; remote_peer:&#x534F;&#x5546;&#x901A;&#x4FE1;&#x5BC6;&#x94A5;&#xFF0C;&#x5B8C;&#x6210;&#x540E;p2p&#x8FDE;&#x63A5;&#x5EFA;&#x7ACB;&#xFF0C;&#x6570;&#x636E;&#x4F20;&#x8F93;...
-</div>
-
-<h1 id="&#x5404;&#x6B65;&#x9AA4;&#x4EE3;&#x7801;&#x8D70;&#x8BFB;">&#x5404;&#x6B65;&#x9AA4;&#x4EE3;&#x7801;&#x8D70;&#x8BFB;</h1>
-<h2 id="&#x521B;&#x5EFA;peerconnect">&#x521B;&#x5EFA;PeerConnect</h2>
+                                <h1 id="rpc">RPC</h1>
 
                                 
                                 </section>
@@ -368,12 +357,12 @@ local_peer -&gt; remote_peer:&#x534F;&#x5546;&#x901A;&#x4FE1;&#x5BC6;&#x94A5;&#x
 
             
                 
-                <a href="README.md" class="navigation navigation-prev " aria-label="Previous page: WebRtc">
+                <a href="../K8S/K8S网络模型.html" class="navigation navigation-prev " aria-label="Previous page: K8S网络模型">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="WebRtc网络模型.html" class="navigation navigation-next " aria-label="Next page: WebRtc网络模型">
+                <a href="自研网络库+RPC框架.html" class="navigation navigation-next " aria-label="Next page: 自研网络库+RPC框架">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -384,7 +373,7 @@ local_peer -&gt; remote_peer:&#x534F;&#x5546;&#x901A;&#x4FE1;&#x5BC6;&#x94A5;&#x
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"WebRtc通信流程","level":"1.2.1","depth":2,"next":{"title":"WebRtc网络模型","level":"1.2.2","depth":2,"path":"WebRtc/WebRtc网络模型.md","ref":"WebRtc/WebRtc网络模型.md","articles":[]},"previous":{"title":"WebRtc","level":"1.2","depth":1,"path":"WebRtc/README.md","ref":"WebRtc/README.md","articles":[{"title":"WebRtc通信流程","level":"1.2.1","depth":2,"path":"WebRtc/WebRtc通信流程.md","ref":"WebRtc/WebRtc通信流程.md","articles":[]},{"title":"WebRtc网络模型","level":"1.2.2","depth":2,"path":"WebRtc/WebRtc网络模型.md","ref":"WebRtc/WebRtc网络模型.md","articles":[]},{"title":"WebRtc线程模型","level":"1.2.3","depth":2,"path":"WebRtc/WebRtc线程模型.md","ref":"WebRtc/WebRtc线程模型.md","articles":[]},{"title":"WebRtc传输协议","level":"1.2.4","depth":2,"path":"WebRtc/WebRtc传输协议.md","ref":"WebRtc/WebRtc传输协议.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid-gb3","livereload"],"pluginsConfig":{"mermaid-gb3":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"WebRtc/WebRtc通信流程.md","mtime":"2021-05-09T10:22:38.339Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-09T10:26:51.038Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"RPC","level":"1.4","depth":1,"next":{"title":"自研网络库+RPC框架","level":"1.4.1","depth":2,"path":"RPC/自研网络库+RPC框架.md","ref":"RPC/自研网络库+RPC框架.md","articles":[]},"previous":{"title":"K8S网络模型","level":"1.3.2","depth":2,"path":"K8S/K8S网络模型.md","ref":"K8S/K8S网络模型.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid-gb3","livereload"],"pluginsConfig":{"mermaid-gb3":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"RPC/README.md","mtime":"2021-05-13T14:04:54.017Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-13T15:03:58.738Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
