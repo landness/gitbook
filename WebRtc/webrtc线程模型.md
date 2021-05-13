@@ -14,9 +14,26 @@ Transport 的初始化
 从网络接收数据，发送给 Worker thread
 从 Worker thread 接收数据，发送到网络
 
-# 3 线程切换
-
-## 3.1 一个例子演示跨线程同步调用的过程
+# 3 线程模型
+## 线程IO模型
+```mermaid
+sequenceDiagram
+participant si as signal_thread
+participant  net as network_thread Processmessage
+participant ss as SocketServer
+si ->> net:invoke msg 并且唤醒目标线程
+net ->> net:被唤醒后get msg from message list
+net ->> net:不为空，dispatch(msg)
+net ->>si :返回跨线程调用结果
+net ->> ss:list为空且有剩余时间<br>则处理网络IO
+ss ->>ss:select阻塞监听注册的网络IO和msg事件
+ss ->> ss:信号触发，若是网络事件则调用OnEvent处理网络事件<br>
+ss ->> net:信号触发，若是msg事件返回到Processmessage
+net ->> net:dispatch(msg)
+net ->>si :返回跨线程调用结果
+```
+可以看到线程阻塞在select，select除了会管理网络IO外，也会管理msg（一般是webrtc内部的跨线程调用），当msg事件被触发，socketServer会将线程控制权归还给Processmessage进行处理，而如果是网络IO，则会直接调用Onevent处理，这就是webrtc的线程模型，它解决了跨线程函数调用和管理网络IO的问题。
+## 3.2 一个例子演示跨线程同步调用的过程
 
 在当前signal_thread线程中创建dataChannel需要调用SeetupNataChannelTransport_n 而这个函数是要在network线程执行，因此需要进行跨线程调用，代码如下：
 
@@ -42,7 +59,7 @@ dispatch(msg)会调用msg的OnMessage方法消费消息，并且置ready为true�
 
 singal_thread线程被唤醒之后会检查局部变量ready是否为true,若为true，则说明唤醒他的是目标线程而且是本次调用，从而函数调用返回
 
-## 3.2 与线程切换相关的类
+## 3.3 与线程切换相关的类
 ### ThreadManger
 TheadManger是一个全局单例类，主要作用就是通过将一个内核线程与一个thread对象关联（将thread对象的地址存储在线程tls的某个槽位中），管理所有thread对象来管理所有线程。主要的方法有设置当前线程关联的thread对象,获取当前线程关联的thread对象等。
 
