@@ -1,4 +1,3 @@
-https://www.jianshu.com/p/6413cf2e8aca 丢包重传原理
 # NACK
 ## Nack模块相关数据结构
 nack_list用于记录丢包信息 seq->nackInfo
@@ -8,7 +7,7 @@ keyframe_list_ 用于记录每次回调OnReceiverPacket的关键帧
 recover_list用于记录每次回调的RTX和FEC恢复包
 
 ## Nack Receiver端触发流程
-![](../pic/接收端NACK包处理机制.jpg)
+![](../pic/NACK接收端验证丢包逻辑.jpg)
 首次接包 把seq更新为newest_seq_num_ 如果seq是关键帧的话插入keyframe_list 直接return
 ahead()判断last是否在seq之前 若是则乱序 是重传包 在nack_list中删除之 并且更新keyframe_list和recover_list 返回该恢复包请求重传或恢复的次数 若否 则是丢包 在nack_list插入中间丢失的包的seq（AddPacketsToNack中间有请求关键帧的步骤 RemovePacketsUntilKeyFrame合理请求I帧恰好能缓解丢包极其严重的问题？？）
 发送重传信息：GetNackBatch得到的nack_list不空则是有丢包的情况 直接发起send 同时重传的包也有可能丢所以配合定时任务RepeatedTaskHandle 每20ms重复发送NACK请求
