@@ -35,3 +35,15 @@ local_peer ->> remote_peer:根据双方iceCandidate做连通性测试
 remote_peer ->> local_peer:根据双方iceCandidate做连通性测试
 local_peer -> remote_peer:协商通信密钥，完成后p2p连接建立，数据传输...
 ```
+# 相关API调用链
+https://blog.csdn.net/freeabc/article/details/105659223
+# UML类图
+https://blog.csdn.net/shichaog/article/details/105864137
+https://blog.csdn.net/shichaog/article/details/115030035
+# demo流程分析
+https://blog.csdn.net/Dreamandpassion/article/details/107749962
+# 参考资料
+https://blog.csdn.net/shichaog/article/details/105864137
+https://blog.csdn.net/shichaog/article/details/115030035
+https://blog.csdn.net/Dreamandpassion/article/details/107749962
+https://blog.csdn.net/freeabc/article/details/105659223
