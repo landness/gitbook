@@ -15,7 +15,7 @@ Transport 的初始化
 从 Worker thread 接收数据，发送到网络
 
 # 3 线程模型
-## 线程IO模型
+## 线程工作流程
 ```mermaid
 sequenceDiagram
 participant si as signal_thread
@@ -38,7 +38,9 @@ net ->>si :返回跨线程调用结果
 在当前signal_thread线程中创建dataChannel需要调用SeetupNataChannelTransport_n 而这个函数是要在network线程执行，因此需要进行跨线程调用，代码如下：
 
 ```
-if(!network_thread())->Invoke<bool>){rtc:Bind(&PeerConnection::SeetupNataChannelTransport_n,this,mid)}
+if(!network_thread())->Invoke<bool>){
+    rtc:Bind(&PeerConnection::SeetupNataChannelTransport_n,this,mid)
+}
 ```
 
 **network_thread()是获取network线程的thread对象，注意这里的Invoke()函数是在sigal线程中执行的network线程对象的Invoke()函数。换言之在Invoke函数内的this指针是netword_thread对象，消息队列message_list也是network_thread对象的，而调用TheadManger的方法 CurrentThead()获取的则是singal线程的对象，以下的分析都是基于此的：**
@@ -66,9 +68,11 @@ TheadManger是一个全局单例类，主要作用就是通过将一个内核线
 ### TaskQueue
 TaskQueue是thread类的父类，主要提供了PostTask、PostDelayedTask接口，使得thread类具有向消息队列投递即时消息和延时消息的能力，thread类在此基础上实现了Send,Invoke方法，实现了方法跨线程同步调用的功能。
 
-# 4 线程结构图
+# 4 webrtc 线程结构
 webrtc规定了特定的线程执行特定的任务，所以一个线程就饿可以看成是一个单独的模块，分析线程之间的结构其实就是在分析webrtc整个的架构内部的架构，比如内部数据流向，各模块的边界和功能等等，这部分需要对webrtc的各个模块都有所了解之后才能把握，所以这里就先放一张网上找的图感性认识一下，详细的分析后续再补。
 ![](../pic/webrtc-线程结构图.jpg)
+目前已搞清楚了
 
 # 参考资料
 https://zhuanlan.zhihu.com/p/136070941
+https://zhuanlan.zhihu.com/p/25288799?from_voters_page=true
