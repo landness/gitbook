@@ -80,6 +80,7 @@ ice candidate中可能有以下几种，按优先级排序，ice会逐个尝试�
 - STUN server看到的客户端的地址
 - TURN server为客户端分配的中继地址
 ## 3 多对多通信
+
 ### 3.1 Mesh
 参与通信的每个peer都与其他每个peer建立p2p连接，拓扑图如下：
 
