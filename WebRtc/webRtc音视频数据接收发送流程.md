@@ -11,6 +11,7 @@ rtp_demuxer_.AddSink(rtp_demuxer_ x,VideoChannel y)
 把VideoChannel作为Sink加到 RtpTransport里的 rtp_demuxer_实现的
 
 ## 
+
 ## 容错处理
 容错：利用h264编码规则对遍历payload中的NALU，看是否缺乏I帧，若缺乏I帧则请求重传
 ### 前置知识：h264编码格式以及视频帧的知识

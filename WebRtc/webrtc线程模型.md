@@ -51,11 +51,11 @@ if(!network_thread())->Invoke<bool>){
 
 Invoke函数（InvokeInternal）:本质上就是将需要执行的方法封装到消息处理器FunctorMessageHandler中，然后执行send(来源线程，FunctorMessageHandler)
 
-Send函数 把入参FunctorMessageHandler包装成msg信息，并且向network_thread线程的message_list投递（Post）msg和一些信号量（比如局部变量ready的引用，这里是用的lamda表达式？？传递的），并且调用wakeup（唤醒机制？？）唤醒network_thread线程，然后阻塞等待返回
+Send函数 把入参FunctorMessageHandler包装成msg信息，并且向network_thread线程的message_list投递（Post）msg和一些信号量（比如局部变量ready的引用，这里是用的lamda表达式传递的），并且调用wakeup（唤醒机制）唤醒network_thread线程，然后阻塞等待返回
 
 network_thread线程有一个消息循环 ProcessMessages，线程被唤醒后，会调用Get函数检查其消息队列
 
-Get函数 逻辑是取到一个消息就返回 优先取延时消息，再取即时消息，并且会计算超时时间（设置的超时时间和延时队列下一个时间触发的时间取最小值），在超时时间内，处理网络IO（SocketServer？？），取到一条消息就会返回true,并调用dispatch处理消息
+Get函数 逻辑是取到一个消息就返回 优先取延时消息，再取即时消息，并且会计算超时时间（设置的超时时间和延时队列下一个时间触发的时间取最小值），在超时时间内，处理网络IO（SocketServer），取到一条消息就会返回true,并调用dispatch处理消息
 
 dispatch(msg)会调用msg的OnMessage方法消费消息，并且置ready为true，结果返回值会层层上抛，返回给调用线程singal_thread，并且调用wakeUp唤醒它
 
@@ -71,7 +71,6 @@ TaskQueue是thread类的父类，主要提供了PostTask、PostDelayedTask接口
 # 4 webrtc 线程结构
 webrtc规定了特定的线程执行特定的任务，所以一个线程就饿可以看成是一个单独的模块，分析线程之间的结构其实就是在分析webrtc整个的架构内部的架构，比如内部数据流向，各模块的边界和功能等等，这部分需要对webrtc的各个模块都有所了解之后才能把握，所以这里就先放一张网上找的图感性认识一下，详细的分析后续再补。
 ![](../pic/webrtc-线程结构图.jpg)
-目前已搞清楚了
 
 # 参考资料
 https://zhuanlan.zhihu.com/p/136070941
