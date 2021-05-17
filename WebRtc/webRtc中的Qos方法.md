@@ -36,10 +36,10 @@ sendNack请求会由RtpVideoStreamReceiver::RtcpFeedbackBuffer::SendNack接管�
 调用链如下：PacedSender::EnqueuePacket函数-->PacedSenderController::EnqueuePacket按照优先级入队RoundRobinPacketQueue(多维优先级链表结构？？)
 
 ## 出队 在pacing线程处理
-## 发送时间间隔确定
+### 发送时间间隔确定
 发送时间间隔由函数PacingController::NextSendTime控制，有两种模式kPeriodic、kDynamic，当时间到达时就会调用PacingController::ProcessPackets发包，其中kPeriodic时周期性发包 kDynamic？？
 
-## 每个发送时发送字节的确定
+### 每个发送时发送字节的确定
 当Pacing::ProcessPackets被触发时，会计算与上次发送的时间差delta_time然后传入IntervalBudget::media_buget_,再IntervalBudget::IncreaseBudget确认还可以发多少，确认的公式是：
 remain bytes = delta_time * tareget_bitrate(pacer的参考码率)/8
 举个例子 :
@@ -50,8 +50,9 @@ remain bytes = delta_time * tareget_bitrate(pacer的参考码率)/8
 
 其中tareget_bitrate是由estimator由网络状态评估的
 
-## 出队控制函数 ProcessPacket主要逻辑
+### 出队控制函数 ProcessPacket主要逻辑
 根据拥塞状态以及budget是否足够，从queue中获取需要发送的报文GetPendingPacket()，可以发送则发送媒体报文，并且更新budget，否则判断是否发送padding；如果队列中数据过多，可能需要增大码率做排空处理（中间还有probing的处理）
+
 拥塞状态：
 当outstanding_data_>congestion_window_size_时拥塞
 outstanding_data 的大小变化：发送报文时增加 收到对端的feedback ack（??不是只发nack吗）之后减小
