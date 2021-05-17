@@ -1,5 +1,5 @@
 # 1 前言
-在读源码过程中发现webrtc的各个线程有明确的分工，特定的函数一定要在指定的线程上执行，因此在webrtc运行中执行代码时，经常会遇到线程切换。为之后的学习做铺垫，需要了解下webrtc的线程模型。
+在读源码过程中发现webrtc的各个线程有明确的分工，特定的函数一定要在指定的线程上执行，因此在webrtc运行中执行代码时，经常会遇到线程切换。为之后的学习做铺垫，需要了解下webRtc的线程模型。
 # 2 各个线程有明确的分工
 - 信令线程（Signal Thread）
 一般是工作在 PeerConnection 层，主要是完成控制平面的逻辑，用于和应用层交互。比如，CreateOffer，SetRemoteSession 等接口都是通过 Signal thread 完成的。默认是采用 PeerConnectionFactory 初始化线程作为信令线程。

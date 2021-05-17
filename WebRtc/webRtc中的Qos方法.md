@@ -6,7 +6,7 @@ keyframe_list_ 用于记录每次回调OnReceiverPacket的关键帧
 
 recover_list用于记录每次回调的RTX和FEC恢复包
 
-## Nack Receiver端触发流程
+## Nack 接收端触发流程
 RtpVideoStreamReceiver::OnReceivedPayloadData->>NackModule2::OnReceivedPacket
 ![](../pic/NACK接收端验证丢包逻辑.jpg)
 首次接包 把seq更新为newest_seq_num_ 
@@ -23,7 +23,7 @@ ahead()判断last是否在seq之前
 调用链：
 sendNack请求会由RtpVideoStreamReceiver::RtcpFeedbackBuffer::SendNack接管，并且会通过RtcpFeedbackBuffer::rtcp_feedback_buffer_成员变量构建请求包，RtpVideoStreamReceiver::RtcpFeedbackBuffer::SendRtcpFeedback发出
 
-## Nack Sender重传流程图
+## Nack 发送端重传
 ![](../pic/Nack发送端重传流程.jpg)
 若不使用PacesSender则RTPSedner::PrepareAndSendPacket进行立即重发，如果是使用 PacedSend, 则使用 PacedSender::InsertPacket 先加入发送列表中, 它的process会定时处理发送任务.
 # pacedSender
@@ -54,7 +54,7 @@ remain bytes = delta_time * tareget_bitrate(pacer的参考码率)/8
 根据拥塞状态以及budget是否足够，从queue中获取需要发送的报文GetPendingPacket()，可以发送则发送媒体报文，并且更新budget，否则判断是否发送padding；如果队列中数据过多，可能需要增大码率做排空处理（中间还有probing的处理）
 拥塞状态：
 当outstanding_data_>congestion_window_size_时拥塞
-outstanding_data 的大小变化：发送报文时增加 收到对端的feedback ack？？（不是只发nack吗）之后减小
+outstanding_data 的大小变化：发送报文时增加 收到对端的feedback ack（??不是只发nack吗）之后减小
 congestion_window_size是由拥塞控制模块决策出的
 
 budget：

@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="WebRtc线程模型.html" />
+    <link rel="next" href="WebRtc传输协议.html" />
     
     
-    <link rel="prev" href="WebRtc通信建立流程.html" />
+    <link rel="prev" href="WebRtc线程模型.html" />
     
 
     </head>
@@ -137,12 +137,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.2" data-path="WebRtc网络相关.html">
+        <li class="chapter " data-level="1.2.2" data-path="webRtc音视频数据接收发送流程.html">
             
-                <a href="WebRtc网络相关.html">
+                <a href="webRtc音视频数据接收发送流程.html">
             
                     
-                    WebRtc网络相关
+                    webrtc音视频数据接收发送流程
             
                 </a>
             
@@ -163,12 +163,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="WebRtc传输协议.html">
+        <li class="chapter active" data-level="1.2.4" data-path="WebRtc网络相关.html">
             
-                <a href="WebRtc传输协议.html">
+                <a href="WebRtc网络相关.html">
             
                     
-                    WebRtc传输协议
+                    WebRtc网络相关
             
                 </a>
             
@@ -176,12 +176,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5" data-path="webRtc音视频数据接收发送流程.html">
+        <li class="chapter " data-level="1.2.5" data-path="WebRtc传输协议.html">
             
-                <a href="webRtc音视频数据接收发送流程.html">
+                <a href="WebRtc传输协议.html">
             
                     
-                    webrtc音视频数据接收发送流程
+                    WebRtc传输协议
             
                 </a>
             
@@ -330,7 +330,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="1-&#x524D;&#x8A00;">1 &#x524D;&#x8A00;</h1>
-<p>&#x4F20;&#x7EDF;&#x7684;&#x7F51;&#x7EDC;&#x6A21;&#x578B;&#x6307;&#x7684;&#x662F;CS&#x6A21;&#x578B;&#x4E2D;&#x670D;&#x52A1;&#x5668;&#x7684;&#x7F51;&#x7EDC;&#x6A21;&#x578B;&#xFF0C;&#x6BD4;&#x5982;&#x591A;&#x8FDB;&#x7A0B;&#xFF0C;&#x591A;&#x7EBF;&#x7A0B;&#xFF0C;Reactor+&#x591A;&#x8DEF;&#x590D;&#x7528;&#x7B49;&#x7B49;&#x6A21;&#x5F0F;&#x3002;&#x8FD9;&#x91CC;&#x97F3;&#x89C6;&#x9891;&#x901A;&#x8BAF;&#x7684;&#x573A;&#x666F;&#x8003;&#x8651;&#x5230;&#x4E2D;&#x5FC3;&#x670D;&#x52A1;&#x5668;&#x7684;&#x538B;&#x529B;&#x4EE5;&#x53CA;&#x5E26;&#x5BBD;&#x7B49;&#xFF0C;&#x4E00;&#x822C;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x5BF9;&#x7B49;&#x8FDE;&#x63A5;&#x5373;p2p&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x7684;&#x7F51;&#x7EDC;&#x6A21;&#x578B;&#x6307;&#x7684;&#x662F;&#x6574;&#x4E2A;&#x7F51;&#x7EDC;&#x7684;&#x62D3;&#x6251;&#x7ED3;&#x6784;&#x3002;</p>
+<p>&#x4F20;&#x7EDF;&#x7684;&#x7F51;&#x7EDC;&#x6A21;&#x578B;&#x4E00;&#x822C;&#x8BF4;&#x7684;&#x662F;CS&#x6A21;&#x578B;&#x4E2D;&#x670D;&#x52A1;&#x5668;&#x7684;&#x7F51;&#x7EDC;&#x6A21;&#x578B;&#xFF0C;&#x6BD4;&#x5982;&#x591A;&#x8FDB;&#x7A0B;&#xFF0C;&#x591A;&#x7EBF;&#x7A0B;&#xFF0C;Reactor+&#x591A;&#x8DEF;&#x590D;&#x7528;&#x7B49;&#x7B49;&#x6A21;&#x5F0F;&#x3002;&#x8FD9;&#x91CC;&#x97F3;&#x89C6;&#x9891;&#x901A;&#x8BAF;&#x7684;&#x573A;&#x666F;&#x8003;&#x8651;&#x5230;&#x4E2D;&#x5FC3;&#x670D;&#x52A1;&#x5668;&#x7684;&#x538B;&#x529B;&#x4EE5;&#x53CA;&#x5E26;&#x5BBD;&#x7B49;&#xFF0C;&#x591A;&#x4F7F;&#x7528;&#x5BF9;&#x7B49;&#x8FDE;&#x63A5;&#x5373;p2p&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x800C;&#x591A;&#x65B9;&#x901A;&#x8BDD;&#x7684;&#x7F51;&#x7EDC;&#x7ED3;&#x6784;&#x4E5F;&#x662F;&#x5728;&#x6B64;&#x57FA;&#x7840;&#x4E0A;&#x4EA7;&#x751F;&#x7684;&#x3002;&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x7684;&#x7F51;&#x7EDC;&#x6A21;&#x578B;&#x6307;&#x7684;&#x662F;&#x6574;&#x4E2A;&#x7F51;&#x7EDC;&#x7684;&#x62D3;&#x6251;&#x7ED3;&#x6784;&#x3002;</p>
 <h2 id="2-p2p&#x901A;&#x4FE1;-1&#x5BF9;1">2 P2P&#x901A;&#x4FE1; 1&#x5BF9;1</h2>
 <h3 id="21-nat&#x7A7F;&#x900F;-natnetwork-address-translators&#xFF0C;&#x7F51;&#x7EDC;&#x5730;&#x5740;&#x8F6C;&#x6362;">2.1 NAT&#x7A7F;&#x900F; NAT(Network Address Translators)&#xFF0C;&#x7F51;&#x7EDC;&#x5730;&#x5740;&#x8F6C;&#x6362;</h3>
 <ul>
@@ -408,9 +408,15 @@ server_IP2 --&gt;&gt; peer:4.&#x7528;&#x53E6;&#x4E00;port2&#x56DE;&#x5305;&#xFF0
 <p>TURN&#x534F;&#x8BAE;&#x662F;STUN&#x534F;&#x8BAE;&#x7684;&#x62D3;&#x5C55;&#xFF0C;&#x7528;&#x4E8E;&#x89E3;&#x51B3;&#x5728;&#x7279;&#x5B9A;&#x7684;&#x73AF;&#x5883;&#x4E0B;peer&#x4E4B;&#x95F4;&#x65E0;&#x6CD5;&#x901A;&#x8FC7;STUN&#x5EFA;&#x7ACB;&#x76F4;&#x63A5;p2p&#x901A;&#x4FE1;&#xFF0C;&#x8FD9;&#x65F6;&#x9700;&#x8981;&#x6709;&#x4E00;&#x4E2A;&#x516C;&#x7F51;&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x8F6C;&#x53D1;&#xFF0C;&#x4EE5;&#x5B9E;&#x73B0;&quot;p2p&quot;&#x901A;&#x4FE1;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;&#x8F6C;&#x53D1;&#x534F;&#x8BAE;&#x5C31;&#x662F;TURN&#x3002;TURN&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;peer&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x4E2D;&#x7EE7;&#x5730;&#x5740;&#xFF08;&#x5B9E;&#x9645;&#x5C31;&#x662F;TURN&#x7684;&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;+&#x968F;&#x673A;&#x7AEF;&#x53E3;port&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x4E2D;&#x7EE7;&#x5730;&#x5740;&#x7684;&#x6570;&#x636E;&#x5305;&#x8F6C;&#x53D1;&#x5230;peer&#x7684;&#x5916;&#x7F51;IP(NAT):port&#x3002;
 &#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;TURN&#x670D;&#x52A1;&#x5668;&#x4E0E;&#x4F20;&#x7EDF;&#x7684;CS&#x6A21;&#x5F0F;&#x7684;&#x670D;&#x52A1;&#x5668;&#x5F88;&#x50CF;&#xFF0C;&#x90FD;&#x662F;server&#x4E2D;&#x5FC3;&#x5316;&#x7684;&#xFF0C;&#x4E5F;TURN&#x4E2D;&#x7EE7;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x5177;&#x6709;&#x4F20;&#x7EDF;&#x670D;&#x52A1;&#x4E2D;&#x5FC3;&#x5316;&#x7684;&#x7F3A;&#x70B9;&#xFF0C;&#x6240;&#x4EE5;&#x5728;ICE&#x534F;&#x8BAE;&#x4E2D;TURN&#x7684;&#x4E2D;&#x7EE7;&#x5730;&#x5740;&#x7684;&#x5019;&#x9009;&#x4F18;&#x5148;&#x7EA7;&#x662F;&#x6700;&#x4F4E;&#x7684;&#x3002;</p>
 <h3 id="24-ice">2.4 ICE</h3>
-<h2 id="3-&#x591A;&#x5BF9;&#x591A;&#x901A;&#x4FE1;">3 &#x591A;&#x5BF9;&#x591A;&#x901A;&#x4FE1;</h2>
+<h4 id="ice-candidate">ICE Candidate</h4>
+<p>ice candidate&#x4E2D;&#x53EF;&#x80FD;&#x6709;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#xFF0C;&#x6309;&#x4F18;&#x5148;&#x7EA7;&#x6392;&#x5E8F;&#xFF0C;ice&#x4F1A;&#x9010;&#x4E2A;&#x5C1D;&#x8BD5;&#x4E0E;&#x5BF9;&#x7AEF;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#xFF1A;</p>
+<ul>
+<li>host &#x5BA2;&#x6237;&#x7AEF;&#x4ECE;&#x672C;&#x673A;&#x7F51;&#x7EDC;&#x63A5;&#x53E3;&#x83B7;&#x53D6;&#x7684;&#x5730;&#x5740;</li>
+<li>STUN server&#x770B;&#x5230;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x5730;&#x5740;</li>
+<li>TURN server&#x4E3A;&#x5BA2;&#x6237;&#x7AEF;&#x5206;&#x914D;&#x7684;&#x4E2D;&#x7EE7;&#x5730;&#x5740;<h2 id="3-&#x591A;&#x5BF9;&#x591A;&#x901A;&#x4FE1;">3 &#x591A;&#x5BF9;&#x591A;&#x901A;&#x4FE1;</h2>
 <h3 id="31-mesh">3.1 Mesh</h3>
-<p>&#x53C2;&#x4E0E;&#x901A;&#x4FE1;&#x7684;&#x6BCF;&#x4E2A;peer&#x90FD;&#x4E0E;&#x5176;&#x4ED6;&#x6BCF;&#x4E2A;peer&#x5EFA;&#x7ACB;p2p&#x8FDE;&#x63A5;&#xFF0C;&#x62D3;&#x6251;&#x56FE;&#x5982;&#x4E0B;&#xFF1A;</p>
+&#x53C2;&#x4E0E;&#x901A;&#x4FE1;&#x7684;&#x6BCF;&#x4E2A;peer&#x90FD;&#x4E0E;&#x5176;&#x4ED6;&#x6BCF;&#x4E2A;peer&#x5EFA;&#x7ACB;p2p&#x8FDE;&#x63A5;&#xFF0C;&#x62D3;&#x6251;&#x56FE;&#x5982;&#x4E0B;&#xFF1A;</li>
+</ul>
 <p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x6BCF;&#x4E2A;peer&#x90FD;&#x6709;4&#x8DEF;&#xFF0C;&#x5206;&#x522B;&#x662F;2&#x8DEF;&#x4E0A;&#x4F20;2&#x8DEF;&#x4E0B;&#x8F7D;&#xFF0C;&#x6BCF;&#x589E;&#x52A0;&#x4E00;&#x4E2A;peer,&#x5176;&#x4F59;peer&#x90FD;&#x8981;&#x589E;&#x52A0;&#x4E24;&#x8DEF;&#x3002;
 &#x4F18;&#x70B9;&#xFF1A;&#x8FD9;&#x79CD;&#x6A21;&#x578B;&#x4E0D;&#x9700;&#x8981;&#x97F3;&#x89C6;&#x9891;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x6240;&#x4EE5;&#x6210;&#x672C;&#x4F4E;&#xFF0C;&#x5B89;&#x5168;&#x6027;&#x597D;&#xFF0C;&#x5728;&#x4EBA;&#x6570;&#x8F83;&#x4F4E;&#x65F6;&#x7531;&#x4E8E;&#x76F4;&#x63A5;p2p&#x8FDE;&#x63A5;&#x8282;&#x7EA6;&#x4E86;&#x5E26;&#x5BBD;&#x6210;&#x672C;
 &#x7F3A;&#x70B9;&#xFF1A;&#x7EE7;&#x7EED;&#x6269;&#x5927;&#x89C4;&#x6A21;&#x65F6;&#xFF0C;&#x6BCF;&#x4E2A;peer&#x90FD;&#x4F1A;&#x589E;&#x52A0;&#x4E00;&#x8DEF;&#x4E0A;&#x4F20;&#x548C;&#x4E00;&#x8DEF;&#x4E0B;&#x8F7D;&#xFF0C;&#x800C;&#x4E0A;&#x4F20;&#x5E26;&#x5BBD;&#x662F;&#x6BD4;&#x8F83;&#x5B9D;&#x8D35;&#x7684;&#xFF0C;&#x5F88;&#x5BB9;&#x6613;&#x51FA;&#x73B0;&#x4E0A;&#x4F20;&#x5E26;&#x5BBD;&#x4E0D;&#x591F;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x800C;&#x4E14;p2p&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x5BF9;&#x89C6;&#x9891;&#x6570;&#x636E;&#x65E0;&#x6CD5;&#x8FDB;&#x884C;&#x540C;&#x4E00;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x6BD4;&#x5982;&#x6709;&#x7684;&#x9700;&#x6C42;&#x662F;&#x5BF9;&#x89C6;&#x9891;&#x505A;&#x5F55;&#x5236;&#x5B58;&#x667A;&#x80FD;&#x5206;&#x6790;&#x8F6C;&#x63A8;&#x76F4;&#x64AD;&#x7B49;&#xFF0C;&#x65E0;&#x6CD5;&#x5B9E;&#x73B0;&#x3002;
@@ -457,12 +463,12 @@ server_IP2 --&gt;&gt; peer:4.&#x7528;&#x53E6;&#x4E00;port2&#x56DE;&#x5305;&#xFF0
 
             
                 
-                <a href="WebRtc通信建立流程.html" class="navigation navigation-prev " aria-label="Previous page: WebRtc通信建立流程">
+                <a href="WebRtc线程模型.html" class="navigation navigation-prev " aria-label="Previous page: WebRtc线程模型">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="WebRtc线程模型.html" class="navigation navigation-next " aria-label="Next page: WebRtc线程模型">
+                <a href="WebRtc传输协议.html" class="navigation navigation-next " aria-label="Next page: WebRtc传输协议">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -473,7 +479,7 @@ server_IP2 --&gt;&gt; peer:4.&#x7528;&#x53E6;&#x4E00;port2&#x56DE;&#x5305;&#xFF0
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"WebRtc网络相关","level":"1.2.2","depth":2,"next":{"title":"WebRtc线程模型","level":"1.2.3","depth":2,"path":"WebRtc/WebRtc线程模型.md","ref":"WebRtc/WebRtc线程模型.md","articles":[]},"previous":{"title":"WebRtc通信建立流程","level":"1.2.1","depth":2,"path":"WebRtc/WebRtc通信建立流程.md","ref":"WebRtc/WebRtc通信建立流程.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid-gb3","livereload"],"pluginsConfig":{"mermaid-gb3":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"WebRtc/WebRtc网络相关.md","mtime":"2021-05-14T01:31:39.231Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-17T04:57:50.740Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"WebRtc网络相关","level":"1.2.4","depth":2,"next":{"title":"WebRtc传输协议","level":"1.2.5","depth":2,"path":"WebRtc/WebRtc传输协议.md","ref":"WebRtc/WebRtc传输协议.md","articles":[]},"previous":{"title":"WebRtc线程模型","level":"1.2.3","depth":2,"path":"WebRtc/WebRtc线程模型.md","ref":"WebRtc/WebRtc线程模型.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid-gb3","livereload"],"pluginsConfig":{"mermaid-gb3":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"WebRtc/WebRtc网络相关.md","mtime":"2021-05-17T07:39:17.689Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-17T10:18:08.909Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
