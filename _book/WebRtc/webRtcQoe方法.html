@@ -391,6 +391,26 @@ bbr&#x5B58;&#x5728;&#x95EE;&#x9898;</p>
 <ol>
 <li>&#x5347;&#x5F97;&#x5FEB;&#xFF0C;&#x964D;&#x5F97;&#x6162;&#xFF0C;&#x731C;&#x6D4B;&#x662F;&#x671F;&#x671B;&#x57FA;&#x4E8E;&#x4E22;&#x5305;&#x7684;&#x62E5;&#x585E;&#x63A7;&#x5236;&#x7B97;&#x6CD5;&#x4F1A;&#x964D;&#x7A97;&#xFF0C;&#x8FD9;&#x5C31;&#x53EF;&#x4EE5;&#x7528;&#x4ED6;&#x4EEC;&#x817E;&#x51FA;&#x6765;&#x7684;&#x5E26;&#x5BBD;&#x3002;&#x4F46;&#x5982;&#x679C;&#x8DEF;&#x7531;&#x5668;&#x7F13;&#x5B58;&#x4E0D;&#x591F;&#x6DF1;&#x53EF;&#x80FD;&#x4F1A;&#x9020;&#x6210;&#x5927;&#x91CF;&#x4E22;&#x5305;&#x3002;&#x751A;&#x81F3;&#x5728;&#x6DF1;&#x961F;&#x5217;&#xFF0C;&#x7B49;&#x4E0D;&#x5230;&#x57FA;&#x4E8E;&#x4E22;&#x5305;&#x7684;&#x62E5;&#x585E;&#x63A7;&#x5236;&#x7B97;&#x6CD5;&#x964D;&#x7A97;&#x800C;&#x4E0D;&#x65AD;&#x964D;&#x4F4E;&#x53D1;&#x9001;&#x901F;&#x7387;&#xFF0C;&#x541E;&#x5410;&#x7387;&#x4E0B;&#x964D;&#x3002;&#x4E14;&#x5F53;&#x5927;&#x5BB6;&#x53D1;&#x73B0;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x63A5;&#x7BA1;&#x4E22;&#x5305;&#x7684;&#x964D;&#x7A97;&#x884C;&#x4E3A;&#x65F6;&#xFF0C;&#x90FD;&#x91C7;&#x7528;&#x6FC0;&#x8FDB;&#x505A;&#x6CD5;&#xFF0C;&#x5BFC;&#x81F4;&#x7F51;&#x7EDC;&#x66F4;&#x52A0;&#x62E5;&#x585E;&#x3002;</li>
 </ol>
+<p>BWE&#x6A21;&#x5757;&#x7684;&#x8F93;&#x51FA;&#x503C;&#xFF1A;</p>
+<pre><code>  struct Result {
+    Result();
+    ~Result() = default;
+    bool updated;
+    bool probe;
+    DataRate target_bitrate = DataRate::Zero();
+    bool recovered_from_overuse;
+    bool backoff_in_alr;
+  };
+</code></pre><p>&#x6838;&#x5FC3;&#x5C31;&#x662F;&#x76EE;&#x6807;&#x7801;&#x7387;target_bitrate 
+&#x5165;&#x53E3;&#x51FD;&#x6570; IncomingPacketFeedbackVector
+<strong>&#x63A5;&#x5408;&#x5904;</strong>
+&#x6BCF;&#x6B21;&#x63A5;&#x6536;rtcp&#x62A5;&#x6587;&#x540E; &#x88AB;&#x8C03;&#x7528;
+&#x8C03;&#x7528;&#x94FE;&#x8DEF;:<a href="https://blog.csdn.net/CrystalShaw/article/details/111573233" target="_blank">https://blog.csdn.net/CrystalShaw/article/details/111573233</a></p>
+<h2 id="inter-arrival">inter arrival</h2>
+<p>&#x5305;&#x7EC4;&#x7406;&#x89E3;&#xFF1A;
+<a href="https://blog.jianchihu.net/webrtc-research-interarrival.html" target="_blank">https://blog.jianchihu.net/webrtc-research-interarrival.html</a>
+&#x6D41;&#x7A0B;&#xFF1A;
+<a href="https://blog.csdn.net/MeRcy_PM/article/details/72629279" target="_blank">https://blog.csdn.net/MeRcy_PM/article/details/72629279</a></p>
 
                                 
                                 </section>
@@ -434,7 +454,7 @@ bbr&#x5B58;&#x5728;&#x95EE;&#x9898;</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"webRtcQoe方法","level":"1.2.7","depth":2,"next":{"title":"K8S","level":"1.3","depth":1,"path":"K8S/README.md","ref":"K8S/README.md","articles":[{"title":"K8S集群内部不能访问LB","level":"1.3.1","depth":2,"path":"K8S/K8S集群内部不能访问LB.md","ref":"K8S/K8S集群内部不能访问LB.md","articles":[]},{"title":"K8S网络模型","level":"1.3.2","depth":2,"path":"K8S/K8S网络模型.md","ref":"K8S/K8S网络模型.md","articles":[]}]},"previous":{"title":"webRtc中的Qos方法","level":"1.2.6","depth":2,"path":"WebRtc/webRtc中的Qos方法.md","ref":"WebRtc/webRtc中的Qos方法.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid-gb3","livereload"],"pluginsConfig":{"mermaid-gb3":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"WebRtc/webRtcQoe方法.md","mtime":"2021-08-27T02:48:31.657Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-27T02:51:17.786Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"webRtcQoe方法","level":"1.2.7","depth":2,"next":{"title":"K8S","level":"1.3","depth":1,"path":"K8S/README.md","ref":"K8S/README.md","articles":[{"title":"K8S集群内部不能访问LB","level":"1.3.1","depth":2,"path":"K8S/K8S集群内部不能访问LB.md","ref":"K8S/K8S集群内部不能访问LB.md","articles":[]},{"title":"K8S网络模型","level":"1.3.2","depth":2,"path":"K8S/K8S网络模型.md","ref":"K8S/K8S网络模型.md","articles":[]}]},"previous":{"title":"webRtc中的Qos方法","level":"1.2.6","depth":2,"path":"WebRtc/webRtc中的Qos方法.md","ref":"WebRtc/webRtc中的Qos方法.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid-gb3","livereload"],"pluginsConfig":{"mermaid-gb3":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"WebRtc/webRtcQoe方法.md","mtime":"2021-08-27T03:13:11.560Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-27T03:13:34.458Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

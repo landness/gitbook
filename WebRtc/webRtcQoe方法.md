@@ -48,3 +48,28 @@ BBR 相对于传统TCP拥塞控制算法的优势：
 https://www.zhihu.com/question/53559433
 bbr存在问题
 1. 升得快，降得慢，猜测是期望基于丢包的拥塞控制算法会降窗，这就可以用他们腾出来的带宽。但如果路由器缓存不够深可能会造成大量丢包。甚至在深队列，等不到基于丢包的拥塞控制算法降窗而不断降低发送速率，吞吐率下降。且当大家发现可以自己接管丢包的降窗行为时，都采用激进做法，导致网络更加拥塞。
+
+BWE模块的输出值：
+```
+  struct Result {
+    Result();
+    ~Result() = default;
+    bool updated;
+    bool probe;
+    DataRate target_bitrate = DataRate::Zero();
+    bool recovered_from_overuse;
+    bool backoff_in_alr;
+  };
+```
+核心就是目标码率target_bitrate 
+入口函数 IncomingPacketFeedbackVector
+**接合处**
+每次接收rtcp报文后 被调用
+调用链路:https://blog.csdn.net/CrystalShaw/article/details/111573233
+
+## inter arrival
+
+包组理解：
+https://blog.jianchihu.net/webrtc-research-interarrival.html
+流程：
+https://blog.csdn.net/MeRcy_PM/article/details/72629279
