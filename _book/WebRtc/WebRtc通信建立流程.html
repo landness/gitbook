@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>WebRtc通信建立流程 · GitBook</title>
+        <title>webrtc通信建立流程 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,7 +65,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="webRtc音视频数据接收发送流程.html" />
+    <link rel="next" href="webrtc音视频数据接收发送流程.html" />
     
     
     <link rel="prev" href="./" />
@@ -115,7 +115,7 @@
                 <a href="./">
             
                     
-                    WebRtc
+                    webrtc
             
                 </a>
             
@@ -124,12 +124,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.1" data-path="WebRtc通信建立流程.html">
+        <li class="chapter active" data-level="1.2.1" data-path="webrtc通信建立流程.html">
             
-                <a href="WebRtc通信建立流程.html">
+                <a href="webrtc通信建立流程.html">
             
                     
-                    WebRtc通信建立流程
+                    webrtc通信建立流程
             
                 </a>
             
@@ -137,9 +137,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="webRtc音视频数据接收发送流程.html">
+        <li class="chapter " data-level="1.2.2" data-path="webrtc音视频数据接收发送流程.html">
             
-                <a href="webRtc音视频数据接收发送流程.html">
+                <a href="webrtc音视频数据接收发送流程.html">
             
                     
                     webrtc音视频数据接收发送流程
@@ -150,12 +150,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="WebRtc线程模型.html">
+        <li class="chapter " data-level="1.2.3" data-path="webrtc线程模型.html">
             
-                <a href="WebRtc线程模型.html">
+                <a href="webrtc线程模型.html">
             
                     
-                    WebRtc线程模型
+                    webrtc线程模型
             
                 </a>
             
@@ -163,12 +163,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="WebRtc网络相关.html">
+        <li class="chapter " data-level="1.2.4" data-path="webrtc网络相关.html">
             
-                <a href="WebRtc网络相关.html">
+                <a href="webrtc网络相关.html">
             
                     
-                    WebRtc网络相关
+                    webrtc网络相关
             
                 </a>
             
@@ -176,12 +176,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5" data-path="WebRtc传输协议.html">
+        <li class="chapter " data-level="1.2.5" data-path="webrtc传输协议.html">
             
-                <a href="WebRtc传输协议.html">
+                <a href="webrtc传输协议.html">
             
                     
-                    WebRtc传输协议
+                    webrtc传输协议
             
                 </a>
             
@@ -189,12 +189,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.6" data-path="webRtc中的Qos方法.html">
+        <li class="chapter " data-level="1.2.6" data-path="webrtc中的Qos方法.html">
             
-                <a href="webRtc中的Qos方法.html">
+                <a href="webrtc中的Qos方法.html">
             
                     
-                    webRtc中的Qos方法
+                    webrtc中的Qos方法
             
                 </a>
             
@@ -202,12 +202,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="webRtcQoe方法.html">
+        <li class="chapter " data-level="1.2.7" data-path="webrtcQoe方法.html">
             
-                <a href="webRtcQoe方法.html">
+                <a href="webrtcQoe方法.html">
             
                     
-                    webRtcQoe方法
+                    webrtcQoe方法
             
                 </a>
             
@@ -253,6 +253,19 @@
             
                     
                     K8S网络模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../K8S/K8S部署实践.md">
+            
+                <span>
+            
+                    
+                    K8S部署实践——oneByOne
             
                 </a>
             
@@ -327,7 +340,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >WebRtc通信建立流程</a>
+        <a href=".." >webrtc通信建立流程</a>
     </h1>
 </div>
 
@@ -343,7 +356,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="1-&#x524D;&#x8A00;">1 &#x524D;&#x8A00;</h1>
-<p>webrtc&#x5EFA;&#x7ACB;p2p&#x8FDE;&#x63A5;&#x4E0E;&#x4EE5;&#x5F80;&#x7684;CS&#x6A21;&#x5F0F;&#x4E0B;&#x7684;tcp udp&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#x6709;&#x5F88;&#x5927;&#x4E0D;&#x540C;&#xFF0C;&#x6240;&#x4EE5;&#x6709;&#x5FC5;&#x8981;&#x5148;&#x4E86;&#x89E3;&#x4E00;&#x4E0B;<a href="WebRtc&#x7F51;&#x7EDC;&#x76F8;&#x5173;.html">webrtc&#x901A;&#x4FE1;&#x5EFA;&#x7ACB;&#x76F8;&#x5173;&#x7684;&#x534F;&#x8BAE;&#x539F;&#x7406;</a>&#xFF0C;&#x6BD4;&#x5982;UDP&#x6253;&#x6D1E;&#x539F;&#x7406;&#xFF0C;Stun,Turn,ICE&#x7B49;&#x534F;&#x8BAE;&#x4EE5;&#x53CA;&#x591A;&#x5BF9;&#x591A;&#x73AF;&#x5883;&#x4E0B;&#x7684;&#x7F51;&#x7EDC;&#x62D3;&#x6251;&#x3002;</p>
+<p>webrtc&#x5EFA;&#x7ACB;p2p&#x8FDE;&#x63A5;&#x4E0E;&#x4EE5;&#x5F80;&#x7684;CS&#x6A21;&#x5F0F;&#x4E0B;&#x7684;tcp udp&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#x6709;&#x5F88;&#x5927;&#x4E0D;&#x540C;&#xFF0C;&#x6240;&#x4EE5;&#x6709;&#x5FC5;&#x8981;&#x5148;&#x4E86;&#x89E3;&#x4E00;&#x4E0B;<a href="WebRtc&#x7F51;&#x7EDC;&#x76F8;&#x5173;.md">webrtc&#x901A;&#x4FE1;&#x5EFA;&#x7ACB;&#x76F8;&#x5173;&#x7684;&#x534F;&#x8BAE;&#x539F;&#x7406;</a>&#xFF0C;&#x6BD4;&#x5982;UDP&#x6253;&#x6D1E;&#x539F;&#x7406;&#xFF0C;Stun,Turn,ICE&#x7B49;&#x534F;&#x8BAE;&#x4EE5;&#x53CA;&#x591A;&#x5BF9;&#x591A;&#x73AF;&#x5883;&#x4E0B;&#x7684;&#x7F51;&#x7EDC;&#x62D3;&#x6251;&#x3002;</p>
 <h1 id="2-webrtc&#x901A;&#x4FE1;&#x5EFA;&#x7ACB;&#x65F6;&#x5E8F;&#x56FE;&#xFF1A;">2 WebRtc&#x901A;&#x4FE1;&#x5EFA;&#x7ACB;&#x65F6;&#x5E8F;&#x56FE;&#xFF1A;</h1>
 <div class="mermaid">
 sequenceDiagram
@@ -412,12 +425,12 @@ local_peer -&gt; remote_peer:&#x534F;&#x5546;&#x901A;&#x4FE1;&#x5BC6;&#x94A5;&#x
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: WebRtc">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: webrtc">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="webRtc音视频数据接收发送流程.html" class="navigation navigation-next " aria-label="Next page: webrtc音视频数据接收发送流程">
+                <a href="webrtc音视频数据接收发送流程.html" class="navigation navigation-next " aria-label="Next page: webrtc音视频数据接收发送流程">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -428,7 +441,7 @@ local_peer -&gt; remote_peer:&#x534F;&#x5546;&#x901A;&#x4FE1;&#x5BC6;&#x94A5;&#x
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"WebRtc通信建立流程","level":"1.2.1","depth":2,"next":{"title":"webrtc音视频数据接收发送流程","level":"1.2.2","depth":2,"path":"WebRtc/webRtc音视频数据接收发送流程.md","ref":"WebRtc/webRtc音视频数据接收发送流程.md","articles":[]},"previous":{"title":"WebRtc","level":"1.2","depth":1,"path":"WebRtc/README.md","ref":"WebRtc/README.md","articles":[{"title":"WebRtc通信建立流程","level":"1.2.1","depth":2,"path":"WebRtc/WebRtc通信建立流程.md","ref":"WebRtc/WebRtc通信建立流程.md","articles":[]},{"title":"webrtc音视频数据接收发送流程","level":"1.2.2","depth":2,"path":"WebRtc/webRtc音视频数据接收发送流程.md","ref":"WebRtc/webRtc音视频数据接收发送流程.md","articles":[]},{"title":"WebRtc线程模型","level":"1.2.3","depth":2,"path":"WebRtc/WebRtc线程模型.md","ref":"WebRtc/WebRtc线程模型.md","articles":[]},{"title":"WebRtc网络相关","level":"1.2.4","depth":2,"path":"WebRtc/WebRtc网络相关.md","ref":"WebRtc/WebRtc网络相关.md","articles":[]},{"title":"WebRtc传输协议","level":"1.2.5","depth":2,"path":"WebRtc/WebRtc传输协议.md","ref":"WebRtc/WebRtc传输协议.md","articles":[]},{"title":"webRtc中的Qos方法","level":"1.2.6","depth":2,"path":"WebRtc/webRtc中的Qos方法.md","ref":"WebRtc/webRtc中的Qos方法.md","articles":[]},{"title":"webRtcQoe方法","level":"1.2.7","depth":2,"path":"WebRtc/webRtcQoe方法.md","ref":"WebRtc/webRtcQoe方法.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid-gb3","livereload"],"pluginsConfig":{"mermaid-gb3":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"WebRtc/WebRtc通信建立流程.md","mtime":"2021-08-27T02:51:19.209Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-27T03:13:34.458Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"webrtc通信建立流程","level":"1.2.1","depth":2,"next":{"title":"webrtc音视频数据接收发送流程","level":"1.2.2","depth":2,"path":"webrtc/webrtc音视频数据接收发送流程.md","ref":"webrtc/webrtc音视频数据接收发送流程.md","articles":[]},"previous":{"title":"webrtc","level":"1.2","depth":1,"path":"WebRtc/README.md","ref":"WebRtc/README.md","articles":[{"title":"webrtc通信建立流程","level":"1.2.1","depth":2,"path":"webrtc/webrtc通信建立流程.md","ref":"webrtc/webrtc通信建立流程.md","articles":[]},{"title":"webrtc音视频数据接收发送流程","level":"1.2.2","depth":2,"path":"webrtc/webrtc音视频数据接收发送流程.md","ref":"webrtc/webrtc音视频数据接收发送流程.md","articles":[]},{"title":"webrtc线程模型","level":"1.2.3","depth":2,"path":"webrtc/webrtc线程模型.md","ref":"webrtc/webrtc线程模型.md","articles":[]},{"title":"webrtc网络相关","level":"1.2.4","depth":2,"path":"webrtc/webrtc网络相关.md","ref":"webrtc/webrtc网络相关.md","articles":[]},{"title":"webrtc传输协议","level":"1.2.5","depth":2,"path":"webrtc/webrtc传输协议.md","ref":"webrtc/webrtc传输协议.md","articles":[]},{"title":"webrtc中的Qos方法","level":"1.2.6","depth":2,"path":"webrtc/webrtc中的Qos方法.md","ref":"webrtc/webrtc中的Qos方法.md","articles":[]},{"title":"webrtcQoe方法","level":"1.2.7","depth":2,"path":"webrtc/webrtcQoe方法.md","ref":"webrtc/webrtcQoe方法.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid-gb3","livereload"],"pluginsConfig":{"mermaid-gb3":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"webrtc/webrtc通信建立流程.md","mtime":"2021-12-10T04:13:52.059Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-12-11T07:52:00.467Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

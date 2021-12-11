@@ -60,7 +60,6 @@ RTCP从上层接收控制信息，封装成RTCP控制包。
 
 RTP将RTP 数据包发往UDP端口对中偶数端口；RTCP将RTCP控制包发往UDP端口对中的接收端口。
 
-
 # 3 SRTP
 在RTP的基础上进行数据加密，类似与http+tls=https，在这是RTP+dtls=SRTP，dtls是基于udp的握手协议，协商密钥具体的握手过程可类比tls不再详细说明。
 
