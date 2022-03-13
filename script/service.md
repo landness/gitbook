@@ -1,3 +1,4 @@
+```
 ## service.yml
 apiVersion: v1
 kind: Service
@@ -24,3 +25,4 @@ spec:                                    #详细描述
       ingress:                           #外部负载均衡器
         ip: string                       #外部负载均衡器的Ip地址值
         hostname: string                 #外部负载均衡器的主机名
+```

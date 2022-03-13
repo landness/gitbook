@@ -1,3 +1,4 @@
+```
 # GCC support can be specified at major, minor, or micro version
 # (e.g. 8, 8.2 or 8.2.0).
 # See https://hub.docker.com/r/library/gcc/ for all supported GCC
@@ -50,3 +51,4 @@ RUN cd /usr/local/rush-rpc && make
 CMD ["./rpc_server_test"]
 
 LABEL Name=RushRPC Version=0.0.1
+```

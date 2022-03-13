@@ -17,8 +17,8 @@ VPC(visual private cloud)的三大部分：私有网络网段、子网和路由�
 具体的创建步骤见第三节实践部分,本节侧重介绍其中的背景知识部分，即K8s的两大配置文件devlopment.yml和service.yml
 利用模板创建完成后会自动生成devlopment.yml文件和service.yml文件，需要能看懂其中的配置项，这样有定制化的运维需求时直接修改对应文件的配置项即可
 为不影响本文的观感，请移步
-[devlopment.yml文件示例及注释](../script/devlopment.yml)
-[service.yml文件示例及注释](../script/service.yml)
+[devlopment.yml文件示例及注释](../script/devlopment.md)
+[service.yml文件示例及注释](../script/service.md)
 ### 1.3.2 githubAction
 阮一峰：githubAction相关的基础概念
 https://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html 
@@ -29,12 +29,15 @@ https://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html
 ## 2.1 makefile
 makefile简易教程
 https://www.cnblogs.com/owlman/p/5514724.html
-[makefile练手](../script/makefile)
+
+[makefile练手](../script/makefile.md)
 ## 2.2 CMakeList
 基本的已经掌握了 暂时在这里不写了,之后再补充（TODO）
 ## 2.3 dockerfile
 ![dockerfile核心命令](../pic/dockerfile核心命令.png)
-[dockerfile练手](../script/dockerfile)
+
+[dockerfile练手](../script/Dockerfile.md)
+
 需要注意的是 上面例子中的dockerfile在生成镜像的时候 编译时间实在太长（需要拉boost库+其他各种库+各种工具+编译）
 笔者的做法是先在跳板机上执行make 生成编译后的可执行文件，再将可执行文件和各种库的依赖打包成镜像，这样速度会快很多
 但缺点也很明显，当代码修改后需要重复执行上面的动作，发布的时候没有做到一键发布

@@ -1,0 +1,789 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>K8S部署实践——oneByOne · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../RPC/" />
+    
+    
+    <link rel="prev" href="K8S网络模型.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../WebRtc/">
+            
+                <a href="../WebRtc/">
+            
+                    
+                    webrtc
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../webrtc/webrtc通信建立流程.html">
+            
+                <a href="../webrtc/webrtc通信建立流程.html">
+            
+                    
+                    webrtc通信建立流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../webrtc/webrtc音视频数据接收发送流程.html">
+            
+                <a href="../webrtc/webrtc音视频数据接收发送流程.html">
+            
+                    
+                    webrtc音视频数据接收发送流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../webrtc/webrtc线程模型.html">
+            
+                <a href="../webrtc/webrtc线程模型.html">
+            
+                    
+                    webrtc线程模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../webrtc/webrtc网络相关.html">
+            
+                <a href="../webrtc/webrtc网络相关.html">
+            
+                    
+                    webrtc网络相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../webrtc/webrtc传输协议.html">
+            
+                <a href="../webrtc/webrtc传输协议.html">
+            
+                    
+                    webrtc传输协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../webrtc/webrtc中的Qos方法.html">
+            
+                <a href="../webrtc/webrtc中的Qos方法.html">
+            
+                    
+                    webrtc中的Qos方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../webrtc/webrtcQoe方法.html">
+            
+                <a href="../webrtc/webrtcQoe方法.html">
+            
+                    
+                    webrtcQoe方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    K8S
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="K8S集群内部不能访问LB.html">
+            
+                <a href="K8S集群内部不能访问LB.html">
+            
+                    
+                    K8S集群内部不能访问LB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="K8S网络模型.html">
+            
+                <a href="K8S网络模型.html">
+            
+                    
+                    K8S网络模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="K8S部署实践——oneByOne.html">
+            
+                <a href="K8S部署实践——oneByOne.html">
+            
+                    
+                    K8S部署实践——oneByOne
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../RPC/">
+            
+                <a href="../RPC/">
+            
+                    
+                    RPC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../RPC/自研网络库+RPC框架.html">
+            
+                <a href="../RPC/自研网络库+RPC框架.html">
+            
+                    
+                    自研网络库+RPC框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../script/">
+            
+                <a href="../script/">
+            
+                    
+                    script
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../script/devlopment.html">
+            
+                <a href="../script/devlopment.html">
+            
+                    
+                    devlopment.yml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../script/dockerfile.md">
+            
+                <span>
+            
+                    
+                    dockerfile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../script/makefile.html">
+            
+                <a href="../script/makefile.html">
+            
+                    
+                    makefile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../script/service.html">
+            
+                <a href="../script/service.html">
+            
+                    
+                    service.yml
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >K8S部署实践——oneByOne</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="1-&#x817E;&#x8BAF;&#x4E91;&#x76F8;&#x5173;">1 &#x817E;&#x8BAF;&#x4E91;&#x76F8;&#x5173;</h1>
+<h2 id="11-vpc&#x2014;&#x2014;&#x521B;&#x5EFA;&#x96C6;&#x7FA4;&#x4E4B;&#x524D;&#x9700;&#x8981;&#x5148;&#x521B;&#x5EFA;&#x79C1;&#x6709;&#x7F51;&#x7EDC;&#x7A7A;&#x95F4;">1.1 VPC&#x2014;&#x2014;&#x521B;&#x5EFA;&#x96C6;&#x7FA4;&#x4E4B;&#x524D;&#x9700;&#x8981;&#x5148;&#x521B;&#x5EFA;&#x79C1;&#x6709;&#x7F51;&#x7EDC;&#x7A7A;&#x95F4;</h2>
+<p>&#x79C1;&#x6709;&#x7F51;&#x7EDC;&#x6982;&#x5FF5;&#x4ECB;&#x7ECD;&#xFF1A;<a href="https://cloud.tencent.com/document/product/215/20046" target="_blank">https://cloud.tencent.com/document/product/215/20046</a>
+VPC(visual private cloud)&#x7684;&#x4E09;&#x5927;&#x90E8;&#x5206;&#xFF1A;&#x79C1;&#x6709;&#x7F51;&#x7EDC;&#x7F51;&#x6BB5;&#x3001;&#x5B50;&#x7F51;&#x548C;&#x8DEF;&#x7531;&#x8868;
+&#x53EF;&#x4EE5;&#x5C06;VPC&#x7C7B;&#x6BD4;&#x4E3A;&#x4E00;&#x4E2A;&#x5C40;&#x57DF;&#x7F51;&#xFF0C;&#x5B50;&#x7F51;&#x5C31;&#x662F;&#x5C40;&#x57DF;&#x7F51;&#x4E0B;&#x7684;&#x5B50;&#x7F51;&#xFF0C;&#x8DEF;&#x7531;&#x8868;&#x4E00;&#x822C;&#x7531;&#x817E;&#x8BAF;&#x4E91;&#x81EA;&#x52A8;&#x751F;&#x6210;&#xFF0C;&#x7528;&#x4E8E;&#x4E0D;&#x540C;&#x5B50;&#x7F51;&#x6253;&#x901A;&#x3002;&#x8BE6;&#x89C1;&#x4E0B;&#x56FE;&#xFF1A;
+<img src="../pic/VPC&#x6838;&#x5FC3;&#x7EC4;&#x6210;&#x56FE;.png" alt=""></p>
+<h2 id="12-&#x96C6;&#x7FA4;&#x7F51;&#x7EDC;&#x4E0E;&#x5BB9;&#x5668;&#x7F51;&#x7EDC;">1.2 &#x96C6;&#x7FA4;&#x7F51;&#x7EDC;&#x4E0E;&#x5BB9;&#x5668;&#x7F51;&#x7EDC;</h2>
+<p>&#x5BB9;&#x5668;&#x7F51;&#x7EDC;&#x4E0E;&#x96C6;&#x7FA4;&#x7F51;&#x7EDC;&#x7684;&#x5173;&#x7CFB;</p>
+<ul>
+<li>&#x96C6;&#x7FA4;&#x7F51;&#x7EDC;&#xFF1A;&#x4E3A;&#x96C6;&#x7FA4;&#x5185;&#x4E3B;&#x673A;&#x5206;&#x914D;&#x5728;&#x8282;&#x70B9;&#x7F51;&#x7EDC;&#x5730;&#x5740;&#x8303;&#x56F4;&#x5185;&#x7684;IP&#x5730;&#x5740;&#xFF0C;&#x9009;&#x62E9;&#x79C1;&#x6709;&#x7F51;&#x7EDC;VPC&#x4E0B;&#x7684;&#x5B50;&#x7F51;&#x7528;&#x4E8E;&#x96C6;&#x7FA4;&#x7684;&#x8282;&#x70B9;&#x7F51;&#x7EDC;.</li>
+<li>&#x5BB9;&#x5668;&#x7F51;&#x7EDC;&#xFF1A;&#x4E3A;&#x96C6;&#x7FA4;&#x5185;&#x5BB9;&#x5668;&#x5206;&#x914D;&#x5728;&#x5BB9;&#x5668;&#x7F51;&#x7EDC;&#x5730;&#x5740;&#x8303;&#x56F4;&#x5185;&#x7684;IP&#x5730;&#x5740;&#xFF0C;&#x5305;&#x542B; GlobalRouter &#x6A21;&#x5F0F;&#x548C; VPC-CNI &#x6A21;&#x5F0F;&#x3002;<ul>
+<li>GlobalRouter &#x6A21;&#x5F0F;&#xFF1A;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x4E09;&#x5927;&#x79C1;&#x6709;&#x7F51;&#x6BB5;&#x4F5C;&#x4E3A;&#x5BB9;&#x5668;&#x7F51;&#x7EDC;&#xFF0C;&#x6839;&#x636E;&#x9009;&#x62E9;&#x7684;&#x96C6;&#x7FA4;&#x5185;&#x670D;&#x52A1;&#x6570;&#x91CF;&#x7684;&#x4E0A;&#x9650;&#xFF0C;&#x81EA;&#x52A8;&#x5206;&#x914D;&#x9002;&#x5F53;&#x5927;&#x5C0F;&#x7684; CIDR &#x6BB5;&#x7528;&#x4E8E; Kubernetes service&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x9009;&#x62E9;&#x7684;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x7684; Pod &#x6570;&#x91CF;&#x4E0A;&#x9650;&#xFF0C;&#x81EA;&#x52A8;&#x4E3A;&#x96C6;&#x7FA4;&#x5185;&#x6BCF;&#x53F0;&#x4E91;&#x670D;&#x52A1;&#x5668;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x9002;&#x5F53;&#x5927;&#x5C0F;&#x7684;&#x7F51;&#x6BB5;&#x7528;&#x4E8E;&#x8BE5;&#x4E3B;&#x673A;&#x5206;&#x914D; Pod &#x7684; IP &#x5730;&#x5740;&#x3002;</li>
+<li>VPC-CNI &#x6A21;&#x5F0F;&#xFF1A;&#x9009;&#x62E9;&#x4E0E;&#x96C6;&#x7FA4;&#x540C; VPC &#x7684;&#x5B50;&#x7F51;&#x7528;&#x4E8E;&#x5BB9;&#x5668;&#x5206;&#x914D; IP&#x3002;</li>
+</ul>
+</li>
+<li>&#x5BB9;&#x5668;&#x7F51;&#x7EDC;&#x4E0E;&#x96C6;&#x7FA4;&#x7F51;&#x7EDC;&#x7684;&#x9650;&#x5236;&#xFF1A;&#x96C6;&#x7FA4;&#x7F51;&#x7EDC;&#x548C;&#x5BB9;&#x5668;&#x7F51;&#x7EDC;&#x7F51;&#x6BB5;&#x4E0D;&#x80FD;&#x91CD;&#x53E0;&#xFF1B;&#x540C;&#x4E00;VPC&#x5185;&#xFF0C;&#x4E0D;&#x540C;&#x96C6;&#x7FA4;&#x7684;&#x5BB9;&#x5668;&#x7F51;&#x7EDC;&#x7F51;&#x6BB5;&#x4E0D;&#x80FD;&#x91CD;&#x53E0;&#x3002;&#x5BB9;&#x5668;&#x7F51;&#x7EDC;&#x548C; VPC &#x8DEF;&#x7531;&#x91CD;&#x53E0;&#x65F6;&#xFF0C;&#x4F18;&#x5148;&#x5728;&#x5BB9;&#x5668;&#x7F51;&#x7EDC;&#x5185;&#x8F6C;&#x53D1;&#x3002;<h2 id="13-devops&#x57FA;&#x4E8E;&#x817E;&#x8BAF;&#x4E91;tkegithub-actions">1.3 devops(&#x57FA;&#x4E8E;&#x817E;&#x8BAF;&#x4E91;TKE+github actions)</h2>
+<h3 id="131-&#x521B;&#x5EFA;&#x96C6;&#x7FA4;">1.3.1 &#x521B;&#x5EFA;&#x96C6;&#x7FA4;</h3>
+&#x5728;&#x817E;&#x8BAF;&#x4E91;&#x4E0B;&#x4F9D;&#x636E;&#x6A21;&#x677F;&#x521B;&#x5EFA;K8s&#x96C6;&#x7FA4;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x70B9;&#x70B9;&#x70B9;&#xFF0C;&#x8BE6;&#x89C1;&#x817E;&#x8BAF;&#x4E91;&#x7528;&#x6237;&#x6587;&#x6863; &#x5199;&#x7684;&#x5F88;&#x6E05;&#x695A;&#x4E86;<a href="https://cloud.tencent.com/document/product/457/32189" target="_blank">https://cloud.tencent.com/document/product/457/32189</a>
+&#x5177;&#x4F53;&#x7684;&#x521B;&#x5EFA;&#x6B65;&#x9AA4;&#x89C1;&#x7B2C;&#x4E09;&#x8282;&#x5B9E;&#x8DF5;&#x90E8;&#x5206;,&#x672C;&#x8282;&#x4FA7;&#x91CD;&#x4ECB;&#x7ECD;&#x5176;&#x4E2D;&#x7684;&#x80CC;&#x666F;&#x77E5;&#x8BC6;&#x90E8;&#x5206;&#xFF0C;&#x5373;K8s&#x7684;&#x4E24;&#x5927;&#x914D;&#x7F6E;&#x6587;&#x4EF6;devlopment.yml&#x548C;service.yml
+&#x5229;&#x7528;&#x6A21;&#x677F;&#x521B;&#x5EFA;&#x5B8C;&#x6210;&#x540E;&#x4F1A;&#x81EA;&#x52A8;&#x751F;&#x6210;devlopment.yml&#x6587;&#x4EF6;&#x548C;service.yml&#x6587;&#x4EF6;&#xFF0C;&#x9700;&#x8981;&#x80FD;&#x770B;&#x61C2;&#x5176;&#x4E2D;&#x7684;&#x914D;&#x7F6E;&#x9879;&#xFF0C;&#x8FD9;&#x6837;&#x6709;&#x5B9A;&#x5236;&#x5316;&#x7684;&#x8FD0;&#x7EF4;&#x9700;&#x6C42;&#x65F6;&#x76F4;&#x63A5;&#x4FEE;&#x6539;&#x5BF9;&#x5E94;&#x6587;&#x4EF6;&#x7684;&#x914D;&#x7F6E;&#x9879;&#x5373;&#x53EF;
+&#x4E3A;&#x4E0D;&#x5F71;&#x54CD;&#x672C;&#x6587;&#x7684;&#x89C2;&#x611F;&#xFF0C;&#x8BF7;&#x79FB;&#x6B65;
+<a href="../script/devlopment.html">devlopment.yml&#x6587;&#x4EF6;&#x793A;&#x4F8B;&#x53CA;&#x6CE8;&#x91CA;</a>
+<a href="../script/service.html">service.yml&#x6587;&#x4EF6;&#x793A;&#x4F8B;&#x53CA;&#x6CE8;&#x91CA;</a><h3 id="132-githubaction">1.3.2 githubAction</h3>
+&#x962E;&#x4E00;&#x5CF0;&#xFF1A;githubAction&#x76F8;&#x5173;&#x7684;&#x57FA;&#x7840;&#x6982;&#x5FF5;
+<a href="https://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html" target="_blank">https://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html</a> 
+&#x5B9E;&#x8DF5;&#x642D;&#x5EFA;&#xFF1A;tke+githubAction
+&#x53C2;&#x8003;csdn&#x6587;&#x7AE0; <a href="https://blog.csdn.net/weixin_41262316/article/details/109583803" target="_blank">https://blog.csdn.net/weixin_41262316/article/details/109583803</a></li>
+</ul>
+<h1 id="2-&#x9879;&#x76EE;&#x6784;&#x5EFA;">2 &#x9879;&#x76EE;&#x6784;&#x5EFA;</h1>
+<h2 id="21-makefile">2.1 makefile</h2>
+<p>makefile&#x7B80;&#x6613;&#x6559;&#x7A0B;
+<a href="https://www.cnblogs.com/owlman/p/5514724.html" target="_blank">https://www.cnblogs.com/owlman/p/5514724.html</a></p>
+<p><a href="../script/makefile.html">makefile&#x7EC3;&#x624B;</a></p>
+<h2 id="22-cmakelist">2.2 CMakeList</h2>
+<p>&#x57FA;&#x672C;&#x7684;&#x5DF2;&#x7ECF;&#x638C;&#x63E1;&#x4E86; &#x6682;&#x65F6;&#x5728;&#x8FD9;&#x91CC;&#x4E0D;&#x5199;&#x4E86;,&#x4E4B;&#x540E;&#x518D;&#x8865;&#x5145;&#xFF08;TODO&#xFF09;</p>
+<h2 id="23-dockerfile">2.3 dockerfile</h2>
+<p><img src="../pic/dockerfile&#x6838;&#x5FC3;&#x547D;&#x4EE4;.png" alt="dockerfile&#x6838;&#x5FC3;&#x547D;&#x4EE4;"></p>
+<p><a href="../script/Dockerfile.md">dockerfile&#x7EC3;&#x624B;</a></p>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F; &#x4E0A;&#x9762;&#x4F8B;&#x5B50;&#x4E2D;&#x7684;dockerfile&#x5728;&#x751F;&#x6210;&#x955C;&#x50CF;&#x7684;&#x65F6;&#x5019; &#x7F16;&#x8BD1;&#x65F6;&#x95F4;&#x5B9E;&#x5728;&#x592A;&#x957F;&#xFF08;&#x9700;&#x8981;&#x62C9;boost&#x5E93;+&#x5176;&#x4ED6;&#x5404;&#x79CD;&#x5E93;+&#x5404;&#x79CD;&#x5DE5;&#x5177;+&#x7F16;&#x8BD1;&#xFF09;
+&#x7B14;&#x8005;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x5148;&#x5728;&#x8DF3;&#x677F;&#x673A;&#x4E0A;&#x6267;&#x884C;make &#x751F;&#x6210;&#x7F16;&#x8BD1;&#x540E;&#x7684;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#xFF0C;&#x518D;&#x5C06;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x548C;&#x5404;&#x79CD;&#x5E93;&#x7684;&#x4F9D;&#x8D56;&#x6253;&#x5305;&#x6210;&#x955C;&#x50CF;&#xFF0C;&#x8FD9;&#x6837;&#x901F;&#x5EA6;&#x4F1A;&#x5FEB;&#x5F88;&#x591A;
+&#x4F46;&#x7F3A;&#x70B9;&#x4E5F;&#x5F88;&#x660E;&#x663E;&#xFF0C;&#x5F53;&#x4EE3;&#x7801;&#x4FEE;&#x6539;&#x540E;&#x9700;&#x8981;&#x91CD;&#x590D;&#x6267;&#x884C;&#x4E0A;&#x9762;&#x7684;&#x52A8;&#x4F5C;&#xFF0C;&#x53D1;&#x5E03;&#x7684;&#x65F6;&#x5019;&#x6CA1;&#x6709;&#x505A;&#x5230;&#x4E00;&#x952E;&#x53D1;&#x5E03;
+&#x4E4B;&#x540E;&#x6709;&#x65F6;&#x95F4;&#x518D;&#x6765;&#x770B;&#x8FD9;&#x4E2A;&#x955C;&#x50CF;&#x7F16;&#x8BD1;&#x65F6;&#x95F4;&#x8FC7;&#x957F;&#x7684;&#x95EE;&#x9898;&#x6709;&#x6CA1;&#x6709;&#x66F4;&#x597D;&#x7684;&#x5904;&#x7406;&#x65B9;&#x6CD5;&#xFF08;TODO&#xFF09;</p>
+<h1 id="3-&#x96C6;&#x7FA4;&#x90E8;&#x7F72;&#x5B9E;&#x8DF5;">3 &#x96C6;&#x7FA4;&#x90E8;&#x7F72;&#x5B9E;&#x8DF5;</h1>
+<p>&#x4EE5;&#x7B14;&#x8005;&#x90E8;&#x7F72;&#x4E00;&#x4E2A; &#x57FA;&#x4E8E;RPC&#x6846;&#x67B6;&#x7684;&#x540E;&#x53F0;&#x670D;&#x52A1;&#x4E3A;&#x4F8B;&#xFF0C;&#x7F51;&#x7EDC;&#x62D3;&#x6251;&#x5982;&#x4E0B;&#xFF1A;
+<img src="../pic/%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91.png" alt="&#x7F51;&#x7EDC;&#x62D3;&#x6251;">
+&#x7528;&#x4E86;8&#x53F0;2&#x6838;2G&#x7684;CVM&#x505A;node&#xFF0C;&#x540E;&#x7EED;&#x4E3A;&#x4E86;&#x505A;&#x6846;&#x67B6;&#x7684;&#x6027;&#x80FD;&#x538B;&#x6D4B;&#x53C8;&#x7528;&#x4E86;2&#x53F0;4&#x6838;8G&#x7684;CVM&#xFF0C;&#x6309;&#x5C0F;&#x65F6;&#x8BA1;&#x8D39;&#xFF0C;&#x6BCF;&#x5C0F;&#x65F6;2&#x5757;&#xFF0C;&#x4E00;&#x5929;&#x5C31;&#x5C06;&#x8FD1;50&#x5757;&#x94B1;&#xFF0C;&#x817E;&#x8BAF;&#x4E91;&#x5356;&#x865A;&#x62DF;&#x673A;&#x8FD8;&#x662F;&#x6709;&#x70B9;&#x8D35;&#x7684;&#x554A;&#xFF0C;&#x82B1;&#x7684;&#x6211;&#x8089;&#x75BC;&#x3002;&#x3002;</p>
+<h2 id="31-&#x521B;&#x5EFA;vpc&#x5B50;&#x7F51;">3.1 &#x521B;&#x5EFA;VPC+&#x5B50;&#x7F51;</h2>
+<p><img src="../pic/%E5%AD%90%E7%BD%91%E6%90%AD%E5%BB%BA%E7%BB%93%E6%9E%9C.PNG" alt="&#x5B50;&#x7F51;&#x642D;&#x5EFA;&#x7ED3;&#x679C;">)</p>
+<h2 id="32-&#x521B;&#x5EFA;&#x79C1;&#x6709;&#x955C;&#x50CF;&#x4ED3;&#x5E93;">3.2 &#x521B;&#x5EFA;&#x79C1;&#x6709;&#x955C;&#x50CF;&#x4ED3;&#x5E93;</h2>
+<p><img src="../pic/%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93.PNG" alt="&#x955C;&#x50CF;&#x4ED3;&#x5E93;"></p>
+<h2 id="33-&#x521B;&#x5EFA;namespaceserviceworkload">3.3 &#x521B;&#x5EFA;namespace+service+workload</h2>
+<p>&#x70B9;&#x70B9;&#x70B9; &#x8BE6;&#x60C5;&#x53EF;&#x4EE5;&#x627E;&#x817E;&#x8BAF;&#x4E91;&#x7684;&#x6587;&#x6863; &#x5F88;&#x7B80;&#x5355; service-pod&#x642D;&#x5EFA;&#x7ED3;&#x679C;&#x5982;&#x4E0B;
+<img src="../pic/K8s%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E7%BB%93%E6%9E%9C.png" alt="">
+&#x5176;&#x4E2D;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;yml&#x6587;&#x4EF6;&#x5173;&#x952E;&#x90E8;&#x5206;&#x622A;&#x53D6;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code># service.yml
+apiVersion: v1
+kind: Service
+spec:
+  clusterIP: 10.3.252.62
+  ports:
+  - name: 7749-7749-tcp
+  selector:
+    k8s-app: teacher-server-service
+    qcloud-app: teacher-server-service
+  type: ClusterIP
+
+# deployment.yml
+apiVersion: apps/v1
+kind: Deployment
+template:
+spec:
+      containers:
+        env:
+        image: ccr.ccs.tencentyun.com/rpc-hub/rush-rpc:1.1.2
+        imagePullPolicy: Always
+        name: teacher-server
+        # command&#x8FD9;&#x884C;&#x540E;&#x7EED;&#x914D;&#x7F6E;&#x8FDB;&#x53BB;&#x7684;
+        # &#x9632;&#x6B62;&#x8FDB;&#x7A0B;&#x7ED3;&#x675F;&#x540E;&#x5BB9;&#x5668;&#x4E0D;&#x65AD;&#x81EA;&#x91CD;&#x542F;
+        command: [&quot;/bin/bash&quot;, &quot;-ce&quot;, &quot;tail -f /dev/null&quot;]
+        resources:
+          limits:
+            cpu: &quot;2&quot;
+            memory: 2Gi
+          requests:
+            cpu: &quot;1&quot;
+            memory: 1Gi
+</code></pre><h2 id="34-&#x540E;&#x53F0;&#x4E1A;&#x52A1;&#x4F9D;&#x8D56;&#x7EC4;&#x4EF6;&#x90E8;&#x7F72;">3.4 &#x540E;&#x53F0;&#x4E1A;&#x52A1;&#x4F9D;&#x8D56;&#x7EC4;&#x4EF6;&#x90E8;&#x7F72;</h2>
+<p>&#x4ECB;&#x7ECD;mysql+redis+etcd&#x7684;&#x5B89;&#x88C5;&#x548C;&#x521D;&#x59CB;&#x5316;</p>
+<h3 id="341-mysql">3.4.1 mysql</h3>
+<p><strong>&#x5B89;&#x88C5;</strong></p>
+<pre><code>sudo apt-get update                  //&#x66F4;&#x65B0;&#x8F6F;&#x4EF6;&#x6E90;
+sudo apt-get install mysql-server  //&#x5B89;&#x88C5;mysql
+sudo apt-get install libmysqlclient-dev
+&#x7F16;&#x8BD1;&#x94FE;&#x63A5;&#x547D;&#x4EE4;
+gcc -o mysql Mysql.c -I /usr/include/mysql/ -lmysqlclient
+</code></pre><p><strong>&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</strong></p>
+<pre><code>vim /etc/mysql/mysql.conf.d/mysqld.cnf
+# &#x6CE8;&#x91CA;&#x6389;&#x4E0B;&#x9762;&#x8FD9;&#x884C;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&#x672C;&#x5730;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x91CA;&#x6389;
+#bind 127.0.0.1 
+# &#x91CD;&#x542F;&#x670D;&#x52A1;
+service mysql restart
+</code></pre><p><strong>&#x6539;&#x5BC6;&#x7801;</strong></p>
+<pre><code>sudo cat /etc/mysql/debian.cnf
+mysql -u debian-sys-maint -p
+use mysql
+update mysql.user set authentication_string=password(&apos;123456&apos;) where user=&apos;root&apos; and Host =&apos;localhost&apos;;
+update user set  plugin=&quot;mysql_native_password&quot;;
+flush privileges;
+</code></pre><p><strong>&#x4FEE;&#x6539;&#x6743;&#x9650;&#x8868;&#xFF08;&#x4EE5;&#x5141;&#x8BB8;&#x5916;&#x90E8;&#x4E3B;&#x673A;&#x94FE;&#x63A5;&#x81F3;mysql&#xFF09;</strong></p>
+<pre><code>select host,user from user;
+update user set host=&apos;%&apos; where user=&apos;root&apos;;
+select host,user from user;
+flush privileges;
+quit;
+</code></pre><hr>
+<p><strong>&#x5EFA;&#x8868;&#x5E76;&#x521D;&#x59CB;&#x5316;</strong></p>
+<pre><code>mysql -u root -p
+123456
+CREATE DATABASE usr;
+use usr
+mysql&gt; create table teacher(
+    -&gt; id int(11) not null auto_increment,
+    -&gt; name varchar(80) not null,
+    -&gt; school varchar(80) not null,
+    -&gt; grade int(11) not null,
+    -&gt; subject varchar(80) not null,
+    -&gt; primary key(id)
+    -&gt; )ENGINE=InnoDB DEFAULT
+    -&gt; CHARSET=gb2312;
+mysql&gt; insert into teacher(id,name,school,grade,subject) values(&apos;1&apos;,&apos;teacher1&apos;,&apos;school1&apos;,&apos;1&apos;,&apos;math&apos;);
+mysql&gt; insert into teacher(id,name,school,grade,subject) values(&apos;2&apos;,&apos;teacher2&apos;,&apos;school2&apos;,&apos;4&apos;,&apos;english&apos;);
+mysql&gt; insert into teacher(id,name,school,grade,subject) values(&apos;3&apos;,&apos;teacher3&apos;,&apos;school3&apos;,&apos;9&apos;,&apos;physics&apos;);
+select * from teacher;
+</code></pre><p>&#x5EFA;&#x8868;&#x7ED3;&#x679C;&#xFF1A;
+<img src="../pic/mysql-teacher%E8%A1%A8%E6%95%B0%E6%8D%AE.PNG" alt="mysql-teacher&#x8868;&#x6570;&#x636E;"></p>
+<h3 id="342-redis">3.4.2 redis</h3>
+<p><strong>redis&#x5B89;&#x88C5;&#x5E76;&#x542F;&#x52A8;</strong></p>
+<pre><code>sudo apt-get install redis-server
+</code></pre><p><strong>&#x521D;&#x59CB;&#x5316;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5E76;&#x91CD;&#x542F;</strong></p>
+<pre><code>sudo vi /etc/redis/redis.conf
+# &#x6CE8;&#x91CA;&#x6389;&#x7ED1;&#x5B9A;&#x5730;&#x5740;
+#bind 127.0.0.1
+#&#x5173;&#x95ED;&#x4FDD;&#x62A4;&#x6A21;&#x5F0F; &#x5426;&#x5219;&#x4F1A;&#x62D2;&#x7EDD;&#x5916;&#x90E8;ip&#x8BBF;&#x95EE;
+protected-mode no 
+# &#x67E5;&#x770B;&#x72B6;&#x6001;
+sudo /etc/init.d/redis-server status
+# &#x91CD;&#x542F;&#x670D;&#x52A1;
+sudo /etc/init.d/redis-server restart
+</code></pre><h3 id="343-etcd&#x4E09;&#x8282;&#x70B9;&#x96C6;&#x7FA4;&#x642D;&#x5EFA;">3.4.3 etcd&#x4E09;&#x8282;&#x70B9;&#x96C6;&#x7FA4;&#x642D;&#x5EFA;</h3>
+<p>node1
+172.16.3.13
+node2
+172.16.3.16
+node3
+172.16.3.5
+<img src="../pic/etcd%E6%90%AD%E5%BB%BA%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt="&#x642D;&#x5EFA;&#x793A;&#x610F;&#x56FE;">
+<strong>&#x5B89;&#x88C5;</strong></p>
+<pre><code>apt-get -y install etcd
+</code></pre><p><strong>etcd&#x914D;&#x7F6E;&#x4FE1;&#x606F;</strong>
+vim /etc/etcd/etcd.conf
+ETCD_NAME=&quot;node1&quot;
+ETCD_DATA_DIR=&quot;/var/lib/etcd&quot;
+ETCD_LISTEN_PEER_URLS=&quot;<a href="http://172.16.3.13:2380" target="_blank">http://172.16.3.13:2380</a>&quot;
+ETCD_LISTEN_CLIENT_URLS=&quot;<a href="http://0.0.0.0:2379" target="_blank">http://0.0.0.0:2379</a>&quot;
+ETCD_INITIAL_ADVERTISE_PEER_URLS=&quot;<a href="http://172.16.3.13:2380" target="_blank">http://172.16.3.13:2380</a>&quot;
+ETCD_INITIAL_CLUSTER=&quot;node1=<a href="http://172.16.3.13:2380,node2=http://172.16.3.16:2380,node3=http://172.16.3.5:2380" target="_blank">http://172.16.3.13:2380,node2=http://172.16.3.16:2380,node3=http://172.16.3.5:2380</a>&quot;
+ETCD_INITIAL_CLUSTER_TOKEN=&quot;my-etcd-cluster&quot;
+ETCD_ADVERTISE_CLIENT_URLS=&quot;<a href="http://0.0.0.0:2379" target="_blank">http://0.0.0.0:2379</a>&quot;</p>
+<p><strong>etcd &#x5E38;&#x7528;&#x547D;&#x4EE4;</strong></p>
+<pre><code># &#x542F;&#x52A8;
+systemctl daemon-reload &amp;&amp; systemctl enable etcd &amp;&amp; systemctl start etcd
+# &#x67E5;&#x770B;&#x96C6;&#x7FA4;&#x72B6;&#x6001;
+etcdctl member list 
+etcdctl cluster-health
+# &#x91CD;&#x542F;
+## 1&#x5173;&#x95ED;&#x6240;&#x6709;etcd 
+systemctl stop etcd 
+## 2&#x5220;&#x9664;&#x6240;&#x6709; etcd &#x8282;&#x70B9;&#x4E2D; ETCD_DATA_DIR &#x914D;&#x7F6E;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x6211;&#x8FD9;&#x91CC;&#x662F;
+ETCD_DATA_DIR=&quot;/var/lib/etcd/default.etcd&quot;
+## 3&#x542F;&#x52A8;&#x6240;&#x6709;etcd: 
+systemctl start etcd
+</code></pre><p>etcd&#x4E09;&#x8282;&#x70B9;&#x96C6;&#x7FA4;&#x642D;&#x5EFA;&#x7ED3;&#x679C;&#xFF1A;
+<img src="../pic/etcd%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E7%BB%93%E6%9E%9C.PNG" alt="etcd&#x96C6;&#x7FA4;&#x642D;&#x5EFA;&#x7ED3;&#x679C;"></p>
+<h2 id="&#x90E8;&#x7F72;&#x8FC7;&#x7A0B;">&#x90E8;&#x7F72;&#x8FC7;&#x7A0B;</h2>
+<p>&#x751F;&#x6210;proto&#x6587;&#x4EF6;
+protoc --cpp_out=./ ./edu.proto
+&#x6539;&#x540E;&#x7F00;&#x540D;cpp</p>
+<p>&#x5B89;&#x88C5;libhv
+git clone <a href="https://github.com/ithewei/libhv.git" target="_blank">https://github.com/ithewei/libhv.git</a>
+cd libhv
+./configure
+make
+sudo make install</p>
+<p>&#x7531;&#x4E8E;libhv.so&#x94FE;&#x63A5;&#x4E0D;&#x4E0A;&#xFF0C;&#x6240;&#x4EE5;&#x5728;/etc/ld.so.conf.d/&#x4E0B;&#x521B;&#x5EFA;
+vi rush-rpc.conf 
+/usr/local/lib
+&#x5237;&#x65B0;&#x7F13;&#x5B58;
+sudo /sbin/ldconfig</p>
+<p>$ etcdctl watch  testkey</p>
+<h1 id="&#x5728;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x7EC8;&#x7AEF;-etcdctl-put--testkey-hello-watch">&#x5728;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x7EC8;&#x7AEF;: etcdctl put  testkey Hello watch</h1>
+<p>testkey</p>
+<p>Hello watch
+$ etcdctl put /testdir/testkey &quot;Hello world&quot;
+$ etcdctl put /testdir/testkey2 &quot;Hello world2&quot;
+$ etcdctl put /testdir/testkey3 &quot;Hello world3&quot;</p>
+<p>$ etcdctl get /testdir/testkey
+Hello world</p>
+<p>linux&#x4E0B;&#x4E24;&#x53F0;&#x4E3B;&#x673A;&#x590D;&#x5236;&#x6587;&#x4EF6;
+scp -r  admin@192.168.219.125:/home/admin/test  /home/admin/
+sudo scp ubuntu@101.33.247.88:/home/ubuntu/RPC-K8S-githubAction_cicd_test/src/rpc_server_edu_test .</p>
+<p>3&#x3001;&#x96C6;&#x7FA4;&#x642D;&#x5EFA;
+&#x642D;&#x5EFA;K8s&#x96C6;&#x7FA4;service&#x96C6;&#x7FA4;&#xFF08;server 3pod client 1pod&#xFF09; </p>
+<p>&#x672C;&#x5730;&#x751F;&#x6210;docker&#x955C;&#x50CF;
+&#x76F4;&#x63A5;&#x6253;&#x5305;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6; dockerfile
+&#x6DFB;&#x52A0;so&#x6587;&#x4EF6;&#x641C;&#x7D22;&#x8DEF;&#x5F84;
+&#x5728;/etc/ld.so.conf.d/&#x4E0B; sudo vim rush-rpc(&#x53EF;&#x4EE5;&#x6539;&#x4E3A;&#x590D;&#x5236;&#x6587;&#x4EF6;)
+&#x5185;&#x5BB9;&#x662F; /home/ubuntu
+&#x5237;&#x65B0;
+sudo ldconfig
+&#x521B;&#x5EFA;dockerfile
+sudo docker build -f dockerfile -t thacher_server:1.0.0 . 
+&#x751F;&#x6210;&#x955C;&#x50CF;
+&#x53D1;&#x5E03;&#x5230;&#x817E;&#x8BAF;&#x4E91;&#x955C;&#x50CF;&#x4ED3;&#x5E93;
+docker login ccr.ccs.tencentyun.com --username=100015196349
+docker tag [imageId] ccr.ccs.tencentyun.com/rpc-hub/rush-rpc-client:[tag]
+docker push ccr.ccs.tencentyun.com/rpc-hub/rush-rpc-client:[tag]
+pod&#x4E2D;&#x4E3B;&#x52A8;&#x62C9;
+docker pull ccr.ccs.tencentyun.com/rpc-hub/rush-rpc-client:[tag]
+&#x521B;&#x5EFA;pod</p>
+<p>&#x4E3A;&#x9632;&#x6B62;&#x955C;&#x50CF;&#x9000;&#x51FA;
+&#x5728;deployment&#x4E2D;&#x6DFB;&#x52A0;
+command: [&quot;/bin/bash&quot;, &quot;-ce&quot;, &quot;tail -f /dev/null&quot;]
+&#x4E5F;&#x53EF;&#x4EE5;&#x5728;dockerfile&#x6587;&#x4EF6;&#x7684;CMD&#x6DFB;&#x52A0;.sh&#x811A;&#x672C;
+&#x811A;&#x672C;&#x6700;&#x540E;&#x6267;&#x884C;tail -f /dev/null
+CMD[&quot;*.sh&quot;]
+spec:
+      containers:</p>
+<pre><code>  # &#x8FD0;&#x884C;&#x5BB9;&#x5668;&#x540D;&#x79F0;&#xFF1B;
+  - name: centos-test
+    # &#x955C;&#x50CF;&#x5730;&#x5740;&#xFF0C;&#x6CE8;&#x610F;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x5929;&#x5BAB; CCR &#x955C;&#x50CF;&#x4ED3;&#x5E93;&#x5730;&#x5740;&#xFF1B;
+    image: &apos;harbor.dcos.guangz.unic.local/common/centos-7.6:tools&apos;
+    command: [&quot;/bin/bash&quot;, &quot;-ce&quot;, &quot;tail -f /dev/null&quot;]
+    # &#x955C;&#x50CF;&#x62C9;&#x53D6;&#x7B56;&#x7565;&#xFF1A;Always&#x3001;IfNotPresent&#x3001;Never&#xFF1B;
+    imagePullPolicy: Always
+    resources:
+      requests: 
+        memory: &quot;512Mi&quot; 
+        cpu: &quot;200m&quot; 
+      limits: 
+        memory: &quot;512Mi&quot; 
+        cpu: &quot;200m&quot;
+</code></pre><p> curl -v <a href="http://127.0.0.1:8080/add?name=teacher4&amp;grade=7&amp;subject=history&amp;school=school4" target="_blank">http://127.0.0.1:8080/add?name=teacher4&amp;grade=7&amp;subject=history&amp;school=school4</a></p>
+<p> redis&#x64CD;&#x4F5C;&#x547D;&#x4EE4;
+ redis-cli</p>
+<p>&#x73B0;&#x6709;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x4E0B; &#x4E0D;&#x540C;pod&#x95F4;&#x8BBF;&#x95EE;&#x4E0D;&#x901A;
+k8s&#x4E2D;&#x4E0D;&#x540C;pod&#x8BBF;&#x95EE; &#x5FC5;&#x987B;&#x901A;&#x8FC7;service_ip</p>
+<p><a href="http://172.16.3.6:8080/add?name=teacher4\&amp;grade=7\&amp;subject=history\&amp;school=school4" target="_blank">http://172.16.3.6:8080/add?name=teacher4\&amp;grade=7\&amp;subject=history\&amp;school=school4</a></p>
+<p>wrk
+<a href="https://www.cnblogs.com/quanxiaoha/p/10661650.html" target="_blank">https://www.cnblogs.com/quanxiaoha/p/10661650.html</a></p>
+<p>&#x6027;&#x80FD;&#x6D4B;&#x8BD5;&#xFF1A;&#x6D4B;&#x5E76;&#x53D1; &#x6D4B;&#x5EF6;&#x65F6;
+&#x6D4B;&#x5355;&#x673A;&#x541E;&#x5410;&#x91CF;
+4&#x6838;8G&#x673A;&#x5668; &#x90E8;&#x7F72;echo&#x670D;&#x52A1; 
+&#x7528;wrk&#x538B;&#x529B;&#x6D4B;&#x8BD5; &#x6D4B;&#x5B8C;&#x4E0E;grpc&#x4F5C;&#x5BF9;&#x6BD4;
+&#x6D4B;&#x901A;&#x4FE1;&#x5EF6;&#x65F6;
+&#x6559;&#x5E08;&#x4FE1;&#x606F;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;
+wrk&#x6D4B;&#x901A;&#x4FE1;&#x5EF6;&#x65F6; 
+http&#x534F;&#x8BAE;&#x4E0B;&#xFF1A;&#x5199;http-http-server&#x6D4B;&#x8BD5;&#x7A0B;&#x5E8F;</p>
+<p>&#x5BF9;&#x7167;&#x65E5;&#x5FD7;&#xFF0C;Client&#x8282;&#x70B9;&#x7684;&#x7CFB;&#x7EDF;&#x8FD0;&#x884C;&#x6D41;&#x7A0B;&#x7B80;&#x5355;&#x63CF;&#x8FF0;&#x5982;&#x4E0B;&#xFF0C;&#x5728;&#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x4E4B;&#x521D;&#x5EFA;&#x7ACB;&#x4E0E;Etcd&#x7684;&#x957F;&#x8FDE;&#x63A5;&#xFF0C;&#x5E76;&#x7528;&#x8FDE;&#x63A5;&#x6C60;&#x6765;&#x7BA1;&#x7406;&#xFF0C;&#x63A5;&#x7740;&#x8FDB;&#x884C;&#x670D;&#x52A1;&#x53D1;&#x73B0;&#xFF0C;&#x5728;Etcd&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x67E5;&#x627E;key&#x4E3A;&#x201C;echo.EchoService&#x201D;&#x7684;&#x952E;&#x503C;&#x5BF9;&#xFF0C;&#x5F97;&#x5230;&#x4E86;&#x670D;&#x52A1;&#x8282;&#x70B9;&#x7684;ip&#xFF1A;101.33.247.88&#x548C;port&#xFF1A;7749&#xFF0C;&#x4EE5;&#x53CA;&#x8D1F;&#x8F7D;&#x4FE1;&#x606F;&#xFF0C;&#x63A5;&#x7740;&#x9009;&#x62E9;CPU&#x8F83;&#x4F4E;&#x8D1F;&#x8F7D;&#x7684;&#x673A;&#x5668;&#x8FDB;&#x884C;&#x670D;&#x52A1;&#x8C03;&#x7528;</p>
+<p>nginx&#x65E5;&#x5FD7;&#x5206;&#x6790;
+<a href="https://www.cnblogs.com/coolworld/p/6726538.html" target="_blank">https://www.cnblogs.com/coolworld/p/6726538.html</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="K8S网络模型.html" class="navigation navigation-prev " aria-label="Previous page: K8S网络模型">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../RPC/" class="navigation navigation-next " aria-label="Next page: RPC">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"K8S部署实践——oneByOne","level":"1.3.3","depth":2,"next":{"title":"RPC","level":"1.4","depth":1,"path":"RPC/README.md","ref":"RPC/README.md","articles":[{"title":"自研网络库+RPC框架","level":"1.4.1","depth":2,"path":"RPC/自研网络库+RPC框架.md","ref":"RPC/自研网络库+RPC框架.md","articles":[]}]},"previous":{"title":"K8S网络模型","level":"1.3.2","depth":2,"path":"K8S/K8S网络模型.md","ref":"K8S/K8S网络模型.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid-gb3","livereload"],"pluginsConfig":{"mermaid-gb3":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"K8S/K8S部署实践——oneByOne.md","mtime":"2022-03-13T10:35:15.604Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-13T10:37:25.596Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+

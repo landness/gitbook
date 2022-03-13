@@ -1,3 +1,4 @@
+```
 apiVersion: extensions/v1beta1   #接口版本
 kind: Deployment                 #接口类型
 metadata:
@@ -100,3 +101,4 @@ spec:
   - name: rbd-pvc                 #挂载PVC磁盘
     persistentVolumeClaim:
       claimName: rbd-pvc1         #挂载已经申请的pvc磁盘
+```
