@@ -1,0 +1,867 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>webrtc线程模型 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="webrtc网络相关.html" />
+    
+    
+    <link rel="prev" href="webrtc音视频数据接收发送流程.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    webrtc
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="webrtc通信建立流程.html">
+            
+                <a href="webrtc通信建立流程.html">
+            
+                    
+                    webrtc通信建立流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="webrtc音视频数据接收发送流程.html">
+            
+                <a href="webrtc音视频数据接收发送流程.html">
+            
+                    
+                    webrtc音视频数据接收发送流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3" data-path="webrtc线程模型.html">
+            
+                <a href="webrtc线程模型.html">
+            
+                    
+                    webrtc线程模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="webrtc网络相关.html">
+            
+                <a href="webrtc网络相关.html">
+            
+                    
+                    webrtc网络相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="webrtc传输协议.html">
+            
+                <a href="webrtc传输协议.html">
+            
+                    
+                    webrtc传输协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="webrtc中的Qos方法.html">
+            
+                <a href="webrtc中的Qos方法.html">
+            
+                    
+                    webrtc中的Qos方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="webrtcQoe方法.html">
+            
+                <a href="webrtcQoe方法.html">
+            
+                    
+                    webrtcQoe方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../K8S/">
+            
+                <a href="../K8S/">
+            
+                    
+                    K8S
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../K8S/K8S集群内部不能访问LB.html">
+            
+                <a href="../K8S/K8S集群内部不能访问LB.html">
+            
+                    
+                    K8S集群内部不能访问LB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../K8S/K8S网络模型.html">
+            
+                <a href="../K8S/K8S网络模型.html">
+            
+                    
+                    K8S网络模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../K8S/K8S部署实践——oneByOne.html">
+            
+                <a href="../K8S/K8S部署实践——oneByOne.html">
+            
+                    
+                    K8S部署实践——oneByOne
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../RPC/">
+            
+                <a href="../RPC/">
+            
+                    
+                    RPC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../RPC/自研网络库+RPC框架.html">
+            
+                <a href="../RPC/自研网络库+RPC框架.html">
+            
+                    
+                    自研网络库+RPC框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../script/">
+            
+                <a href="../script/">
+            
+                    
+                    script
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../script/devlopment.html">
+            
+                <a href="../script/devlopment.html">
+            
+                    
+                    devlopment.yml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../script/dockerfile.md">
+            
+                <span>
+            
+                    
+                    dockerfile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../script/makefile.html">
+            
+                <a href="../script/makefile.html">
+            
+                    
+                    makefile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../script/service.html">
+            
+                <a href="../script/service.html">
+            
+                    
+                    service.yml
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >webrtc线程模型</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="1-&#x524D;&#x8A00;">1 &#x524D;&#x8A00;</h1>
+<p>&#x5728;&#x8BFB;&#x6E90;&#x7801;&#x8FC7;&#x7A0B;&#x4E2D;&#x53D1;&#x73B0;webrtc&#x7684;&#x5404;&#x4E2A;&#x7EBF;&#x7A0B;&#x6709;&#x660E;&#x786E;&#x7684;&#x5206;&#x5DE5;&#xFF0C;&#x7279;&#x5B9A;&#x7684;&#x51FD;&#x6570;&#x4E00;&#x5B9A;&#x8981;&#x5728;&#x6307;&#x5B9A;&#x7684;&#x7EBF;&#x7A0B;&#x4E0A;&#x6267;&#x884C;&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x6267;&#x884C;&#x4EE3;&#x7801;&#x65F6;&#xFF0C;&#x7ECF;&#x5E38;&#x4F1A;&#x9047;&#x5230;&#x8DE8;&#x7EBF;&#x7A0B;&#x8C03;&#x7528;&#x3002;&#x540C;&#x65F6;&#x5728;&#x5B66;&#x4E60;&#x97F3;&#x89C6;&#x9891;&#x63A5;&#x6536;&#x6D41;&#x7A0B;&#x65F6;&#x4E5F;&#x9700;&#x8981;&#x5BF9;webrtc&#x5E95;&#x5C42;&#x7EBF;&#x7A0B;&#x5BF9;socketIO&#x7684;&#x54CD;&#x5E94;&#x673A;&#x5236;&#x6709;&#x4E86;&#x89E3;&#x3002;&#x4E3A;&#x4E4B;&#x540E;&#x7684;&#x5B66;&#x4E60;&#x505A;&#x94FA;&#x57AB;&#xFF0C;&#x4ECE;&#x8DE8;&#x7EBF;&#x7A0B;&#x8C03;&#x7528;&#x548C;IO&#x54CD;&#x5E94;&#x8FD9;&#x4E24;&#x65B9;&#x9762;&#x5B66;&#x4E60;&#x548C;&#x603B;&#x7ED3;&#x4E86;webrtc&#x7684;&#x7EBF;&#x7A0B;&#x6A21;&#x578B;&#x3002;</p>
+<h1 id="2-&#x5404;&#x4E2A;&#x7EBF;&#x7A0B;&#x6709;&#x660E;&#x786E;&#x7684;&#x5206;&#x5DE5;">2 &#x5404;&#x4E2A;&#x7EBF;&#x7A0B;&#x6709;&#x660E;&#x786E;&#x7684;&#x5206;&#x5DE5;</h1>
+<ul>
+<li>&#x4FE1;&#x4EE4;&#x7EBF;&#x7A0B;&#xFF08;Signal Thread&#xFF09;
+&#x4E00;&#x822C;&#x662F;&#x5DE5;&#x4F5C;&#x5728; PeerConnection &#x5C42;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x5B8C;&#x6210;&#x63A7;&#x5236;&#x5E73;&#x9762;&#x7684;&#x903B;&#x8F91;&#xFF0C;&#x7528;&#x4E8E;&#x548C;&#x5E94;&#x7528;&#x5C42;&#x4EA4;&#x4E92;&#x3002;
+&#x6BD4;&#x5982;CreateOffer&#xFF0C;SetRemoteSession&#x7B49;&#x63A5;&#x53E3;&#x90FD;&#x662F;&#x901A;&#x8FC7; Signal thread &#x5B8C;&#x6210;&#x7684;&#x3002;
+&#x9ED8;&#x8BA4;&#x662F;&#x91C7;&#x7528; PeerConnectionFactory&#x521D;&#x59CB;&#x5316;&#x7EBF;&#x7A0B;&#x4F5C;&#x4E3A;&#x4FE1;&#x4EE4;&#x7EBF;&#x7A0B;&#x3002;</li>
+<li>&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#xFF08;Worker Thread&#xFF09;
+&#x4E3B;&#x8981;&#x662F;&#x5DE5;&#x4F5C;&#x5728;&#x5A92;&#x4F53;&#x5F15;&#x64CE;&#x5C42;&#xFF08;media engine&#xFF09;&#xFF0C;&#x5177;&#x4F53;&#x5DE5;&#x4F5C;&#x5982;&#x4E0B;:
+&#x97F3;&#x9891;&#x8BBE;&#x5907;&#x521D;&#x59CB;&#x5316;&#x3001;&#x89C6;&#x9891;&#x8BBE;&#x5907;&#x521D;&#x59CB;&#x5316;&#x3001;&#x6D41;&#x5BF9;&#x8C61;&#x7684;&#x521D;&#x59CB;&#x5316;
+&#x4ECE;&#x7F51;&#x7EDC;&#x7EBF;&#x7A0B;&#x63A5;&#x6536;&#x6570;&#x636E;&#xFF0C;&#x4F20;&#x7ED9;&#x89E3;&#x7801;&#x5668;&#x7EBF;&#x7A0B;
+&#x4ECE;&#x7F16;&#x7801;&#x5668;&#x7EBF;&#x7A0B;&#x63A5;&#x6536;&#x6570;&#x636E;&#xFF0C;&#x4F20;&#x7ED9;&#x7F51;&#x7EDC;&#x7EBF;&#x7A0B;</li>
+<li>&#x7F51;&#x7EDC;&#x7EBF;&#x7A0B;&#xFF08;Network thread &#xFF09;
+&#x4E3B;&#x8981;&#x662F;&#x5DE5;&#x4F5C;&#x5728;&#x4F20;&#x8F93;&#xFF08;transport&#xFF09;&#x5C42;&#xFF0C;&#x5177;&#x4F53;&#x5DE5;&#x4F5C;&#x5982;&#x4E0B;&#xFF1A;
+Transport &#x7684;&#x521D;&#x59CB;&#x5316;
+&#x4ECE;&#x7F51;&#x7EDC;&#x63A5;&#x6536;&#x6570;&#x636E;&#xFF0C;&#x53D1;&#x9001;&#x7ED9; Worker thread
+&#x4ECE; Worker thread &#x63A5;&#x6536;&#x6570;&#x636E;&#xFF0C;&#x53D1;&#x9001;&#x5230;&#x7F51;&#x7EDC;</li>
+</ul>
+<h1 id="3-&#x7EBF;&#x7A0B;&#x6A21;&#x578B;">3 &#x7EBF;&#x7A0B;&#x6A21;&#x578B;</h1>
+<h2 id="31-&#x4EE5;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x5F00;&#x59CB;">3.1 &#x4EE5;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x5F00;&#x59CB;</h2>
+<p>&#x5E94;&#x7528;&#x5C42;&#x60F3;&#x8981;&#x5B9E;&#x73B0;&#x901A;&#x8BDD;&#x9996;&#x5148;&#x8981;&#x521B;&#x5EFA;PeerConnection &#x5982;&#x4E0B;</p>
+<pre><code>bool InitializePeerConnection() {
+    peer_connection_factory_ = webrtc::CreatePeerConnectionFactory(
+
+      nullptr /* network_thread */, nullptr /* worker_thread */,
+      nullptr /* signaling_thread */, nullptr /* default_adm */,
+      webrtc::CreateBuiltinAudioEncoderFactory(),
+      webrtc::CreateBuiltinAudioDecoderFactory(),
+      webrtc::CreateBuiltinVideoEncoderFactory(),
+      webrtc::CreateBuiltinVideoDecoderFactory(), nullptr /* audio_mixer */,
+      nullptr /* audio_processing */);
+
+      peer_connection_ = peer_connection_factory_-&gt;CreatePeerConnection(
+      config, nullptr, nullptr, this);
+      return peer_connection_ == nullptr;
+}
+</code></pre><p>CreatePeerConnection &#x5E95;&#x5C42;&#x8C03;&#x7528;&#x4E86;peerConnection&#x7684;Initialize&#x521D;&#x59CB;&#x5316;&#x51FD;&#x6570;&#xFF08;\src\pc\peer_connection.cc &#xFF09;</p>
+<pre><code>RTCError PeerConnection::Initialize(
+    const PeerConnectionInterface::RTCConfiguration&amp; configuration,
+    PeerConnectionDependencies dependencies) {
+    // PeerConnection&#x521D;&#x59CB;&#x5316;&#x662F;&#x5728;signaling_thread
+    RTC_DCHECK_RUN_PeerConnectionON(signaling_thread());
+    // &#x521B;&#x5EFA;stun_servers  turn_servers
+    cricket::ServerAddresses stun_servers;
+    std::vector&lt;cricket::RelayServerConfig&gt; turn_servers;
+    // &#x4E3A;stun turn&#x6DFB;&#x52A0;&#x914D;&#x7F6E;&#x53C2;&#x6570;
+    RTCErrorType parse_error =
+      ParseIceServers(configuration.servers, &amp;stun_servers, &amp;turn_servers);
+    // network_thread&#x7EBF;&#x7A0B;&#x521D;&#x59CB;&#x5316;
+    network_thread()-&gt;Invoke&lt;void&gt;(RTC_FROM_HERE, [this, &amp;stun_servers,
+                                                 &amp;turn_servers, &amp;configuration,
+                                                 &amp;dependencies] {
+    RTC_DCHECK_RUN_ON(network_thread());
+    network_thread_safety_ = PendingTaskSafetyFlag::Create();
+    InitializePortAllocatorResult pa_result =
+        InitializePortAllocator_n(stun_servers, turn_servers, configuration);
+    // &#x586B;&#x5145;&#x4F20;&#x8F93;&#x63A7;&#x5236;&#x53C2;&#x6570;
+    InitializeTransportController_n(configuration, dependencies);
+</code></pre><p>&#x53EF;&#x4EE5;&#x770B;&#x5230;PeerConnection&#x521D;&#x59CB;&#x5316;&#x662F;&#x5728;signaling_thread&#x4E2D;&#xFF0C;&#x521D;&#x59CB;&#x5316;port&#x548C;transport&#x65F6;&#x9700;&#x8981;&#x8C03;&#x7528;InitializePortAllocator_n&#x3001;InitializeTransportController_n&#xFF0C; &#x800C;&#x8FD9;&#x4E24;&#x4E2A;&#x51FD;&#x6570;&#x662F;&#x8981;&#x5728;network thread&#x6267;&#x884C;&#xFF0C;&#x6240;&#x4EE5;&#x6B64;&#x5904;&#x8FDB;&#x884C;&#x4E86;&#x8DE8;&#x7EBF;&#x7A0B;&#x8C03;&#x7528;&#x3002;</p>
+<h2 id="32-&#x7EBF;&#x7A0B;&#x5DE5;&#x4F5C;&#x5927;&#x81F4;&#x6D41;&#x7A0B;">3.2 &#x7EBF;&#x7A0B;&#x5DE5;&#x4F5C;&#x5927;&#x81F4;&#x6D41;&#x7A0B;</h2>
+<p><div class="mermaid">
+sequenceDiagram
+participant si as signal_thread
+participant  net as network_thread <br>  <br>Processmessage
+participant ss as SocketServer
+si -&gt;&gt; net:invoke msg &#x5E76;&#x4E14;&#x5524;&#x9192;&#x76EE;&#x6807;&#x7EBF;&#x7A0B;
+si-&gt;&gt; si:&#x963B;&#x585E;&#x7B49;&#x5F85;
+net -&gt;&gt; net:&#x88AB;&#x5524;&#x9192;&#x540E;get msg from message list
+net -&gt;&gt; net:&#x4E0D;&#x4E3A;&#x7A7A;&#xFF0C;dispatch(msg)
+net -&gt;&gt;si :&#x8FD4;&#x56DE;&#x8DE8;&#x7EBF;&#x7A0B;&#x8C03;&#x7528;&#x7ED3;&#x679C;&#x5E76;&#x5524;&#x9192;
+net -&gt;&gt; ss:list&#x4E3A;&#x7A7A;&#x4E14;&#x6709;&#x5269;&#x4F59;&#x65F6;&#x95F4;<br>&#x5219;&#x5904;&#x7406;&#x7F51;&#x7EDC;IO
+ss -&gt;&gt;ss:select/epoll&#x963B;&#x585E;&#x76D1;&#x542C;&#x6CE8;&#x518C;&#x7684;&#x7F51;&#x7EDC;IO&#x548C;msg&#x4E8B;&#x4EF6;
+ss -&gt;&gt; ss:&#x4FE1;&#x53F7;&#x89E6;&#x53D1;&#xFF0C;&#x82E5;&#x662F;&#x7F51;&#x7EDC;&#x4E8B;&#x4EF6;&#x5219;&#x8C03;&#x7528;OnEvent&#x5904;&#x7406;&#x7F51;&#x7EDC;&#x4E8B;&#x4EF6;<br>
+ss -&gt;&gt; net:&#x4FE1;&#x53F7;&#x89E6;&#x53D1;&#xFF0C;&#x82E5;&#x662F;msg&#x4E8B;&#x4EF6;&#x8FD4;&#x56DE;&#x5230;Processmessage
+net -&gt;&gt; net:dispatch(msg)
+net -&gt;&gt;si :&#x8FD4;&#x56DE;&#x8DE8;&#x7EBF;&#x7A0B;&#x8C03;&#x7528;&#x7ED3;&#x679C;
+</div>
+&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x7EBF;&#x7A0B;&#x963B;&#x585E;&#x5728;select/epoll&#xFF0C;select/epoll&#x9664;&#x4E86;&#x4F1A;&#x7BA1;&#x7406;&#x7F51;&#x7EDC;IO&#x5916;&#xFF0C;&#x4E5F;&#x4F1A;&#x7BA1;&#x7406;msg&#xFF08;&#x4E00;&#x822C;&#x662F;webrtc&#x5185;&#x90E8;&#x7684;&#x8DE8;&#x7EBF;&#x7A0B;&#x8C03;&#x7528;&#xFF09;&#xFF0C;&#x5F53;msg&#x4E8B;&#x4EF6;&#x88AB;&#x89E6;&#x53D1;&#xFF0C;socketServer&#x4F1A;&#x5C06;&#x7EBF;&#x7A0B;&#x63A7;&#x5236;&#x6743;&#x5F52;&#x8FD8;&#x7ED9;Processmessage&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x800C;&#x5982;&#x679C;&#x662F;&#x7F51;&#x7EDC;IO&#xFF0C;&#x5219;&#x4F1A;&#x76F4;&#x63A5;&#x8C03;&#x7528;onEvent&#x5904;&#x7406;&#x3002;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x5B83;&#x89E3;&#x51B3;&#x4E86;&#x8DE8;&#x7EBF;&#x7A0B;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x548C;&#x7BA1;&#x7406;&#x7F51;&#x7EDC;IO&#x7684;&#x95EE;&#x9898;&#x3002;&#x8BE6;&#x7EC6;&#x7684;&#x5206;&#x6790;&#x89C1;3.2&#x8DE8;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;&#x8C03;&#x7528;&#x548C;3.3 socketserver&#x7F51;&#x7EDC;IO&#x54CD;&#x5E94;&#x3002;</p>
+<h2 id="33-&#x8DE8;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;&#x8C03;&#x7528;">3.3 &#x8DE8;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;&#x8C03;&#x7528;</h2>
+<p><strong>network_thread()&#x662F;&#x83B7;&#x53D6;network&#x7EBF;&#x7A0B;thread&#x5BF9;&#x8C61;&#xFF0C;&#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x7684;Invoke()&#x51FD;&#x6570;&#x662F;&#x5728;sigal&#x7EBF;&#x7A0B;&#x4E2D;&#x6267;&#x884C;&#x7684;network&#x7EBF;&#x7A0B;&#x5BF9;&#x8C61;&#x7684;Invoke()&#x51FD;&#x6570;&#x3002;&#x6362;&#x8A00;&#x4E4B;&#x5728;Invoke&#x51FD;&#x6570;&#x5185;&#x7684;this&#x6307;&#x9488;&#x662F;netword_thread&#x5BF9;&#x8C61;&#xFF0C;&#x6D88;&#x606F;&#x961F;&#x5217;message_list&#x4E5F;&#x662F;network_thread&#x5BF9;&#x8C61;&#x7684;&#xFF0C;&#x800C;&#x8C03;&#x7528;TheadManger&#x7684;&#x65B9;&#x6CD5; CurrentThead()&#x83B7;&#x53D6;&#x7684;&#x5219;&#x662F;singal&#x7EBF;&#x7A0B;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x8BFB;&#x4EE3;&#x7801;&#x65F6;&#x9700;&#x6CE8;&#x610F;&#xFF0C;&#x4EE5;&#x4E0B;&#x7684;&#x5206;&#x6790;&#x90FD;&#x662F;&#x57FA;&#x4E8E;&#x6B64;&#x7684;&#xFF1A;</strong></p>
+<p><strong>1&#x3001;Invoke&#x51FD;&#x6570;&#xFF08;InvokeInternal&#xFF09;</strong>
+&#x672C;&#x8D28;&#x4E0A;&#x5C31;&#x662F;&#x5C06;&#x9700;&#x8981;&#x6267;&#x884C;&#x7684;&#x65B9;&#x6CD5;&#x5C01;&#x88C5;&#x5230;&#x6D88;&#x606F;&#x5904;&#x7406;&#x5668;MessageHandler&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x6267;&#x884C;Send(&#x6765;&#x6E90;&#x7EBF;&#x7A0B;&#xFF0C;FunctorMessageHandler)</p>
+<pre><code>void Thread::InvokeInternal(const Location&amp; posted_from,
+                            rtc::FunctionView&lt;void()&gt; functor) {
+  // FunctorMessageHandler &#x5C06;&#x51FD;&#x6570;functor&#x5305;&#x88C5;&#x6210;message handler
+  class FunctorMessageHandler : public MessageHandler {
+   public:
+    explicit FunctorMessageHandler(rtc::FunctionView&lt;void()&gt; functor)
+        : functor_(functor) {}
+    void OnMessage(Message* msg) override { functor_(); }
+
+   private:
+    rtc::FunctionView&lt;void()&gt; functor_;
+  } handler(functor);
+
+  Send(posted_from, &amp;handler);
+}
+</code></pre><p><strong>2&#x3001;Send&#x51FD;&#x6570;</strong> 
+&#x628A;&#x5165;&#x53C2;FunctorMessageHandler&#x5305;&#x88C5;&#x6210;msg&#x4FE1;&#x606F;&#xFF0C;&#x5E76;&#x4E14;&#x5411;network_thread&#x7EBF;&#x7A0B;&#x7684;message_list&#x6295;&#x9012;msg&#x548C;&#x4E00;&#x4E9B;&#x4FE1;&#x53F7;&#x91CF;&#xFF08;&#x6BD4;&#x5982;&#x5C40;&#x90E8;&#x53D8;&#x91CF;ready&#xFF09;&#xFF0C;&#x8FD9;&#x91CC;&#x662F;&#x901A;&#x8FC7;Post&#x51FD;&#x6570;&#x5B9E;&#x73B0;&#x6295;&#x9012;&#x7684;&#xFF0C;post&#x51FD;&#x6570;&#x672C;&#x8EAB;&#x662F;&#x975E;&#x963B;&#x585E;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5728;Send&#x51FD;&#x6570;&#x8C03;&#x7528;post&#x540E;&#x8FD8;&#x9700;&#x8981;&#x963B;&#x585E;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x7B49;&#x5F85;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;&#x3002;
+&#x8FD9;&#x91CC;PostTask&#x5B9E;&#x9645;&#x4E0A;&#x5411;&#x76EE;&#x6807;&#x7EBF;&#x7A0B;&#x6295;&#x9012;&#x4E86;&#x4E24;&#x4E2A;&#x6D88;&#x606F;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x5B9E;&#x9645;&#x7684;msg&#x5904;&#x7406;&#x51FD;&#x6570;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x662F;msg&#x88AB;&#x6D88;&#x8D39;&#x540E;&#x7684;clean&#x51FD;&#x6570;&#xFF0C;&#x7531;&#x4E8E;&#x6D88;&#x606F;&#x961F;&#x5217;&#x662F;&#x4E00;&#x4E2A;FIFO&#x961F;&#x5217;&#xFF0C;&#x4E8E;&#x662F;msg&#x88AB;&#x6D88;&#x8D39;&#x540E;&#x4F1A;&#x8C03;&#x7528;clean&#x51FD;&#x6570;&#xFF0C;&#x800C;clean&#x51FD;&#x6570;&#x4E2D;&#x5C01;&#x88C5;&#x4E86;&#x5524;&#x9192;&#x4FE1;&#x606F;&#xFF0C;&#x4F1A;&#x5524;&#x9192;&#x8BF7;&#x6C42;from&#x7684;&#x7EBF;&#x7A0B;&#xFF0C;&#x5982;&#x6B64;&#x5904;&#x7684;singal thread&#x3002;&#x8FD9;&#x6837;&#x7684;&#x505A;&#x6CD5;&#x5F88;&#x5DE7;&#x5999;&#xFF0C;&#x505A;&#x5230;&#x4E86;&#x89E3;&#x8026;&#x3002;</p>
+<pre><code>void Thread::Send(const Location&amp; posted_from,
+                  MessageHandler* phandler,
+                  uint32_t id,
+                  MessageData* pdata) {
+  if (IsQuitting())
+    return;
+  Message msg;
+  msg.posted_from = posted_from;
+  msg.phandler = phandler;
+  msg.message_id = id;
+  msg.pdata = pdata;
+  // &#x5982;&#x679C;this == current thread &#x5219;&#x5728;&#x5F53;&#x524D;&#x7EBF;&#x7A0B; &#x76F4;&#x63A5;&#x6D88;&#x8D39;
+  if (IsCurrent()) {
+    msg.phandler-&gt;OnMessage(&amp;msg);
+    return;
+  }
+  // current_thread&#x662F;singal thread&#x7684;&#x7EBF;&#x7A0B;&#x5BF9;&#x8C61;
+  Thread* current_thread = Thread::Current();
+  bool ready = false;
+  // PostTask()&#x8C03;&#x7528;&#x4E86;Post()&#x5B9E;&#x73B0;&#x6D88;&#x606F;&#x6295;&#x9012;
+  // ToQueuedTask&#x662F;&#x51FD;&#x6570;&#x6A21;&#x677F; &#x53EF;&#x4EE5;&#x5C06;&#x4E24;&#x4E2A;lamda&#x51FD;&#x6570;&#x8F6C;&#x5316;&#x6210;task
+  PostTask(webrtc::ToQueuedTask(
+      // &#x4F20;&#x9012;msg&#x548C;&#x5904;&#x7406;&#x51FD;&#x6570;
+      [&amp;msg]() mutable { msg.phandler-&gt;OnMessage(&amp;msg); },
+      // &#x6E05;&#x7406;&#x51FD;&#x6570; msg&#x88AB;&#x6D88;&#x8D39;&#x540E;&#x8C03;&#x7528; 
+      [this, &amp;ready, current_thread] {
+        CritScope cs(&amp;crit_);
+        ready = true;
+        current_thread-&gt;socketserver()-&gt;WakeUp();
+      }));
+  // &#x963B;&#x585E;&#x7B49;&#x5F85;
+  bool waited = false;
+  // ready&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x548C;&#x76EE;&#x6807;&#x7EBF;&#x7A0B;&#x90FD;&#x4F1A;&#x8BBF;&#x95EE; &#x6240;&#x4EE5;&#x8981;&#x52A0;&#x540C;&#x4E00;&#x628A;&#x9501; &#x5373;&#x4E0A;&#x9762;&#x7684;crit_
+  // Send&#x963B;&#x585E;&#x5728;socketserver&#x7684;wait&#x4E0A;
+  crit_.Enter();
+  while (!ready) {
+    crit_.Leave();
+    current_thread-&gt;socketserver()-&gt;Wait(kForever, false);
+    waited = true;
+    crit_.Enter();
+  }
+  crit_.Leave();
+  // &#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x963B;&#x585E;&#x5728;wait&#x4E2D;&#x65F6;&#x6709;&#x53EF;&#x80FD;&#x6709;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x5411;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x6295;&#x9012;&#x6D88;&#x606F; 
+  // &#x8FD9;&#x65F6;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;wakeup&#x4F46;&#x662F;while&#x5FAA;&#x73AF;&#x4E0D;&#x80FD;&#x9000;&#x51FA;&#xFF08;ready&#x53D8;&#x91CF;&#x672A;&#x7F6E;&#x4E3A;true&#xFF09; &#x4E5F;&#x5373;&#x4E00;&#x4E9B;&#x5524;&#x9192;&#x4E8B;&#x4EF6;&#x88AB;&#x5C4F;&#x853D;&#x4E86;
+  // &#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x4E86;waited &#x5728;send&#x9000;&#x51FA;&#x524D;&#x91CD;&#x65B0;&#x5524;&#x9192;&#x4EE5;&#x53CA;&#x65F6;&#x5904;&#x7406;&#x8FD9;&#x4E9B;&#x4E8B;&#x4EF6;
+  if (waited) {
+      current_thread-&gt;socketserver()-&gt;WakeUp();
+  }
+</code></pre><p><strong>3&#x3001;Post&#x51FD;&#x6570;</strong>
+&#x975E;&#x963B;&#x585E;&#x6295;&#x9012;&#x6D88;&#x606F;&#xFF0C;&#x672C;&#x8EAB;&#x903B;&#x8F91;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x52A0;&#x9501;&#x5165;&#x961F;&#xFF0C;&#x5524;&#x9192;&#x76EE;&#x6807;&#x7EBF;&#x7A0B;&#x3002;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x5C31;&#x662F;&#x4E0A;&#x9762;&#x8BF4;&#x7684;&#x8FD9;&#x91CC;&#x7684;thread&#x5BF9;&#x8C61;&#x662F;&#x76EE;&#x6807;thread&#xFF0C;&#x6545;messagelist&#x662F;&#x76EE;&#x6807;thread&#x7684;&#xFF0C;&#x5524;&#x9192;&#x7684;&#x4E5F;&#x662F;&#x76EE;&#x6807;&#x7EBF;&#x7A0B;&#x3002;</p>
+<pre><code>// Post&#x7528;&#x4E8E;&#x6295;&#x9012;&#x5373;&#x65F6;&#x6D88;&#x606F;
+void Thread::Post(const Location&amp; posted_from,
+                  MessageHandler* phandler,
+                  uint32_t id,
+                  MessageData* pdata,
+                  bool time_sensitive) {
+  if (IsQuitting())
+    return;
+  {
+    // &#x6D88;&#x606F;&#x5165;&#x961F;&#x52A0;&#x9501; &#x7528;{}&#x9650;&#x5236;cs&#x7684;&#x4F5C;&#x7528;&#x533A;&#x548C;&#x751F;&#x5B58;&#x671F;
+    CritScope cs(&amp;crit_);
+    Message msg;
+    msg.posted_from = posted_from;
+    msg.phandler = phandler;
+    msg.message_id = id;
+    msg.pdata = pdata;
+    messages_.push_back(msg);
+  }
+  // &#x5524;&#x9192;&#x76EE;&#x6807;&#x7EBF;&#x7A0B;network thread
+  WakeUpSocketServer();
+}
+</code></pre><p><strong>4&#x3001;&#x6D88;&#x606F;&#x5FAA;&#x73AF;ProcessMessages</strong>
+network_thread&#x7EBF;&#x7A0B;&#x6709;&#x4E00;&#x4E2A;<strong>&#x6D88;&#x606F;&#x5FAA;&#x73AF;ProcessMessages</strong>&#xFF0C;&#x7EBF;&#x7A0B;&#x88AB;&#x5524;&#x9192;&#x540E;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;Get&#x51FD;&#x6570;&#x68C0;&#x67E5;&#x5176;&#x6D88;&#x606F;&#x961F;&#x5217;</p>
+<pre><code>bool Thread::ProcessMessages(int cmsLoop) {
+  while (true) {
+    Message msg;
+    if (!Get(&amp;msg, cmsNext))
+      return !IsQuitting();
+    // msg&#x5728;&#x6B64;&#x5904;&#x88AB;&#x6D88;&#x8D39;
+    Dispatch(&amp;msg);
+  }
+}
+// &#x4E3A;&#x65B9;&#x4FBF;&#x5206;&#x6790; &#x9ED8;&#x8BA4;&#x5FAA;&#x73AF;&#x65E0;&#x9650;&#x671F;&#x65B9;&#x5F0F;&#x6267;&#x884C; &#x4E5F;&#x5373; cmsLoop=kForever
+</code></pre><p><strong>5&#x3001;Get&#x51FD;&#x6570;</strong>
+&#x903B;&#x8F91;&#x662F;&#x53D6;&#x5230;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#x5C31;&#x8FD4;&#x56DE; &#x4F18;&#x5148;&#x53D6;&#x5EF6;&#x65F6;&#x6D88;&#x606F;&#xFF0C;&#x518D;&#x53D6;&#x5373;&#x65F6;&#x6D88;&#x606F;&#xFF0C;&#x5E76;&#x4E14;&#x4F1A;&#x8BA1;&#x7B97;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#xFF08;&#x8BBE;&#x7F6E;&#x7684;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x548C;&#x5EF6;&#x65F6;&#x961F;&#x5217;&#x4E0B;&#x4E00;&#x4E2A;&#x65F6;&#x95F4;&#x89E6;&#x53D1;&#x7684;&#x65F6;&#x95F4;&#x53D6;&#x6700;&#x5C0F;&#x503C;&#xFF09;&#xFF0C;&#x5728;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x5185;&#xFF0C;&#x5904;&#x7406;&#x7F51;&#x7EDC;IO&#xFF08;SocketServer&#xFF09;&#xFF0C;&#x6B64;&#x65F6;get&#x963B;&#x585E;&#x5728;socketServer&#x7684;wait&#x8C03;&#x7528;&#x4E0A;</p>
+<pre><code>bool Thread::Get(Message* pmsg, int cmsWait, bool process_io) {
+  int64_t msStart = TimeMillis();
+  int64_t msCurrent = msStart;
+  while (true) {
+    int64_t cmsDelayNext = kForever;
+    bool first_pass = true;
+    while (true) {
+      // &#x5BF9;&#x6D88;&#x606F;&#x961F;&#x5217;&#x7684;&#x64CD;&#x4F5C; &#x4E0A;&#x9501;
+      {
+        CritScope cs(&amp;crit_);
+        // &#x5148;&#x5904;&#x7406;&#x5EF6;&#x8FDF;&#x6D88;&#x606F;&#x961F;&#x5217;
+        if (first_pass) {
+          first_pass = false;
+          // &#x5C06;&#x5EF6;&#x8FDF;&#x6D88;&#x606F;&#x961F;&#x5217;dmsgq_&#x4E2D;&#x5DF2;&#x7ECF;&#x8D85;&#x8FC7;&#x89E6;&#x53D1;&#x65F6;&#x95F4;&#x7684;&#x6D88;&#x606F;&#x653E;&#x5230;&#x5373;&#x65F6;&#x6D88;&#x606F;&#x961F;&#x5217;msgq_&#x4E2D;
+          // &#x8BA1;&#x7B97;&#x6700;&#x8FD1;&#x89E6;&#x53D1;&#x65F6;&#x95F4;&#x95F4;&#x9694; &#x4F5C;&#x4E3A;&#x540E;&#x7EED;&#x7F51;&#x7EDC;IO&#x5904;&#x7406;&#x7684;&#x8D85;&#x65F6;&#x65F6;&#x95F4;
+          while (!delayed_messages_.empty()) {
+            if (msCurrent &lt; delayed_messages_.top().run_time_ms_) {
+              cmsDelayNext =
+                  TimeDiff(delayed_messages_.top().run_time_ms_, msCurrent);
+              break;
+            }
+            messages_.push_back(delayed_messages_.top().msg_);
+            delayed_messages_.pop();
+          }
+        }
+
+        // &#x53D6;&#x5373;&#x65F6;&#x6D88;&#x606F;&#x961F;&#x5217;&#x5934;
+        if (messages_.empty()) {
+            // &#x82E5;&#x961F;&#x5217;&#x4E3A;&#x7A7A; &#x76F4;&#x63A5;break &#x65F6;&#x95F4;&#x4EA4;&#x7ED9;&#x7F51;&#x7EDC;IO
+          break;
+        } else {
+          *pmsg = messages_.front();
+          messages_.pop_front();
+        }
+      }
+      return true;
+    }
+    if (IsQuitting())
+      break;
+    // &#x963B;&#x585E;&#x5904;&#x7406;IO&#x591A;&#x8DEF;&#x590D;&#x7528; cmsDelayNext&#x5EF6;&#x65F6;&#x961F;&#x5217;&#x8D85;&#x65F6;&#x65F6;&#x95F4; &#x4F5C;&#x4E3A;IO&#x5904;&#x7406;&#x8D85;&#x65F6;&#x65F6;&#x95F4;
+    // &#x963B;&#x585E;&#x9000;&#x51FA;&#x7684;&#x6761;&#x4EF6;&#x662F;&#x662F;&#x5904;&#x7406;&#x65F6;&#x95F4;&#x8017;&#x5C3D;&#x6216;&#x8005;&#x6709;&#x65B0;&#x6D88;&#x606F;&#x8FDB;&#x5165;&#x5FAA;&#x73AF;&#x88AB;&#x5524;&#x9192;
+    {
+      if (!ss_-&gt;Wait(static_cast&lt;int&gt;(cmsDelayNext), process_io))
+        return false;
+    }
+  }
+  return false;
+}
+// &#x4E3A;&#x65B9;&#x4FBF;&#x5206;&#x6790;&#xFF0C;&#x4E0A;&#x9762;&#x9ED8;&#x8BA4;get&#x65E0;&#x9650;&#x671F;&#x65B9;&#x5F0F;&#x6267;&#x884C; &#x4E5F;&#x5373; cmsWait=kForever
+</code></pre><p><strong>6&#x3001;Dispatch(&amp;msg)</strong>
+&#x4F1A;&#x8C03;&#x7528;msg&#x7684;OnMessage&#x65B9;&#x6CD5;&#x6D88;&#x8D39;&#x6D88;&#x606F;&#xFF0C;&#x4E5F;&#x5373;&#x5B9E;&#x73B0;&#x4E86;&#x5728;&#x6307;&#x5B9A;&#x7EBF;&#x7A0B;network thread&#x4E0A;&#x6267;&#x884C;&#x5BF9;&#x5E94;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>7&#x3001;&#x6700;&#x540E;&#xFF0C;&#x6B63;&#x5982;&#x4E0A;&#x9762;Send&#x51FD;&#x6570;&#x4E2D;&#x5206;&#x6790;&#x7684;clean&#x51FD;&#x6570;&#xFF0C;&#x4F1A;&#x5524;&#x9192;&#x8BF7;&#x6C42;from&#x7EBF;&#x7A0B;&#x548C;&#x4F20;&#x9012;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x8DE8;&#x7EBF;&#x7A0B;&#x8C03;&#x7528;&#x7684;&#x6574;&#x4E2A;&#x6D41;&#x7A0B;&#x3002;</p>
+<h2 id="34-socketserver-io&#x54CD;&#x5E94;&#x673A;&#x5236;">3.4 socketserver IO&#x54CD;&#x5E94;&#x673A;&#x5236;</h2>
+<p>socketserver&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x662F;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x7C7B;&#xFF0C;&#x5B83;&#x6709;&#x4E24;&#x4E2A;&#x529F;&#x80FD;wait&#x963B;&#x585E;&#x76D1;&#x542C;&#x548C;wakeup&#x5524;&#x9192;&#xFF0C;&#x800C;&#x8FD9;&#x4E24;&#x4E2A;&#x529F;&#x80FD;&#x5B9E;&#x9645;&#x662F;&#x5728;&#x5B50;&#x7C7B;PhysicalSocketServer&#x4E2D;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x4E0B;&#x9762;&#x7684;socketserver&#x5B9E;&#x9645;&#x6307;&#x7684;&#x662F;PhysicalSocketServer&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4EE5;linux&#x5E73;&#x53F0;&#x7684;socketserver&#x5B9E;&#x73B0;&#x4E3A;&#x4F8B;&#x5206;&#x6790;&#x3002;</p>
+<h3 id="&#x76D1;&#x542C;&#x53CA;&#x54CD;&#x5E94;&#x673A;&#x5236;">&#x76D1;&#x542C;&#x53CA;&#x54CD;&#x5E94;&#x673A;&#x5236;</h3>
+<p><strong>1&#x3001;wait&#x51FD;&#x6570;</strong> 
+&#x5728;3.2 get&#x51FD;&#x6570;&#x5206;&#x6790;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x7EBF;&#x7A0B;&#x963B;&#x585E;&#x5728;wait&#x8C03;&#x7528;&#x4E2D;&#xFF0C;wait&#x51FD;&#x6570;&#x6838;&#x5FC3;&#x662F;&#x901A;&#x8FC7;select/poll/epoll&#x8C03;&#x7528;&#x5B9E;&#x73B0;&#x7684;&#x963B;&#x585E;&#x76D1;&#x542C;&#x3002;</p>
+<pre><code>bool PhysicalSocketServer::Wait(int cmsWait, bool process_io) {
+  ScopedSetTrue s(&amp;waiting_);
+#if defined(WEBRTC_USE_EPOLL)
+  // We don&apos;t keep a dedicated &quot;epoll&quot; descriptor containing only the non-IO
+  // (i.e. signaling) dispatcher, so &quot;poll&quot; will be used instead of the default
+  // &quot;select&quot; to support sockets larger than FD_SETSIZE.
+  if (!process_io) {
+    return WaitPoll(cmsWait, signal_wakeup_);
+  } else if (epoll_fd_ != INVALID_SOCKET) {
+    return WaitEpoll(cmsWait);
+  }
+#endif
+  return WaitSelect(cmsWait, process_io);
+}
+</code></pre><p>&#x4E0A;&#x9762;&#x8981;&#x91CD;&#x70B9;&#x5173;&#x6CE8;&#x4E0B;webrtc&#x5BF9;&#x8FD9;&#x4E09;&#x79CD;&#x6A21;&#x5F0F;&#x7684;&#x9009;&#x62E9;&#xFF1A;&#x5F53;&#x7BA1;&#x7406;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x8F83;&#x5C11;&#x7684;&#x65F6;&#x5019;&#x4F7F;&#x7528;select&#xFF0C;&#x5426;&#x5219;&#x542F;&#x7528;epoll&#x6765;&#x5904;&#x7406;&#x7F51;&#x7EDC;IO&#xFF0C;&#x5F53;&#x8C03;&#x7528;wait&#x6807;&#x8BC6;&#x672C;&#x6B21;&#x4E0D;&#x5904;&#x7406;&#x7F51;&#x7EDC;IO&#x65F6;&#xFF08;process_io = false&#xFF09;&#x4F7F;&#x7528;poll&#xFF0C;&#x8FD9;&#x65F6;poll&#x5904;&#x7406;&#x7684;&#x5C31;&#x662F;&#x4E00;&#x4E9B;&#x5524;&#x9192;&#x4E8B;&#x4EF6;&#xFF0C;&#x6BD4;&#x5982;&#x4E0A;&#x9762;signal_thread&#x8DE8;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;&#x8C03;&#x7528;send msg&#x4E4B;&#x540E;&#x9677;&#x5165;&#x963B;&#x585E;&#xFF0C;&#x6B64;&#x65F6;&#x7684;wait&#x5C31;&#x662F;&#x4F7F;&#x7528;&#x7684;poll&#x3002;&#x63A8;&#x6D4B;&#x8FD9;&#x6837;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x7531;&#x4E8E;epoll&#x7684;&#x5185;&#x5B58;&#x5F00;&#x9500;&#x6BD4;&#x8F83;&#x5927;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x7EF4;&#x62A4;&#x7EA2;&#x9ED1;&#x6811;&#x548C;&#x5C31;&#x7EEA;&#x94FE;&#x8868;&#xFF0C;&#x6240;&#x4EE5;&#x6BCF;&#x4E2A;socketserver&#x4E0D;&#x9ED8;&#x8BA4;&#x7EF4;&#x62A4;&#x4E00;&#x4E2A;epoll_fd&#xFF0C;&#x53EA;&#x6709;&#x90A3;&#x4E9B;&#x5904;&#x7406;&#x5927;&#x91CF;&#x7F51;&#x7EDC;IO&#x7684;&#x624D;&#x542F;&#x7528;epoll&#x3002;
+<strong>2&#x3001;epoll</strong>
+&#x8FD9;&#x91CC;epoll&#x7684;&#x4F7F;&#x7528;&#x6BD4;&#x8F83;&#x5E38;&#x89C1;&#xFF0C;&#x800C;&#x4E14;&#x4EE3;&#x7801;&#x6BD4;&#x8F83;&#x957F;&#x8FD9;&#x91CC;&#x5C31;&#x4E0D;&#x8BE6;&#x7EC6;&#x5199;&#x4E86;&#x3002;
+<strong>3&#x3001;IO&#x54CD;&#x5E94;</strong>
+&#x4EE5;&#x53EF;&#x8BFB;&#x4E8B;&#x4EF6;&#x4E3A;&#x4F8B;&#xFF0C;&#x5E95;&#x5C42;epoll IO&#x89E6;&#x53D1;&#x540E;&#xFF0C;webrtc&#x662F;&#x5982;&#x4F55;&#x4E00;&#x6B65;&#x6B65;&#x901A;&#x77E5;&#x7ED9;&#x4E0A;&#x5C42;&#x7684;&#xFF1F;&#x4E4B;&#x524D;&#x89C1;&#x5230;&#x7684;&#x505A;&#x6CD5;&#x4E00;&#x822C;&#x662F;&#x4E8B;&#x5148;&#x5728;&#x5BF9;&#x5E94;&#x7684;&#x6A21;&#x5757;&#x7ED1;&#x5B9A;&#x597D;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x800C;webrtc&#x662F;&#x4F7F;&#x7528;&#x4E86;&#x4FE1;&#x53F7;&#x4E0E;&#x69FD;&#x673A;&#x5236;&#xFF08;\rtc_base\third_party\sigslot\sigslot.h&#xFF09;&#x3002;</p>
+<p>epoll&#x53EF;&#x8BFB;&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x540E;&#x6700;&#x7EC8;&#x4F1A;&#x8C03;&#x7528;SignalReadEvent(this)&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x53D1;&#x51FA;&#x4FE1;&#x53F7;&#xFF0C;&#x4F1A;&#x89E6;&#x53D1;&#x6CE8;&#x518C;&#x7ED9;&#x5230;&#x8FD9;&#x4E2A;&#x4FE1;&#x53F7;&#x7684;&#x69FD;&#x51FD;&#x6570;&#x3002;</p>
+<p>&#x4E3E;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#xFF08;\examples\peerconnection\client\peer_connection_client.cc&#xFF09;&#xFF1A;
+&#x521B;&#x5EFA;&#x4E00;&#x4E2A;webrtc&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x9664;&#x4E86;&#x5F00;&#x5934;&#x8BF4;&#x7684;&#x9996;&#x5148;&#x8981;&#x521B;&#x5EFA;PeerConnection&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x6709;&#x5904;&#x7406;IO&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x6BD4;&#x5982;&#x5E94;&#x7528;&#x5C42;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x4E0E;&#x4FE1;&#x4EE4;&#x670D;&#x52A1;&#x5668;&#x4EA4;&#x4E92;&#x7684;PeerConnectionClient::onRead&#x51FD;&#x6570;&#xFF0C;&#x7528;&#x6765;&#x89E3;&#x6790;http&#x5305;&#x3002;</p>
+<pre><code>void PeerConnectionClient::OnRead(rtc::AsyncSocket* socket) {
+  size_t content_length = 0;
+  if (ReadIntoBuffer(socket, &amp;control_data_, &amp;content_length)) {
+    size_t peer_id = 0, eoh = 0;
+    bool ok =
+        ParseServerResponse(control_data_, content_length, &amp;peer_id, &amp;eoh);
+    if (ok) {
+      // &#x767B;&#x5F55;&#x903B;&#x8F91;...
+    }
+  }
+}
+</code></pre><p>&#x7136;&#x540E;&#x901A;&#x8FC7;&#x6CE8;&#x518C;&#x5230;&#x5E95;&#x5C42;socket&#x7684;read&#x4FE1;&#x53F7;&#x4E0A;&#xFF0C;&#x5F53;control<em>socket</em>&#x7684;&#x53EF;&#x8BFB;&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x65F6;&#xFF0C;&#x5C31;&#x4F1A;&#x8C03;&#x7528;&#x5230;&#x5E94;&#x7528;&#x5C42;&#x7684;read</p>
+<pre><code>control_socket_-&gt;SignalReadEvent.connect(this, &amp;PeerConnectionClient::OnRead);
+</code></pre><h3 id="&#x5524;&#x9192;&#x673A;&#x5236;">&#x5524;&#x9192;&#x673A;&#x5236;</h3>
+<p>&#x5728;3.2 send&#x51FD;&#x6570;&#x548C;get&#x51FD;&#x6570;&#x5206;&#x6790;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x7EBF;&#x7A0B;&#x95F4;&#x5524;&#x9192;&#x662F;socketserver&#x7684;WakeUp&#x51FD;&#x6570;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>void PhysicalSocketServer::WakeUp() {
+  // signal_wakeup &#x662F;&#x5524;&#x9192;&#x7C7B;Signaler&#x5B9E;&#x4F8B;
+  signal_wakeup_-&gt;Signal();
+}
+</code></pre><p>&#x901A;&#x8FC7;&#x9605;&#x8BFB;Signaler&#x7C7B;&#x7684;&#x4EE3;&#x7801;&#x5F97;&#x5230;&#xFF0C;webrtc&#x4F7F;&#x7528;&#x4E86;pipe&#x673A;&#x5236;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x95F4;&#x7684;&#x5524;&#x9192;&#x64CD;&#x4F5C;&#xFF0C;&#x5177;&#x4F53;&#x5C31;&#x662F;&#x901A;&#x8FC7;&#x8C03;&#x7528;Signal()&#x51FD;&#x6570;&#x5411;pipe&#x7684;&#x5199;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26; fd[1]&#x5199;&#x5165;&#x6D88;&#x606F;&#xFF0C;&#x800C;&#x8BFB;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;fd[0]&#x5DF2;&#x4E8B;&#x5148;&#x6CE8;&#x518C;&#x5230;select&#x6216;epoll&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4F1A;&#x89E6;&#x53D1;select&#x6216;epoll_wait&#x7684;&#x53EF;&#x8BFB;&#x4E8B;&#x4EF6;&#x8FDB;&#x800C;&#x5B9E;&#x73B0;&#x5524;&#x9192;&#x7EBF;&#x7A0B;&#x3002;</p>
+<pre><code>// &#x7236;&#x7C7B;Dispatcher &#x53EF;&#x8BA4;&#x4E3A;&#x662F;webrtc&#x5305;&#x88C5;&#x7684;socket+event&#x7ED3;&#x6784;
+class Signaler : public Dispatcher {
+ public:
+  Signaler(PhysicalSocketServer* ss, bool&amp; flag_to_clear)
+      : ss_(ss),
+        // &#x5C06;arry[1] | arry[0]&#x5EFA;&#x7ACB;&#x7BA1;&#x9053;
+        afd_([] {
+          std::array&lt;int, 2&gt; afd = {-1, -1};
+          if (pipe(afd.data()) &lt; 0) {}
+          return afd;
+        }()),
+        fSignaled_(false),
+        flag_to_clear_(flag_to_clear) {
+    // socketserver.add &#x6700;&#x7EC8;&#x4F1A;&#x8C03;&#x7528;epoll_ctl
+    // &#x5C06;arry[0]&#x6CE8;&#x518C;&#x5230;epoll
+    ss_-&gt;Add(this);
+  }
+
+  // &#x5524;&#x9192;&#x51FD;&#x6570;
+  virtual void Signal() {
+    webrtc::MutexLock lock(&amp;mutex_);
+    if (!fSignaled_) {
+      const uint8_t b[1] = {0};
+      // &#x901A;&#x8FC7;&#x5199;&#x5B9E;&#x73B0;&#x5524;&#x9192;
+      const ssize_t res = write(afd_[1], b, sizeof(b));
+      fSignaled_ = true;
+    }
+  }
+  // &#x7EE7;&#x627F;&#x81EA;Dispatcher
+  // arry[0]&#x5728;epoll&#x89E6;&#x53D1;&#x53EF;&#x8BFB;&#x4E8B;&#x4EF6;&#x540E;&#x7684;&#x5904;&#x7406;&#x51FD;&#x6570;
+  void OnEvent(uint32_t ff, int err) override {
+    webrtc::MutexLock lock(&amp;mutex_);
+    if (fSignaled_) {
+      uint8_t b[4];
+      const ssize_t res = read(afd_[0], b, sizeof(b));
+      fSignaled_ = false;
+    }
+    flag_to_clear_ = false;
+  }
+
+  int GetDescriptor() override { return afd_[0]; }
+
+ private:
+  PhysicalSocketServer* const ss_;
+  const std::array&lt;int, 2&gt; afd_;
+  bool fSignaled_ RTC_GUARDED_BY(mutex_);
+  webrtc::Mutex mutex_;
+  bool&amp; flag_to_clear_;
+};
+</code></pre><h2 id="35-&#x76F8;&#x5173;&#x7684;&#x7C7B;">3.5 &#x76F8;&#x5173;&#x7684;&#x7C7B;</h2>
+<h3 id="threadmanger">ThreadManger</h3>
+<p>TheadManger&#x662F;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x5355;&#x4F8B;&#x7C7B;&#xFF0C;&#x4E3B;&#x8981;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x901A;&#x8FC7;&#x5C06;&#x4E00;&#x4E2A;&#x5185;&#x6838;&#x7EBF;&#x7A0B;&#x4E0E;&#x4E00;&#x4E2A;thread&#x5BF9;&#x8C61;&#x5173;&#x8054;&#xFF08;&#x5C06;thread&#x5BF9;&#x8C61;&#x7684;&#x5730;&#x5740;&#x5B58;&#x50A8;&#x5728;&#x7EBF;&#x7A0B;tls&#x7684;&#x67D0;&#x4E2A;&#x69FD;&#x4F4D;&#x4E2D;&#xFF09;&#xFF0C;&#x7BA1;&#x7406;&#x6240;&#x6709;thread&#x5BF9;&#x8C61;&#x6765;&#x7BA1;&#x7406;&#x6240;&#x6709;&#x7EBF;&#x7A0B;&#x3002;&#x4E3B;&#x8981;&#x7684;&#x65B9;&#x6CD5;&#x6709;&#x8BBE;&#x7F6E;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x5173;&#x8054;&#x7684;thread&#x5BF9;&#x8C61;,&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x5173;&#x8054;&#x7684;thread&#x5BF9;&#x8C61;&#x7B49;&#x3002;</p>
+<h3 id="taskqueue">TaskQueue</h3>
+<p>TaskQueue&#x662F;thread&#x7C7B;&#x7684;&#x7236;&#x7C7B;&#xFF0C;&#x4E3B;&#x8981;&#x63D0;&#x4F9B;&#x4E86;PostTask&#x3001;PostDelayedTask&#x63A5;&#x53E3;&#xFF0C;&#x4F7F;&#x5F97;thread&#x7C7B;&#x5177;&#x6709;&#x5411;&#x6D88;&#x606F;&#x961F;&#x5217;&#x6295;&#x9012;&#x5373;&#x65F6;&#x6D88;&#x606F;&#x548C;&#x5EF6;&#x65F6;&#x6D88;&#x606F;&#x7684;&#x80FD;&#x529B;&#xFF0C;thread&#x7C7B;&#x5728;&#x6B64;&#x57FA;&#x7840;&#x4E0A;&#x5B9E;&#x73B0;&#x4E86;Send,Invoke&#x65B9;&#x6CD5;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;&#x65B9;&#x6CD5;&#x8DE8;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;&#x8C03;&#x7528;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<h1 id="4-&#x6574;&#x4E2A;webrtc&#x7684;&#x7EBF;&#x7A0B;&#x7ED3;&#x6784;">4 &#x6574;&#x4E2A;webrtc&#x7684;&#x7EBF;&#x7A0B;&#x7ED3;&#x6784;</h1>
+<p>&#x4E0A;&#x9762;&#x7684;&#x5206;&#x6790;&#x7740;&#x773C;&#x4E8E;signal thread&#x548C;network thread&#x7684;&#x4EA4;&#x4E92;&#xFF0C;&#x4ECE;&#x8DE8;&#x7EBF;&#x7A0B;&#x8C03;&#x7528;&#x89D2;&#x5EA6;&#x5206;&#x6790;&#x4E86;webrtc&#x7EBF;&#x7A0B;&#x95F4;&#x7684;&#x540C;&#x6B65;&#x539F;&#x7406;&#xFF0C;&#x4ECE;&#x7F51;&#x7EDC;IO&#x89D2;&#x5EA6;&#x5206;&#x6790;&#x4E86;&#x7EBF;&#x7A0B;IO&#x7684;&#x54CD;&#x5E94;&#x539F;&#x7406;&#xFF0C;&#x7740;&#x91CD;&#x4ECB;&#x7ECD;&#x4E86;webrtc&#x7EBF;&#x7A0B;&#x6A21;&#x578B;&#x7684;&#x5E95;&#x5C42;&#x539F;&#x7406;&#x3002;</p>
+<p>webrtc&#x89C4;&#x5B9A;&#x4E86;&#x7279;&#x5B9A;&#x7684;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x7279;&#x5B9A;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x6240;&#x4EE5;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x6210;&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x5206;&#x6790;&#x7EBF;&#x7A0B;&#x4E4B;&#x95F4;&#x7684;&#x7ED3;&#x6784;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x5728;&#x5206;&#x6790;webrtc&#x6574;&#x4E2A;&#x67B6;&#x6784;&#x7684;&#x5185;&#x90E8;&#x7ED3;&#x6784;&#xFF0C;&#x6BD4;&#x5982;&#x5185;&#x90E8;&#x6570;&#x636E;&#x6D41;&#x5411;&#xFF0C;&#x5404;&#x6A21;&#x5757;&#x7684;&#x529F;&#x80FD;&#x548C;&#x8FB9;&#x754C;&#x7B49;&#x7B49;&#xFF0C;&#x8FD9;&#x9700;&#x8981;&#x5BF9;webrtc&#x7684;&#x5404;&#x4E2A;&#x6A21;&#x5757;&#x90FD;&#x6709;&#x6240;&#x4E86;&#x89E3;&#x4E4B;&#x540E;&#x624D;&#x80FD;&#x628A;&#x63E1;&#x3002;&#x8FD9;&#x91CC;&#x5148;&#x653E;&#x4E00;&#x5F20;&#x7F51;&#x4E0A;&#x770B;&#x5230;&#x7684;&#x56FE;&#xFF0C;&#x6BD4;&#x8F83;&#x6E05;&#x695A;&#x7684;&#x5C55;&#x793A;&#x4E86;&#x7EBF;&#x7A0B;&#x95F4;&#x7684;&#x6570;&#x636E;&#x6D41;&#x5411;&#x3002;
+<img src="../pic/webrtc-&#x7EBF;&#x7A0B;&#x7ED3;&#x6784;&#x56FE;.jpg" alt=""></p>
+<p>&#x540E;&#x7EED;&#x4F1A;&#x5BF9;&#x89C6;&#x9891;&#x4F20;&#x8F93;&#x6A21;&#x5757;&#x505A;&#x8BE6;&#x7EC6;&#x5206;&#x6790;&#xFF0C;&#x5373;&#x4E0A;&#x56FE;&#x4E2D;&#x7684;&#x7EA2;&#x6846;&#x90E8;&#x5206;&#xFF0C;&#x7740;&#x91CD;&#x5173;&#x6CE8;&#x5404;&#x4E2A;&#x6A21;&#x5757;&#x7684;&#x529F;&#x80FD;&#x548C;&#x5176;&#x4E2D;&#x7684;&#x4E00;&#x4E9B;qos&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x8FD9;&#x90E8;&#x5206;&#x7684;&#x8865;&#x5145;&#x3002;</p>
+<h1 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h1>
+<p><a href="https://zhuanlan.zhihu.com/p/136070941" target="_blank">https://zhuanlan.zhihu.com/p/136070941</a>
+<a href="https://zhuanlan.zhihu.com/p/25288799?from_voters_page=true" target="_blank">https://zhuanlan.zhihu.com/p/25288799?from_voters_page=true</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="webrtc音视频数据接收发送流程.html" class="navigation navigation-prev " aria-label="Previous page: webrtc音视频数据接收发送流程">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="webrtc网络相关.html" class="navigation navigation-next " aria-label="Next page: webrtc网络相关">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"webrtc线程模型","level":"1.2.3","depth":2,"next":{"title":"webrtc网络相关","level":"1.2.4","depth":2,"path":"webrtc/webrtc网络相关.md","ref":"webrtc/webrtc网络相关.md","articles":[]},"previous":{"title":"webrtc音视频数据接收发送流程","level":"1.2.2","depth":2,"path":"webrtc/webrtc音视频数据接收发送流程.md","ref":"webrtc/webrtc音视频数据接收发送流程.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid-gb3","livereload"],"pluginsConfig":{"mermaid-gb3":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"webrtc/webrtc线程模型.md","mtime":"2021-12-09T08:13:10.170Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-13T10:37:25.596Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+

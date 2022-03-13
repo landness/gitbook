@@ -1,0 +1,561 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>webrtc传输协议 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="webrtc中的Qos方法.html" />
+    
+    
+    <link rel="prev" href="webrtc网络相关.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    webrtc
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="webrtc通信建立流程.html">
+            
+                <a href="webrtc通信建立流程.html">
+            
+                    
+                    webrtc通信建立流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="webrtc音视频数据接收发送流程.html">
+            
+                <a href="webrtc音视频数据接收发送流程.html">
+            
+                    
+                    webrtc音视频数据接收发送流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="webrtc线程模型.html">
+            
+                <a href="webrtc线程模型.html">
+            
+                    
+                    webrtc线程模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="webrtc网络相关.html">
+            
+                <a href="webrtc网络相关.html">
+            
+                    
+                    webrtc网络相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.5" data-path="webrtc传输协议.html">
+            
+                <a href="webrtc传输协议.html">
+            
+                    
+                    webrtc传输协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="webrtc中的Qos方法.html">
+            
+                <a href="webrtc中的Qos方法.html">
+            
+                    
+                    webrtc中的Qos方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="webrtcQoe方法.html">
+            
+                <a href="webrtcQoe方法.html">
+            
+                    
+                    webrtcQoe方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../K8S/">
+            
+                <a href="../K8S/">
+            
+                    
+                    K8S
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../K8S/K8S集群内部不能访问LB.html">
+            
+                <a href="../K8S/K8S集群内部不能访问LB.html">
+            
+                    
+                    K8S集群内部不能访问LB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../K8S/K8S网络模型.html">
+            
+                <a href="../K8S/K8S网络模型.html">
+            
+                    
+                    K8S网络模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../K8S/K8S部署实践——oneByOne.html">
+            
+                <a href="../K8S/K8S部署实践——oneByOne.html">
+            
+                    
+                    K8S部署实践——oneByOne
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../RPC/">
+            
+                <a href="../RPC/">
+            
+                    
+                    RPC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../RPC/自研网络库+RPC框架.html">
+            
+                <a href="../RPC/自研网络库+RPC框架.html">
+            
+                    
+                    自研网络库+RPC框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../script/">
+            
+                <a href="../script/">
+            
+                    
+                    script
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../script/devlopment.html">
+            
+                <a href="../script/devlopment.html">
+            
+                    
+                    devlopment.yml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../script/dockerfile.md">
+            
+                <span>
+            
+                    
+                    dockerfile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../script/makefile.html">
+            
+                <a href="../script/makefile.html">
+            
+                    
+                    makefile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../script/service.html">
+            
+                <a href="../script/service.html">
+            
+                    
+                    service.yml
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >webrtc传输协议</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="1-&#x524D;&#x8A00;">1 &#x524D;&#x8A00;</h1>
+<p>WebRTC&#x5728;&#x4FE1;&#x4EE4;&#x4F20;&#x8F93;&#x91C7;&#x7528;&#x4E86;&#x53EF;&#x9760;&#x7684;TCP&#xFF0C;&#x4F46;&#x662F;&#x97F3;&#x89C6;&#x9891;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x4E0A;&#xFF0C;&#x4F7F;&#x7528;&#x4E86;&#x6548;&#x7387;&#x9AD8;&#x7684;UDP&#x4F5C;&#x4E3A;&#x4F20;&#x8F93;&#x5C42;&#x534F;&#x8BAE;&#x3002;&#x800C;&#x5728;UDP&#x7684;&#x4F7F;&#x7528;&#x8FC7;&#x7A0B;&#x5E38;&#x51FA;&#x73B0;&#x4E22;&#x5305;&#x548C;&#x4E71;&#x5E8F;&#x7B49;&#x95EE;&#x9898;&#xFF0C;&#x4E3A;&#x4E86;&#x4FDD;&#x969C;&#x97F3;&#x89C6;&#x9891;&#x901A;&#x8BAF;&#x7684;&#x76F8;&#x5BF9;&#x53EF;&#x9760;&#x6027;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x5E94;&#x7528;&#x5C42;&#x4F7F;&#x7528;RTP&#x534F;&#x8BAE;&#x5B9E;&#x73B0;&#xFF0C;&#x5728;&#x6B64;&#x57FA;&#x7840;&#x4E0A;SRTP&#x4F7F;&#x7528;dtls&#x52A0;&#x5BC6;&#x6570;&#x636E;,&#x9632;&#x6B62;&#x6570;&#x636E;&#x88AB;&#x7A83;&#x53D6;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x5BF9;&#x4E8E;&#x5176;&#x4ED6;&#x6570;&#x636E;&#x7684;&#x4F20;&#x8F93;&#xFF0C;webrtc&#x4F7F;&#x7528;&#x7684;&#x662F;SCTP&#x534F;&#x8BAE;&#x3002;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x4E0B;&#x9762;&#x8FD9;&#x5F20;&#x56FE;&#xFF1A;
+<img src="../pic/webrtc&#x901A;&#x4FE1;&#x534F;&#x8BAE;.jpg" alt=""></p>
+<h2 id="2-rtp-real-timetransportprotocol-&#x5B9E;&#x65F6;&#x4F20;&#x8F93;&#x534F;&#x8BAE;">2 RTP Real-timeTransportProtocol (&#x5B9E;&#x65F6;&#x4F20;&#x8F93;&#x534F;&#x8BAE;)</h2>
+<h3 id="21-rtp">2.1 RTP</h3>
+<p>RTP&#x4E3B;&#x8981;&#x63D0;&#x4F9B;&#x7684;&#x80FD;&#x529B;&#x6709;&#xFF1A;&#x5B9E;&#x65F6;&#x6570;&#x636E;&#x7684;&#x7AEF;&#x5230;&#x7AEF;&#x4F20;&#x8F93;,&#x5E8F;&#x53F7;&#xFF08;&#x7528;&#x4E8E;&#x4E22;&#x5305;&#x548C;&#x91CD;&#x6392;&#x5E8F;&#x68C0;&#xFF09;,&#x65F6;&#x95F4;&#x6233;&#xFF08;&#x65F6;&#x95F4;&#x540C;&#x6B65;&#x6821;&#x5BF9;&#x548C;&#x5206;&#x53D1;&#x76D1;&#x63A7;&#xFF09;,&#x8F7D;&#x8377;&#x7684;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;&#xFF08;&#x7528;&#x4E8E;&#x8BF4;&#x660E;&#x6570;&#x636E;&#x7684;&#x7F16;&#x7801;&#x683C;&#x5F0F;&#xFF09;,&#x4F46;&#x4E0D;&#x5305;&#x62EC;&#xFF1A;&#x53CA;&#x65F6;&#x53D1;&#x9001;,&#x8D28;&#x91CF;&#x4FDD;&#x8BC1;,&#x9001;&#x8FBE;&#xFF08;&#x53EF;&#x80FD;&#x4E22;&#xFF09;,&#x65F6;&#x5E8F;&#xFF08;&#x5230;&#x8FBE;&#x987A;&#x5E8F;&#xFF09;</p>
+<p><strong>RTP&#x62A5;&#x6587;&#xFF1A;</strong></p>
+<p>RTP&#x62A5;&#x6587;&#x7531;&#x4E24;&#x90E8;&#x5206;&#x7EC4;&#x6210;&#xFF1A;&#x62A5;&#x5934;&#x548C;&#x6709;&#x6548;&#x8F7D;&#x8377;
+&#x4EE5;&#x4E0B;&#x4E3A;RTP&#x534F;&#x8BAE;&#x5934;&#x7684;&#x89E3;&#x91CA;&#xFF0C;&#x524D;12&#x5B57;&#x8282;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#xFF0C;CSRC&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x6216;&#x8005;0&#x4E2A;&#x3002;</p>
+<p>V&#xFF1A;RTP&#x534F;&#x8BAE;&#x7684;&#x7248;&#x672C;&#x53F7;&#xFF0C;&#x5360;2&#x4F4D;&#xFF0C;&#x5F53;&#x524D;&#x534F;&#x8BAE;&#x7248;&#x672C;&#x53F7;&#x4E3A;2</p>
+<p>P&#xFF1A;&#x586B;&#x5145;&#x6807;&#x5FD7;&#xFF0C;&#x5360;1&#x4F4D;&#xFF0C;&#x5982;&#x679C;P=1&#xFF0C;&#x5219;&#x5728;&#x8BE5;&#x62A5;&#x6587;&#x7684;&#x5C3E;&#x90E8;&#x586B;&#x5145;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x989D;&#x5916;&#x7684;&#x516B;&#x4F4D;&#x7EC4;&#xFF0C;&#x5B83;&#x4EEC;&#x4E0D;&#x662F;&#x6709;&#x6548;&#x8F7D;&#x8377;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002;</p>
+<p>X&#xFF1A;&#x6269;&#x5C55;&#x6807;&#x5FD7;&#xFF0C;&#x5360;1&#x4F4D;&#xFF0C;&#x5982;&#x679C;X=1&#xFF0C;&#x5219;&#x5728;RTP&#x62A5;&#x5934;&#x540E;&#x8DDF;&#x6709;&#x4E00;&#x4E2A;&#x6269;&#x5C55;&#x62A5;&#x5934;&#x3002;</p>
+<p>CC&#xFF1A;CSRC&#x8BA1;&#x6570;&#x5668;&#xFF0C;&#x5360;4&#x4F4D;&#xFF0C;&#x6307;&#x793A;CSRC&#x6807;&#x8BC6;&#x7B26;&#x4E2A;&#x6570;</p>
+<p>M&#xFF1A;&#x6807;&#x5FD7;&#xFF0C;&#x5360;1&#x4F4D;&#xFF0C;&#x4E0D;&#x540C;&#x7684;&#x6709;&#x6548;&#x8F7D;&#x8377;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x542B;&#x4E49;&#xFF0C;&#x5BF9;&#x4E8E;&#x89C6;&#x9891;&#xFF0C;&#x6807;&#x8BB0;&#x4E00;&#x5E27;&#x7684;&#x7ED3;&#x675F;&#xFF1B;&#x5BF9;&#x4E8E;&#x97F3;&#x9891;&#xFF0C;&#x6807;&#x8BB0;&#x4F1A;&#x8BDD;&#x7684;&#x5F00;&#x59CB;&#x3002;</p>
+<p>PT&#xFF08;payload type&#xFF09;&#xFF1A;&#x6709;&#x6548;&#x8377;&#x8F7D;&#x7C7B;&#x578B;&#xFF0C;&#x5360;7&#x4F4D;&#xFF0C;&#x7528;&#x4E8E;&#x8BB0;&#x5F55;RTP&#x62A5;&#x6587;&#x4E2D;&#x6709;&#x6548;&#x8F7D;&#x8377;&#x7684;&#x7C7B;&#x578B;/Codec&#xFF0C;&#x5728;&#x6D41;&#x5A92;&#x4F53;&#x4E2D;&#x5927;&#x90E8;&#x5206;&#x662F;&#x7528;&#x6765;&#x533A;&#x5206;&#x97F3;&#x9891;&#x6D41;&#x548C;&#x89C6;&#x9891;&#x6D41;&#xFF0C;&#x4FBF;&#x4E8E;&#x63A5;&#x6536;&#x7AEF;&#xFF08;receiver&#xFF09;&#x627E;&#x51FA;&#x76F8;&#x5E94;&#x7684; decoder &#x89E3;&#x78BC;&#x51FA;&#x4F86;&#x3002;</p>
+<p>&#x5E8F;&#x5217;&#x53F7;&#xFF08;sequence number&#xFF09;&#xFF1A;&#x5360;16&#x4F4D;&#xFF0C;<strong>&#x7528;&#x4E8E;&#x6807;&#x8BC6;&#x53D1;&#x9001;&#x8005;&#x6240;&#x53D1;&#x9001;&#x7684;RTP&#x62A5;&#x6587;&#x7684;&#x5E8F;&#x5217;&#x53F7;&#xFF0C;&#x6BCF;&#x53D1;&#x9001;&#x4E00;&#x4E2A;&#x62A5;&#x6587;&#xFF0C;&#x5E8F;&#x5217;&#x53F7;&#x589E;1&#x3002;</strong> &#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#x5F53;&#x4E0B;&#x5C42;&#x7684;&#x627F;&#x8F7D;&#x534F;&#x8BAE;&#x7528;UDP&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7F51;&#x7EDC;&#x72B6;&#x51B5;&#x4E0D;&#x597D;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x68C0;&#x67E5;&#x4E22;&#x5305;&#x3002;&#x5F53;&#x51FA;&#x73B0;&#x7F51;&#x7EDC;&#x6296;&#x52A8;&#x7684;&#x60C5;&#x51B5;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x91CD;&#x65B0;&#x6392;&#x5E8F;&#x3002;&#x5E8F;&#x5217;&#x53F7;&#x7684;&#x521D;&#x59CB;&#x503C;&#x662F;&#x968F;&#x673A;&#x7684;&#xFF0C;&#x540C;&#x65F6;&#x97F3;&#x9891;&#x5305;&#x548C;&#x89C6;&#x9891;&#x5305;&#x7684;sequence&#x662F;&#x5206;&#x522B;&#x8BA1;&#x6570;&#x7684;&#x3002;</p>
+<p>&#x65F6;&#x6233;&#xFF08;timestamp&#xFF09;&#xFF1A;&#x5360;32&#x4F4D;&#xFF0C;&#x5FC5;&#x987B;&#x4F7F;&#x7528;90kHZ&#x65F6;&#x949F;&#x9891;&#x7387;&#xFF08;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;90000&#xFF09;&#x3002;&#x65F6;&#x6233;&#x53CD;&#x6620;&#x4E86;&#x8BE5;RTP&#x62A5;&#x6587;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x516B;&#x4F4D;&#x7EC4;&#x7684;&#x91C7;&#x6837;&#x65F6;&#x523B;&#x3002;&#x63A5;&#x53D7;&#x8005;&#x4F7F;&#x7528;&#x65F6;&#x6233;&#x6765;&#x8BA1;&#x7B97;&#x5EF6;&#x8FDF;&#x548C;&#x5EF6;&#x8FDF;&#x6296;&#x52A8;&#xFF0C;&#x5E76;&#x8FDB;&#x884C;&#x540C;&#x6B65;&#x63A7;&#x5236;&#x3002;&#x53EF;&#x4EE5;&#x6839;&#x636E;RTP&#x5305;&#x7684;&#x65F6;&#x95F4;&#x6233;&#x6765;&#x83B7;&#x5F97;&#x6570;&#x636E;&#x5305;&#x7684;&#x65F6;&#x5E8F;&#x3002;</p>
+<p>&#x540C;&#x6B65;&#x6E90;&#xFF08;SSRC&#xFF09;&#x6807;&#x8BC6;&#x7B26;&#xFF1A;&#x5360;32&#x4F4D;&#xFF0C;&#x7528;&#x4E8E;&#x6807;&#x8BC6;&#x540C;&#x6B65;&#x4FE1;&#x6E90;&#x3002;&#x540C;&#x6B65;&#x4FE1;&#x6E90;&#x662F;&#x6307;&#x4EA7;&#x751F;&#x5A92;&#x4F53;&#x6D41;&#x7684;&#x4FE1;&#x6E90;&#xFF0C;&#x4ED6;&#x901A;&#x8FC7;RTP&#x62A5;&#x5934;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;32&#x4E3A;&#x6570;&#x5B57;SSRC&#x6807;&#x8BC6;&#x7B26;&#x6765;&#x6807;&#x8BC6;&#xFF0C;&#x800C;&#x4E0D;&#x4F9D;&#x8D56;&#x7F51;&#x7EDC;&#x5730;&#x5740;&#xFF0C;&#x63A5;&#x6536;&#x8005;&#x5C06;&#x6839;&#x636E;SSRC&#x6807;&#x8BC6;&#x7B26;&#x6765;&#x533A;&#x5206;&#x4E0D;&#x540C;&#x7684;&#x4FE1;&#x6E90;&#xFF0C;&#x8FDB;&#x884C;RTP&#x62A5;&#x6587;&#x7684;&#x5206;&#x7EC4;&#x3002;</p>
+<p>&#x8D21;&#x732E;&#x6E90;&#xFF08;CSRC&#xFF09;&#x6807;&#x8BC6;&#x7B26;&#xFF1A;&#x6BCF;&#x4E2A;CSRC&#x6807;&#x8BC6;&#x7B26;&#x5360;32&#x4F4D;&#xFF0C;&#x53EF;&#x4EE5;&#x6709;0~15&#x4E2A;CSRC&#x3002;&#x6BCF;&#x4E2A;CSRC&#x6807;&#x8BC6;&#x4E86;&#x5305;&#x542B;&#x5728;RTP&#x62A5;&#x6587;&#x6709;&#x6548;&#x8F7D;&#x8377;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x63D0;&#x4F9B;&#x4FE1;&#x6E90;&#x3002;</p>
+<h3 id="22-rtcp-&#xFF08;real-timecontrolprotocol-&#x5B9E;&#x65F6;&#x4F20;&#x8F93;&#x63A7;&#x5236;&#x534F;&#x8BAE;&#xFF09;">2.2 RTCP &#xFF08;Real-timeControlProtocol &#x5B9E;&#x65F6;&#x4F20;&#x8F93;&#x63A7;&#x5236;&#x534F;&#x8BAE;&#xFF09;</h3>
+<p>&#x6B63;&#x5982;&#x4E0A;&#x9762;&#x6240;&#x8BF4;&#xFF0C;RTP&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x5373;&#x65F6;&#x53D1;&#x9001;&#x548C;&#x8D28;&#x91CF;&#x3002;</p>
+<p>RTCP&#x7528;&#x6765;&#x76D1;&#x63A7;&#x7F51;&#x7EDC;&#x670D;&#x52A1;&#x8D28;&#x91CF;&#xFF0C;&#x4F1A;&#x5728;&#x4F20;&#x8F93;&#x65F6;&#x5B9E;&#x65F6;&#x544A;&#x77E5;&#x5BF9;&#x65B9;&#x7F51;&#x7EDC;&#x8D28;&#x91CF;&#xFF08;&#x5982;&#x4E22;&#x5305;&#xFF0C;&#x4E71;&#x5E8F;&#xFF0C;&#x6296;&#x52A8;&#x7B49;&#xFF09;&#xFF0C;&#x8FD9;&#x6837;webrtc&#x5C31;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x7F51;&#x7EDC;&#x60C5;&#x51B5;&#x6765;&#x8C03;&#x6574;&#x4F20;&#x8F93;&#x7B56;&#x7565;&#x4E86;.</p>
+<p>RTCP&#x534F;&#x8BAE;&#xFF1A;</p>
+<p>&#x9996;&#x5148;RTCP&#x62A5;&#x6587;&#x6709;&#x591A;&#x79CD;&#x7C7B;&#x578B;&#xFF0C;&#x91CD;&#x70B9;&#x5173;&#x6CE8;&#xFF1A;</p>
+<p>&#x53D1;&#x9001;&#x62A5;&#x544A;SR (Sender Report): &#x5F53;&#x524D;&#x6D3B;&#x52A8;&#x53D1;&#x9001;&#x8005;&#x53D1;&#x9001;&#x3001;&#x63A5;&#x6536;&#x7EDF;&#x8BA1;&#x3002;</p>
+<p>&#x63A5;&#x53D7;&#x8005;&#x62A5;&#x544A;RR (Reciver Report)&#xFF1A;&#x63A5;&#x6536;&#x62A5;&#x544A;&#xFF0C;&#x975E;&#x6D3B;&#x52A8;&#x53D1;&#x9001;&#x8005;&#x63A5;&#x6536;&#x7EDF;&#x8BA1;&#x3002;</p>
+<p>SR&#x7684;&#x534F;&#x8BAE;&#x89C4;&#x8303;&#xFF1A;</p>
+<p>Header &#x90E8;&#x5206;&#x7528;&#x4E8E;&#x6807;&#x8BC6;&#x8BE5;&#x62A5;&#x6587;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x6BD4;&#x5982;&#x662F; SR&#xFF08;200&#xFF09; &#x8FD8;&#x662F; RR&#xFF08;201&#xFF09;&#x3002;</p>
+<p>Sender info &#x90E8;&#x5206;&#x7528;&#x4E8E;&#x6307;&#x660E;&#x4F5C;&#x4E3A;&#x53D1;&#x9001;&#x65B9;&#xFF0C;&#x5230;&#x5E95;&#x53D1;&#x4E86;&#x591A;&#x5C11;&#x5305;&#x3002;</p>
+<p>Report block &#x90E8;&#x5206;&#x6307;&#x660E;&#x53D1;&#x9001;&#x65B9;&#x4F5C;&#x4E3A;&#x63A5;&#x6536;&#x65B9;&#x65F6;&#xFF0C;&#x5B83;&#x4ECE;&#x5404;&#x4E2A; SSRC &#x63A5;&#x6536;&#x5305;&#x7684;&#x60C5;&#x51B5;</p>
+<h3 id="23-&#x4F1A;&#x8BDD;&#x6D41;&#x7A0B;">2.3 &#x4F1A;&#x8BDD;&#x6D41;&#x7A0B;</h3>
+<p>&#x5F53;&#x5E94;&#x7528;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;RTP&#x4F1A;&#x8BDD;&#x65F6;&#xFF0C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5C06;&#x786E;&#x5B9A;&#x4E00;&#x5BF9;&#x76EE;&#x7684;&#x4F20;&#x8F93;&#x5730;&#x5740;&#x3002;&#x76EE;&#x7684;&#x4F20;&#x8F93;&#x5730;&#x5740;&#x7531;&#x4E00;&#x4E2A;&#x7F51;&#x7EDC;&#x5730;&#x5740;&#x548C;&#x4E00;&#x5BF9;&#x7AEF;&#x53E3;&#x7EC4;&#x6210;&#xFF0C;&#x6709;&#x4E24;&#x4E2A;&#x7AEF;&#x53E3;&#xFF1A;&#x4E00;&#x4E2A;&#x7ED9;RTP&#x5305;&#xFF0C;&#x4E00;&#x4E2A;&#x7ED9;RTCP&#x5305;&#x3002;RTP&#x6570;&#x636E;&#x53D1;&#x5411;&#x5076;&#x6570;&#x7684;UDP&#x7AEF;&#x53E3;&#xFF0C;&#x800C;&#x5BF9;&#x5E94;&#x7684;&#x63A7;&#x5236;&#x4FE1;&#x53F7;RTCP&#x6570;&#x636E;&#x53D1;&#x5411;&#x76F8;&#x90BB;&#x7684;&#x5947;&#x6570;UDP&#x7AEF;&#x53E3;&#xFF08;&#x5076;&#x6570;&#x7684;UDP&#x7AEF;&#x53E3;&#xFF0B;1&#xFF09;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x6784;&#x6210;&#x4E00;&#x4E2A;UDP&#x7AEF;&#x53E3;&#x5BF9;&#x3002;&#x5927;&#x81F4;&#x6D41;&#x7A0B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>RTP&#x534F;&#x8BAE;&#x4ECE;&#x4E0A;&#x5C42;&#x63A5;&#x6536;&#x6D41;&#x5A92;&#x4F53;&#x4FE1;&#x606F;&#x7801;&#x6D41;&#xFF0C;&#x5C01;&#x88C5;&#x6210;RTP&#x6570;&#x636E;&#x5305;&#xFF1B;</p>
+<p>RTCP&#x4ECE;&#x4E0A;&#x5C42;&#x63A5;&#x6536;&#x63A7;&#x5236;&#x4FE1;&#x606F;&#xFF0C;&#x5C01;&#x88C5;&#x6210;RTCP&#x63A7;&#x5236;&#x5305;&#x3002;</p>
+<p>RTP&#x5C06;RTP &#x6570;&#x636E;&#x5305;&#x53D1;&#x5F80;UDP&#x7AEF;&#x53E3;&#x5BF9;&#x4E2D;&#x5076;&#x6570;&#x7AEF;&#x53E3;&#xFF1B;RTCP&#x5C06;RTCP&#x63A7;&#x5236;&#x5305;&#x53D1;&#x5F80;UDP&#x7AEF;&#x53E3;&#x5BF9;&#x4E2D;&#x7684;&#x63A5;&#x6536;&#x7AEF;&#x53E3;&#x3002;</p>
+<h1 id="3-srtp">3 SRTP</h1>
+<p>&#x5728;RTP&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x52A0;&#x5BC6;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E0E;http+tls=https&#xFF0C;&#x5728;&#x8FD9;&#x662F;RTP+dtls=SRTP&#xFF0C;dtls&#x662F;&#x57FA;&#x4E8E;udp&#x7684;&#x63E1;&#x624B;&#x534F;&#x8BAE;&#xFF0C;&#x534F;&#x5546;&#x5BC6;&#x94A5;&#x5177;&#x4F53;&#x7684;&#x63E1;&#x624B;&#x8FC7;&#x7A0B;&#x53EF;&#x7C7B;&#x6BD4;tls&#x4E0D;&#x518D;&#x8BE6;&#x7EC6;&#x8BF4;&#x660E;&#x3002;</p>
+<h1 id="4-sctp">4 SCTP</h1>
+<p>webrtc&#x4F20;&#x8F93;&#x5176;&#x4ED6;&#x6570;&#x636E;&#x7528;SCTP,&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x534F;&#x8BAE;&#x3002;&#x5177;&#x4F53;&#x53EF;&#x53C2;&#x8003;&#xFF1A;<a href="http://km.oa.com/articles/show/355904?kmref=search&amp;from_page=1&amp;no=9" target="_blank">http://km.oa.com/articles/show/355904?kmref=search&amp;from_page=1&amp;no=9</a></p>
+<h1 id="5-&#x53C2;&#x8003;&#x8D44;&#x6599;">5 &#x53C2;&#x8003;&#x8D44;&#x6599;</h1>
+<p><a href="http://km.oa.com/articles/show/355904?kmref=search&amp;from_page=1&amp;no=9" target="_blank">http://km.oa.com/articles/show/355904?kmref=search&amp;from_page=1&amp;no=9</a>
+<a href="http://km.oa.com/group/29048/articles/show/405435" target="_blank">http://km.oa.com/group/29048/articles/show/405435</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="webrtc网络相关.html" class="navigation navigation-prev " aria-label="Previous page: webrtc网络相关">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="webrtc中的Qos方法.html" class="navigation navigation-next " aria-label="Next page: webrtc中的Qos方法">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"webrtc传输协议","level":"1.2.5","depth":2,"next":{"title":"webrtc中的Qos方法","level":"1.2.6","depth":2,"path":"webrtc/webrtc中的Qos方法.md","ref":"webrtc/webrtc中的Qos方法.md","articles":[]},"previous":{"title":"webrtc网络相关","level":"1.2.4","depth":2,"path":"webrtc/webrtc网络相关.md","ref":"webrtc/webrtc网络相关.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid-gb3","livereload"],"pluginsConfig":{"mermaid-gb3":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"webrtc/webrtc传输协议.md","mtime":"2021-12-10T04:13:45.826Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-13T10:37:25.596Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+
