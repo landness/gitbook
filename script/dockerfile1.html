@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>service.yml · GitBook</title>
+        <title>dockerfile · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,8 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="makefile.html" />
     
-    <link rel="prev" href="makefile.html" />
+    
+    <link rel="prev" href="devlopment.yml.html" />
     
 
     </head>
@@ -322,12 +324,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="devlopment.html">
+        <li class="chapter " data-level="1.5.1" data-path="devlopment.yml.html">
             
-                <a href="devlopment.html">
+                <a href="devlopment.yml.html">
             
                     
-                    devlopment.yml
+                    development.yml
             
                 </a>
             
@@ -335,9 +337,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="dockerfile.md">
+        <li class="chapter active" data-level="1.5.2" data-path="dockerfile1.html">
             
-                <span>
+                <a href="dockerfile1.html">
             
                     
                     dockerfile
@@ -361,9 +363,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5.4" data-path="service.html">
+        <li class="chapter " data-level="1.5.4" data-path="service.yml.html">
             
-                <a href="service.html">
+                <a href="service.yml.html">
             
                     
                     service.yml
@@ -409,7 +411,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >service.yml</a>
+        <a href=".." >dockerfile</a>
     </h1>
 </div>
 
@@ -424,32 +426,58 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <pre><code>## service.yml
-apiVersion: v1
-kind: Service
-matadata:                                #&#x5143;&#x6570;&#x636E;
-  name: string                           #service&#x7684;&#x540D;&#x79F0;
-  namespace: string                      #&#x547D;&#x540D;&#x7A7A;&#x95F4;
-  labels:                                #&#x81EA;&#x5B9A;&#x4E49;&#x6807;&#x7B7E;&#x5C5E;&#x6027;&#x5217;&#x8868;
-    - name: string
-  annotations:                           #&#x81EA;&#x5B9A;&#x4E49;&#x6CE8;&#x89E3;&#x5C5E;&#x6027;&#x5217;&#x8868;
-    - name: string
-spec:                                    #&#x8BE6;&#x7EC6;&#x63CF;&#x8FF0;
-  selector: []                           #label selector&#x914D;&#x7F6E;&#xFF0C;&#x5C06;&#x9009;&#x62E9;&#x5177;&#x6709;label&#x6807;&#x7B7E;&#x7684;Pod&#x4F5C;&#x4E3A;&#x7BA1;&#x7406; &#x8303;&#x56F4;
-  type: string                           #service&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x6307;&#x5B9A;service&#x7684;&#x8BBF;&#x95EE;&#x65B9;&#x5F0F;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;clusterIp
-  clusterIP: string                      #&#x865A;&#x62DF;&#x670D;&#x52A1;&#x5730;&#x5740;
-  sessionAffinity: string                #&#x662F;&#x5426;&#x652F;&#x6301;session
-  ports:                                 #service&#x9700;&#x8981;&#x66B4;&#x9732;&#x7684;&#x7AEF;&#x53E3;&#x5217;&#x8868;
-  - name: string                         #&#x7AEF;&#x53E3;&#x540D;&#x79F0;
-    protocol: string                     #&#x7AEF;&#x53E3;&#x534F;&#x8BAE;&#xFF0C;&#x652F;&#x6301;TCP&#x548C;UDP&#xFF0C;&#x9ED8;&#x8BA4;TCP
-    port: int                            #&#x670D;&#x52A1;&#x76D1;&#x542C;&#x7684;&#x7AEF;&#x53E3;&#x53F7;
-    targetPort: int                      #&#x9700;&#x8981;&#x8F6C;&#x53D1;&#x5230;&#x540E;&#x7AEF;Pod&#x7684;&#x7AEF;&#x53E3;&#x53F7;
-    nodePort: int                        #&#x5F53;type = NodePort&#x65F6;&#xFF0C;&#x6307;&#x5B9A;&#x6620;&#x5C04;&#x5230;&#x7269;&#x7406;&#x673A;&#x7684;&#x7AEF;&#x53E3;&#x53F7;
-  status:                                #&#x5F53;spce.type=LoadBalancer&#x65F6;&#xFF0C;&#x8BBE;&#x7F6E;&#x5916;&#x90E8;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x5668;&#x7684;&#x5730;&#x5740;
-    loadBalancer:                        #&#x5916;&#x90E8;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x5668;
-      ingress:                           #&#x5916;&#x90E8;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x5668;
-        ip: string                       #&#x5916;&#x90E8;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x5668;&#x7684;Ip&#x5730;&#x5740;&#x503C;
-        hostname: string                 #&#x5916;&#x90E8;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x5668;&#x7684;&#x4E3B;&#x673A;&#x540D;
+                                <pre><code># GCC support can be specified at major, minor, or micro version
+# (e.g. 8, 8.2 or 8.2.0).
+# See https://hub.docker.com/r/library/gcc/ for all supported GCC
+# tags from Docker Hub.
+# See https://docs.docker.com/samples/library/gcc/ for more on how to use this image
+FROM gcc:latest
+
+# These commands copy your files into the specified directory in the image
+# and set that as the working location
+RUN mkdir /usr/local/rush-rpc
+# COPY command
+# 1&#x3001;&#x5982;&#x679C;&#x6E90;&#x8DEF;&#x5F84;&#x662F;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x4E14;&#x76EE;&#x6807;&#x8DEF;&#x5F84;&#x662F;&#x4EE5; / &#x7ED3;&#x5C3E;&#xFF0C; &#x5219;docker&#x4F1A;&#x628A;&#x76EE;&#x6807;&#x8DEF;&#x5F84;&#x5F53;&#x4F5C;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#xFF0C;&#x4F1A;&#x628A;&#x6E90;&#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#x5230;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;&#x3002;
+# 2&#x3001;&#x5982;&#x679C;&#x6E90;&#x8DEF;&#x5F84;&#x662F;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x4E14;&#x76EE;&#x6807;&#x8DEF;&#x5F84;&#x662F;&#x4E0D;&#x662F;&#x4EE5; / &#x7ED3;&#x5C3E;&#xFF0C;&#x5219;docker&#x4F1A;&#x628A;&#x76EE;&#x6807;&#x8DEF;&#x5F84;&#x5F53;&#x4F5C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x3002;
+# &#x5982;&#x679C;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x5B9E;&#x9645;&#x662F;&#x4E2A;&#x5B58;&#x5728;&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x5219;&#x4F1A;&#x6E90;&#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#x5230;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;&#x3002; &#x6CE8;&#x610F;&#xFF0C;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6700;&#x597D;&#x663E;&#x793A;&#x7684;&#x4EE5; / &#x7ED3;&#x5C3E;&#xFF0C;&#x4EE5;&#x907F;&#x514D;&#x6DF7;&#x6DC6;&#x3002;
+# 3&#x3001;&#x5982;&#x679C;&#x6E90;&#x8DEF;&#x5F84;&#x662F;&#x4E2A;&#x76EE;&#x5F55;&#xFF0C;&#x4E14;&#x76EE;&#x6807;&#x8DEF;&#x5F84;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x5219;docker&#x4F1A;&#x81EA;&#x52A8;&#x4EE5;&#x76EE;&#x6807;&#x8DEF;&#x5F84;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#xFF0C;&#x628A;&#x6E90;&#x8DEF;&#x5F84;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#x8FDB;&#x6765;&#x3002;
+# &#x5982;&#x679C;&#x76EE;&#x6807;&#x8DEF;&#x5F84;&#x662F;&#x4E2A;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x5219;docker&#x4F1A;&#x628A;&#x6E90;&#x8DEF;&#x5F84;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#x5230;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;&#x3002;
+COPY ./src /usr/local/rush-rpc
+WORKDIR /usr/local/rush-rpc
+
+RUN apt-get install -y make wget curl openssl \ 
+    autoconf automake libtool unzip &amp;&amp; \
+    wget http://sourceforge.net/projects/boost/files/boost/1.60.0/boost_1_60_0.tar.gz &amp;&amp; \
+    tar -xzvf boost_1_60_0.tar.gz &amp;&amp; \
+    cd boost_1_60_0 &amp;&amp; \
+    ./bootstrap.sh --prefix=/usr/local &amp;&amp; \
+    ./b2 install --with=all &amp;&amp; \
+    cd .. &amp;&amp; mv boost_1_60_0 /usr/local &amp;&amp; \
+    cd /usr/local/rush-rpc &amp;&amp; git clone https://github.com/google/protobuf &amp;&amp; \
+    cd protobuf &amp;&amp; \
+    ./autogen.sh &amp;&amp; \
+    ./configure &amp;&amp; \
+    make &amp;&amp; \
+    make install &amp;&amp; \
+    ldconfig &amp;&amp; \
+    cd /usr/local/rush-rpc &amp;&amp; git clone https://github.com/redis/hiredis.git &amp;&amp; \
+    cd hiredis &amp;&amp; \
+    make &amp;&amp; \
+    make install
+
+ENV PATH $PATH:/usr/local/boost_1_60_0
+ENV PATH $PATH:/usr/local/boost_1_60_0/stage/lib
+# if ENV invalid, use export
+#export   CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/usr/local/boost_1_60_0
+#export   LIBRARY_PATH=$LIBRARY_PATH:/usr/local/boost_1_60_0/stage/lib
+
+# This command compiles your app using GCC, adjust for your source code
+RUN cd /usr/local/rush-rpc &amp;&amp; make
+
+# This command runs your application, comment out this line to compile only
+CMD [&quot;./rpc_server_test&quot;]
+
+LABEL Name=RushRPC Version=0.0.1
 </code></pre>
                                 
                                 </section>
@@ -477,10 +505,14 @@ spec:                                    #&#x8BE6;&#x7EC6;&#x63CF;&#x8FF0;
 
             
                 
-                <a href="makefile.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: makefile">
+                <a href="devlopment.yml.html" class="navigation navigation-prev " aria-label="Previous page: development.yml">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="makefile.html" class="navigation navigation-next " aria-label="Next page: makefile">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -489,7 +521,7 @@ spec:                                    #&#x8BE6;&#x7EC6;&#x63CF;&#x8FF0;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"service.yml","level":"1.5.4","depth":2,"previous":{"title":"makefile","level":"1.5.3","depth":2,"path":"script/makefile.md","ref":"script/makefile.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid-gb3","livereload"],"pluginsConfig":{"mermaid-gb3":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"script/service.md","mtime":"2022-03-13T10:32:44.766Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-13T10:37:25.596Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"dockerfile","level":"1.5.2","depth":2,"next":{"title":"makefile","level":"1.5.3","depth":2,"path":"script/makefile.md","ref":"script/makefile.md","articles":[]},"previous":{"title":"development.yml","level":"1.5.1","depth":2,"path":"script/devlopment.yml.md","ref":"script/devlopment.yml.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid-gb3","livereload"],"pluginsConfig":{"mermaid-gb3":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"script/dockerfile1.md","mtime":"2022-03-14T08:49:57.219Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-14T09:00:18.577Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
