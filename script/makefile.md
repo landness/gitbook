@@ -1,3 +1,4 @@
+```
 # \
 cc = gcc \
 program = rpc \
@@ -59,3 +60,4 @@ client_test: test/client_test.cpp
 server_test: test/server_test.cpp
 rpc_client_test: test/rpc_client_test.cpp
 rpc_server_test: test/rpc_server_test.cpp
+```
