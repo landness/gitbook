@@ -1,0 +1,1282 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>数据编码 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="grafana监控搭建.html" />
+    
+    
+    <link rel="prev" href="存储与查询设计.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../WebRtc/">
+            
+                <a href="../WebRtc/">
+            
+                    
+                    webrtc
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../webrtc/webrtc通信建立流程.html">
+            
+                <a href="../webrtc/webrtc通信建立流程.html">
+            
+                    
+                    webrtc通信建立流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../webrtc/webrtc音视频数据接收发送流程.html">
+            
+                <a href="../webrtc/webrtc音视频数据接收发送流程.html">
+            
+                    
+                    webrtc音视频数据接收发送流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../webrtc/webrtc线程模型.html">
+            
+                <a href="../webrtc/webrtc线程模型.html">
+            
+                    
+                    webrtc线程模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../webrtc/webrtc网络相关.html">
+            
+                <a href="../webrtc/webrtc网络相关.html">
+            
+                    
+                    webrtc网络相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../webrtc/webrtc传输协议.html">
+            
+                <a href="../webrtc/webrtc传输协议.html">
+            
+                    
+                    webrtc传输协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../webrtc/webrtc中的Qos方法.html">
+            
+                <a href="../webrtc/webrtc中的Qos方法.html">
+            
+                    
+                    webrtc中的Qos方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../webrtc/webrtcQoe方法.html">
+            
+                <a href="../webrtc/webrtcQoe方法.html">
+            
+                    
+                    webrtcQoe方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../K8S/">
+            
+                <a href="../K8S/">
+            
+                    
+                    K8S
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../K8S/K8S集群内部不能访问LB.html">
+            
+                <a href="../K8S/K8S集群内部不能访问LB.html">
+            
+                    
+                    K8S集群内部不能访问LB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../K8S/K8S网络模型.html">
+            
+                <a href="../K8S/K8S网络模型.html">
+            
+                    
+                    K8S网络模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../K8S/K8S部署实践——oneByOne.html">
+            
+                <a href="../K8S/K8S部署实践——oneByOne.html">
+            
+                    
+                    K8S部署实践——oneByOne
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../RPC/">
+            
+                <a href="../RPC/">
+            
+                    
+                    RPC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../RPC/自研网络库+RPC框架.html">
+            
+                <a href="../RPC/自研网络库+RPC框架.html">
+            
+                    
+                    自研网络库+RPC框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../script/">
+            
+                <a href="../script/">
+            
+                    
+                    script
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../script/devlopment.yml.html">
+            
+                <a href="../script/devlopment.yml.html">
+            
+                    
+                    development.yml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../script/dockerfile1.html">
+            
+                <a href="../script/dockerfile1.html">
+            
+                    
+                    dockerfile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../script/makefile.html">
+            
+                <a href="../script/makefile.html">
+            
+                    
+                    makefile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../script/service.yml.html">
+            
+                <a href="../script/service.yml.html">
+            
+                    
+                    service.yml
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    TSDB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="调研与选型.html">
+            
+                <a href="调研与选型.html">
+            
+                    
+                    调研与选型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="存储与查询设计.html">
+            
+                <a href="存储与查询设计.html">
+            
+                    
+                    存储与查询设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.3" data-path="数据编码.html">
+            
+                <a href="数据编码.html">
+            
+                    
+                    数据编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="grafana监控搭建.html">
+            
+                <a href="grafana监控搭建.html">
+            
+                    
+                    grafana监控搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Others/">
+            
+                <a href="../Others/">
+            
+                    
+                    Others
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Others/开发语言.html">
+            
+                <a href="../Others/开发语言.html">
+            
+                    
+                    开发语言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../Others/组件库.html">
+            
+                <a href="../Others/组件库.html">
+            
+                    
+                    组件库
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >数据编码</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="1-&#x524D;&#x8A00;">1. &#x524D;&#x8A00;</h1>
+<p>&#x65F6;&#x5E8F;&#x6570;&#x636E;&#x5E93;&#x7684;&#x6570;&#x636E;&#x5728;&#x5199;&#x5230;&#x78C1;&#x76D8;&#x4E4B;&#x524D;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x8FDB;&#x884C;&#x7F16;&#x7801;&#x538B;&#x7F29;&#xFF0C;&#x4EE5;&#x51CF;&#x5C11;&#x6570;&#x636E;&#x5360;&#x7528;&#x3002;</p>
+<p>&#x65F6;&#x5E8F;&#x6570;&#x636E;&#x7684;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x70B9;&#x7531;&#x65F6;&#x95F4;&#x6233;&#x548C;&#x503C;{ts,val}&#x7EC4;&#x6210;&#xFF0C;ts&#x4E3A;int64_t, val&#x4E3A;float64&#x3002;</p>
+<ul>
+<li>&#x6570;&#x636E;&#x7279;&#x70B9;&#xFF1A;
+&#x5BF9;&#x4E8E;&#x56FA;&#x5B9A;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x7684;&#x65F6;&#x95F4;&#x70B9;&#xFF0C;&#x5176;&#x65F6;&#x95F4;&#x6233;&#x7684;delta-of-delta&#x4E3A;0
+&#x5927;&#x90E8;&#x5206;&#x7684;&#x65F6;&#x5E8F;&#x6570;&#x636E;&#x70B9;&#x7684;&#x503C;&#x76F8;&#x5BF9;&#x4E8E;&#x5176;&#x90BB;&#x8FD1;&#x70B9;&#x5E76;&#x4E0D;&#x4F1A;&#x6709;&#x663E;&#x8457;&#x53D8;&#x5316;&#xFF0C;&#x6240;&#x4EE5;&#x76F8;&#x8FD1;&#x7684;&#x6D6E;&#x70B9;&#x6570;&#x7684;&#x7B26;&#x53F7;&#x3001;&#x6307;&#x6570;&#x548C;&#x5C3E;&#x6570;&#x7684;&#x5F00;&#x5934;&#x51E0;&#x4F4D;&#x90FD;&#x4F1A;&#x662F;&#x76F8;&#x540C;&#x7684;</li>
+</ul>
+<p>&#x7F16;&#x7801;&#x7B97;&#x6CD5;&#xFF1A;facebook&#x7684;gorilla paper encoding</p>
+<h1 id="2-bitstream">2. bitstream</h1>
+<p>&#x7531;&#x4E8E;&#x5404;&#x79CD;&#x7F16;&#x7801;&#x7B97;&#x6CD5;&#x76F4;&#x63A5;&#x64CD;&#x4F5C;&#x5230;bit&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x5BF9;&#x5B57;&#x7B26;&#x6570;&#x7EC4;bytestream&#x7684;&#x6309;&#x4F4D;&#x5199;&#xFF0C;&#x6309;&#x4F4D;&#x8BFB;&#x80FD;&#x529B;
+bitstream&#x5BF9;&#x8C61;</p>
+<pre><code>struct tsdb_bstream_s
+{
+  uint32_t                        pos;
+  /* write stream*/
+  uint8_t                         cache[1024];
+  uint8_t                         byte;
+  uint8_t                         bit_count;
+  /* read stream */
+  uint8_t                         *stream;
+  int32_t                          size;
+  uint64_t                         buffer;
+  uint8_t                          bit_valid;
+  bool                             eof;
+}tsdb_bstream_t;
+</code></pre><p>&#x6309;&#x4F4D;&#x5199;&#xFF1A;char[]&#x6570;&#x7EC4; ---&gt; bstream</p>
+<p>&#x5176;&#x4E2D;&#x7684;&#x6838;&#x5FC3;&#x4EE3;&#x7801;&#x662F;&#xFF1A;&#x5C06;&#x4E00;&#x4E2A;&#x6570;(byte)&#x7684;&#x67D0;&#x4E00;&#x4F4D;(bit_count)&#x7F6E;&#x4E3A;1
+<strong>byte |= 1 &lt;&lt; bit_count</strong></p>
+<pre><code>static inline void
+tsdb_bstream_reset(tsdb_bstream_t *bs)
+{
+  memset(bs-&gt;cache, 0, 1024);
+  bs-&gt;pos = 0;
+  bs-&gt;bit_count = 8;
+  bs-&gt;bit_valid = 0;
+  bs-&gt;eof = false;
+}
+
+static inline int8_t
+tsdb_bstream_append(tsdb_bstream_t *bs)
+{
+  if (bs-&gt;pos &gt; 1024 - 1) return -1;
+
+  bs-&gt;cache[bs-&gt;pos] = bs-&gt;byte;
+  bs-&gt;pos++;
+
+  return 0;
+}
+
+static inline int8_t
+tsdb_bstream_write_bit(tsdb_bstream_t *bs, bit b)
+{
+  /* &#x5199;&#x64CD;&#x4F5C;&#x6838;&#x5FC3;&#x5C31;&#x662F;&#x8FD9;&#x53E5; bit_count&#x4EE3;&#x8868;byte&#x7684;&#x7B2C;&#x51E0;&#x4F4D; */
+  /* &#x5E38;&#x7528;&#x64CD;&#x4F5C;&#xFF1A;&#x5C06;&#x4E00;&#x4E2A;&#x6570;&#x7684;&#x67D0;&#x4E00;&#x4F4D;&#x7F6E;1 */
+  if (b) 
+    bs-&gt;byte |= 1 &lt;&lt; (bs-&gt;bit_count - 1);
+  }
+
+  bs-&gt;bit_count--;
+  if (bs-&gt;bit_count == 0) {
+    if (tsdb_bstream_append(bs) != 0) return -1;
+    bs-&gt;byte = 0;
+    bs-&gt;bit_count = 8;
+  }
+
+  return 0;
+}
+
+static inline int8_t
+tsdb_bstream_write_byte(tsdb_bstream_t *bs, uint8_t by)
+{
+  bs-&gt;byte |= by &gt;&gt; (8 - bs-&gt;bit_count);
+
+  if (tsdb_bstream_append(bs) != 0) return -1;
+
+  bs-&gt;byte = by &lt;&lt; bs-&gt;bit_count;
+
+  return 0;
+}
+
+static inline int8_t
+tsdb_bstream_write_bits(tsdb_bstream_t *bs, uint64_t u, int nbits)
+{
+  uint8_t byte = 0;
+
+  if (nbits &gt; 64 || nbits &lt; 0) return -1;
+
+  u &lt;&lt;= (64 - nbits);
+
+  while (nbits &gt;= 8) {
+    byte = u &gt;&gt; 56;
+    if (tsdb_bstream_write_byte(bs, byte) != 0)
+      return -1;
+    u &lt;&lt;= 8;
+    nbits -= 8;
+  }
+
+  while (nbits &gt; 0) {
+    if (tsdb_bstream_write_bit(bs, u &gt;&gt; 63) != 0)
+      return -2;
+    u &lt;&lt;= 1;
+    nbits--;
+  }
+
+  return 0;
+}
+
+static inline int8_t
+tsdb_bstream_flush(tsdb_bstream_t *bs, bit b)
+{
+  while (bs-&gt;bit_count != 8) {
+    if (tsdb_bstream_write_bit(bs, b) != 0) return -1;
+  }
+
+  return 0;
+}
+</code></pre><p>&#x6309;&#x4F4D;&#x8BFB;: bstream ---&gt; char[]</p>
+<pre><code>static inline int
+bits_len(uint64_t x)
+{
+  int n = 0;
+  static const uint8_t len8_tab[256] = {
+  0x00, 0x01, 0x02, 0x02, 0x03, 0x03, 0x03, 0x03, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04,
+  0x05, 0x05, 0x05, 0x05, 0x05, 0x05, 0x05, 0x05, 0x05, 0x05, 0x05, 0x05, 0x05, 0x05, 0x05, 0x05,
+  0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06,
+  0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x06,
+  0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07,
+  0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07,
+  0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07,
+  0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07,
+  0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
+  0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
+  0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
+  0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
+  0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
+  0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
+  0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
+  0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08,
+  };
+
+  if (x &gt;= ((uint64_t)1 &lt;&lt; 32)) {
+    x &gt;&gt;= 32;
+    n = 32;
+  }
+
+  if (x &gt;= 1 &lt;&lt; 16) {
+    x &gt;&gt;= 16;
+    n += 16;
+  }
+
+  if (x &gt;= 1 &lt;&lt; 8) {
+    x &gt;&gt;= 8;
+    n += 8;
+  }
+
+  return n + len8_tab[x];
+}
+
+static inline int
+leading_zero64(uint64_t u)
+{
+  return 64 - bits_len(u);
+}
+
+static inline int
+trailing_zero64(uint64_t u)
+{
+  if (u == 0) return 64;
+
+  static const uint64_t de_bruijn64 = 0x03f79d71b4ca8b09;
+  static const uint8_t de_bruijn64_tab[64] = {
+    0, 1, 56, 2, 57, 49, 28, 3, 61, 58, 42, 50, 38, 29, 17, 4,
+    62, 47, 59, 36, 45, 43, 51, 22, 53, 39, 33, 30, 24, 18, 12, 5,
+    63, 55, 48, 27, 60, 41, 37, 16, 46, 35, 44, 21, 52, 32, 23, 11,
+    54, 26, 40, 15, 34, 20, 31, 10, 25, 14, 19, 9, 13, 8, 7, 6,
+  };
+
+  return de_bruijn64_tab[(u&amp;-u)*de_bruijn64 &gt;&gt; (64 - 6)];
+}
+
+static inline bool
+tsdb_bstream_load_next_buffer(tsdb_bstream_t *bs, uint8_t nbits)
+{
+  if (bs-&gt;pos &gt;= bs-&gt;size) return false;
+
+  if (bs-&gt;pos + 8 &lt; bs-&gt;size) {
+    bs-&gt;buffer = (uint64_t)bs-&gt;stream[7 + bs-&gt;pos] | (uint64_t)bs-&gt;stream[6 + bs-&gt;pos] &lt;&lt; 8
+      | (uint64_t)(bs-&gt;stream[5 + bs-&gt;pos]) &lt;&lt; 16 | (uint64_t)(bs-&gt;stream[4 + bs-&gt;pos]) &lt;&lt; 24
+      | (uint64_t)(bs-&gt;stream[3 + bs-&gt;pos]) &lt;&lt; 32 | (uint64_t)(bs-&gt;stream[2 + bs-&gt;pos]) &lt;&lt; 40
+      | (uint64_t)(bs-&gt;stream[1 + bs-&gt;pos]) &lt;&lt; 48 | (uint64_t)(bs-&gt;stream[0 + bs-&gt;pos]) &lt;&lt; 56;
+    bs-&gt;pos += 8;
+    bs-&gt;bit_valid = 64;
+    return true;
+  }
+
+  int nbytes = (int)(nbits / 8) + 1;
+
+  if ((bs-&gt;pos + nbytes) &gt; bs-&gt;size) {
+    nbytes = bs-&gt;size - bs-&gt;pos;
+  }
+
+  uint64_t buffer = (uint64_t)0;
+
+  for (int i = 0; i &lt; nbytes; i++)
+  {
+    buffer = buffer | (uint64_t)(bs-&gt;stream[bs-&gt;pos + i])
+      &lt;&lt; (uint)(8 * (nbytes - i - 1));
+  }
+
+  bs-&gt;buffer = buffer;
+  bs-&gt;pos += nbytes;
+  bs-&gt;bit_valid = (uint8_t)(nbytes * 8);
+
+  return true;
+}
+
+static inline uint64_t
+tsdb_bstream_read_bits_fast(tsdb_bstream_t *bs, uint8_t nbits)
+{
+  if (bs-&gt;bit_valid &lt; nbits) {
+    bs-&gt;eof = true;
+    return 0;
+  }
+
+  bs-&gt;bit_valid -= nbits;
+  uint64_t bit_mask = (uint64_t)~0 &gt;&gt; (64 - nbits);
+
+  return (bs-&gt;buffer &gt;&gt; bs-&gt;bit_valid) &amp; bit_mask;
+}
+
+static inline uint64_t
+tsdb_bstream_read_bits(tsdb_bstream_t *bs, uint8_t nbits)
+{
+  if (!bs-&gt;bit_valid) {
+    if (!tsdb_bstream_load_next_buffer(bs, nbits)) {
+      bs-&gt;eof = true;
+      return false;
+    };
+  }
+
+  if (bs-&gt;bit_valid &gt;= nbits) {
+    return tsdb_bstream_read_bits_fast(bs, nbits);
+  }
+
+  /* read all remaining valid bits from the current buffer and a part from the next one */
+  uint64_t bit_mask = (uint64_t)~0 &gt;&gt; (64 - bs-&gt;bit_valid);
+  nbits -= bs-&gt;bit_valid;
+  uint64_t res = (bs-&gt;buffer &amp; bit_mask) &lt;&lt; nbits;
+  bs-&gt;bit_valid = 0;
+
+  if (!tsdb_bstream_load_next_buffer(bs, nbits)) {
+    bs-&gt;eof = true;
+    return false;
+  }
+
+  res |= ((bs-&gt;buffer &gt;&gt; (bs-&gt;bit_valid - nbits)) &amp; bit_mask);
+  bs-&gt;bit_valid -= nbits;
+
+  return res;
+}
+
+static inline uint8_t
+tsdb_bstream_read_byte(tsdb_bstream_t *bs)
+{
+  return (uint8_t)tsdb_bstream_read_bits(bs, 8);
+}
+</code></pre><h1 id="3-int64&#xFF1A;varint64&#x7F16;&#x7801;">3. int64&#xFF1A;varint64&#x7F16;&#x7801;</h1>
+<p>&#x6574;&#x578B;&#x9AD8;&#x4F4D;&#x5F80;&#x5F80;&#x6709;&#x5F88;&#x591A;0&#x7A7A;&#x4F4D;&#xFF0C;varint&#x538B;&#x7F29;&#x4E86;&#x9AD8;&#x4F4D;&#x7684;0</p>
+<p>&#x539F;&#x7406;&#x5C31;&#x662F;&#x6BCF;&#x4E2A;&#x5B57;&#x8282;&#x7528;&#x6700;&#x9AD8;&#x4F4D;&#x4F5C;&#x4E3A;&#x7B26;&#x53F7;&#x4F4D;&#xFF0C;&#x6307;&#x793A;&#x8FD9;&#x4E2A;&#x5B57;&#x8282;&#x524D;&#x662F;&#x5426;&#x8FD8;&#x6709;&#x975E;0&#x5B57;&#x8282;</p>
+<p>&#x6B65;&#x9AA4;1&#xFF1A;&#x53D6;&#x51FA;&#x5B57;&#x8282;&#x4E32;&#x672B;7&#x4F4D;
+&#x6B65;&#x9AA4;2&#xFF1A;&#x5728;7&#x4F4D;&#x7684;&#x6700;&#x9AD8;&#x4F4D;&#x6DFB;&#x52A0;1&#x6784;&#x6210;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x53D6;&#x51FA;&#xFF08;&#x524D;&#x9762;&#x90FD;&#x4E3A;0&#xFF09;&#xFF0C;&#x5219;&#x5728;&#x6700;&#x9AD8;&#x4F4D;&#x6DFB;&#x52A0;0&#x6784;&#x6210;1&#x4E2A;&#x5B57;&#x8282;&#xFF1B;
+&#x6B65;&#x9AA4;3&#xFF1A;&#x5C06;&#x6BCF;&#x4E2A;&#x5B57;&#x8282;&#x62FC;&#x6210;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x4E32;&#xFF08;&#x8FD9;&#x91CC;&#x5C31;&#x6D89;&#x53CA;&#x4E86;&#x5927;&#x5C0F;&#x7AEF;&#x7F16;&#x7801;&#xFF09;</p>
+<p>&#x8FD9;&#x6837;&#x89E3;&#x538B;&#x7F29;&#x65F6;&#xFF0C;&#x6839;&#x636E;&#x6807;&#x5FD7;&#x4F4D;&#x5224;&#x65AD;&#x662F;&#x5426;&#x7ED3;&#x675F;&#x8BFB;&#x53D6;</p>
+<p><a href="https://blog.csdn.net/weixin_43954926/article/details/102869587" target="_blank">https://blog.csdn.net/weixin_43954926/article/details/102869587</a></p>
+<pre><code>struct tsdb_encoder_s
+{
+  tsdb_bstream_t                 *bs;
+  xc_string_t                    *file_name;
+  FILE                           *fd;
+  int64_t                         t0;
+  int64_t                         t1;
+  int64_t                         t;
+  uint64_t                        delta;
+  double                          value;
+  uint64_t                        leading;
+  uint64_t                        trailing;
+  uint16_t                        read_nums;
+}tsdb_encoder_t;
+
+char*
+tsdb_encoder_varint64_put(char *dst, uint64_t v)
+{
+  static const int B = 128;
+  uint8_t *ptr = (uint8_t*)dst;
+
+  while (v &gt;= B) {
+    *(ptr++) = v | B;
+    v &gt;&gt;= 7;
+  }
+
+  *(ptr++) = (uint8_t)v;
+
+  return (char*)(ptr);
+}
+
+void
+tsdb_encoder_varint64(tsdb_encoder_t *enc, uint64_t v)
+{
+  char buf[10];
+
+  char *ptr = tsdb_encoder_varint64_put(buf, v);
+
+  for (int i = 0; i &lt; ptr - buf; i++) {
+    tsdb_bstream_write_byte(enc-&gt;bs, buf[i]);
+  }
+}
+
+bool
+tsdb_decoder_varint64(tsdb_bstream_t *bs, uint64_t *v)
+{
+  const char *limit = (char*)bs-&gt;stream + bs-&gt;size;
+
+  char *p = (bs-&gt;stream + bs-&gt;pos);
+
+  uint64_t res = 0;
+
+  for (int shift = 0; shift &lt;= 63 &amp;&amp; p &lt; limit; shift += 7) {
+    uint64_t byte = *(uint8_t*)p;
+    p++;
+    if (byte &amp; 128) {
+      res |= ((byte &amp; 127) &lt;&lt; shift);
+    }
+    else {
+      res |= (byte &lt;&lt; shift);
+      *v = res;
+      bs-&gt;pos = p - (char*)bs-&gt;stream;
+      return true;
+    }
+  }
+
+  return false;
+}
+</code></pre><h1 id="4-&#x65F6;&#x95F4;&#x6233;&#xFF1A;delta-of-delta&#x7F16;&#x7801;">4. &#x65F6;&#x95F4;&#x6233;&#xFF1A;delta-of-delta&#x7F16;&#x7801;</h1>
+<p>&#x7B97;&#x6CD5;&#x6D41;&#x7A0B;&#xFF1A;
+&#x7B2C;&#x4E00;&#x4E2A;&#x65F6;&#x95F4;&#x6233;&#x7528;varint64&#x7F16;&#x7801;</p>
+<p>&#x7B2C;&#x4E8C;&#x4E2A;&#x65F6;&#x95F4;&#x6233;&#x8BA1;&#x7B97;delta, &#x5E76;&#x7528;varint64&#x7F16;&#x7801;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x9488;&#x5BF9;&#x6BCF;&#x4E2A;&#x65F6;&#x95F4;&#x6233;&#x8BA1;&#x7B97;&#x5176;&#x5BF9;&#x5E94;&#x7684; delta-of-delta: 
+&#x5982;&#x679C;&#x4E3A;0, &#x5219;&#x7528;&#x4E00;&#x4E2A;&#x6BD4;&#x7279;&#x5B58;&#x50A8; &#x2018;0&#x2019;
+&#x5982;&#x679C;&#x5728;[&#x2212;63,64] &#x4E4B;&#x95F4;, &#x7528; 2 &#x4E2A;&#x6BD4;&#x7279;&#x5B58;&#x50A8; &#x2018;10&#x2019; , &#x7136;&#x540E;&#x63A5;&#x4E0B;&#x6765; 7 &#x6BD4;&#x7279;&#x5B58;&#x50A8;dod&#x7684;&#x5177;&#x4F53;&#x503C;.
+&#x5982;&#x679C;&#x5728;[&#x2212;255,256] &#x4E4B;&#x95F4;, &#x7528; 3 &#x4E2A;&#x6BD4;&#x7279;&#x5B58;&#x50A8; &#x2018;110&#x2019;, &#x7136;&#x540E;&#x63A5;&#x4E0B;&#x6765; 9 &#x6BD4;&#x7279;&#x5B58;&#x50A8;dod&#x7684;&#x5177;&#x4F53;&#x503C;.
+&#x5982;&#x679C;&#x5728;[&#x2212;2047,2048] &#x4E4B;&#x95F4;, &#x7528; 4 &#x4E2A;&#x6BD4;&#x7279;&#x5B58;&#x50A8; &#x2018;1110&#x2019;, &#x7136;&#x540E;&#x63A5;&#x4E0B;&#x6765; 12 &#x6BD4;&#x7279;&#x5B58;&#x50A8;dod&#x7684;&#x5177;&#x4F53;&#x503C;.
+&#x5176;&#x5B83;&#x60C5;&#x51B5;, &#x7528; 4 &#x4E2A;&#x6BD4;&#x7279;&#x5B58;&#x50A8; &#x2018;1111&#x2019;, &#x7136;&#x540E;&#x63A5;&#x4E0B;&#x6765; 32 &#x6BD4;&#x7279;&#x5B58;&#x50A8;dod&#x7684;&#x5177;&#x4F53;&#x503C;.
+&#x8FD9;&#x91CC;range&#x7684;&#x8BA1;&#x7B97;&#x662F;&#x4E00;&#x4E2A;&#x7B97;&#x662F;facebook&#x7684;&#x7ECF;&#x9A8C;&#x503C;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x4E3A;&#x4E86;&#x9632;&#x6B62;&#x6570;&#x636E;&#x70B9;&#x4E22;&#x5931;&#xFF0C;delta-of-delta&#x8FC7;&#x5927;&#xFF0C;&#x6240;&#x4EE5;&#x7528;&#x4E86;&#x4E0D;&#x540C;&#x7684;range&#x548C;&#x957F;&#x5EA6;&#x53BB;&#x5B58;</p>
+<p>&#x5BF9;&#x4E8E;&#x56FA;&#x5B9A;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x4E0A;&#x62A5;&#x6570;&#x636E;&#x6765;&#x8BF4;&#xFF0C;&#x5176;deltaofdelta&#x503C;&#x4E3A;0&#xFF0C;&#x6240;&#x4EE5;&#x4E00;&#x4E2A;&#x65F6;&#x95F4;&#x6233;&#x7528;&#x4E00;&#x4E2A;bit&#x5C31;&#x53EF;&#x4EE5;&#x8868;&#x793A;&#xFF0C;&#x5927;&#x5927;&#x63D0;&#x9AD8;&#x4E86;&#x538B;&#x7F29;&#x7387;</p>
+<pre><code>struct tsdb_encoder_s
+{
+  tsdb_bstream_t                 *bs;
+  xc_string_t                    *file_name;
+  FILE                           *fd;
+  int64_t                         t0;
+  int64_t                         t1;
+  int64_t                         t;
+  uint64_t                        delta;
+  double                          value;
+  uint64_t                        leading;
+  uint64_t                        trailing;
+  uint16_t                        read_nums;
+}tsdb_encoder_t;
+
+void
+tsdb_encoder_point(tsdb_encoder_t *enc, tsdb_field_point_t *pt)
+{
+  XC_DCHECK(pt);
+  if (!pt) return;
+
+  uint64_t t_delta = 0;
+
+  if (enc-&gt;t0 == 0) {
+    tsdb_encoder_varint64(enc, pt-&gt;ts);
+    tsdb_bstream_write_bits(enc-&gt;bs, (uint64_t)pt-&gt;value, 64);
+    enc-&gt;t0 = pt-&gt;ts;
+  }
+  else if (enc-&gt;t1 == 0) {
+    t_delta = (uint64_t)(pt-&gt;ts - enc-&gt;t0);
+    tsdb_encoder_varint64(enc, t_delta);
+    tsdb_encoder_float64(enc, pt-&gt;value);
+    enc-&gt;t1 = pt-&gt;ts;
+  }
+  else {
+    t_delta = (uint64_t)(pt-&gt;ts - enc-&gt;t);
+
+    int64_t delta_of_delta = t_delta - enc-&gt;delta;
+
+    if (delta_of_delta == 0) {
+      tsdb_bstream_write_bit(enc-&gt;bs, 0);
+    }
+    else if (-63 &lt;= delta_of_delta &amp;&amp; delta_of_delta &lt;= 64) {
+      tsdb_bstream_write_bits(enc-&gt;bs, 0x02, 2);
+      tsdb_bstream_write_bits(enc-&gt;bs, (uint64_t)delta_of_delta, 7);
+    }
+    else if (-255 &lt;= delta_of_delta &amp;&amp; delta_of_delta &lt;= 256) {
+      tsdb_bstream_write_bits(enc-&gt;bs, 0x06, 3);
+      tsdb_bstream_write_bits(enc-&gt;bs, (uint64_t)delta_of_delta, 9);
+    }
+    else if (-2047 &lt;= delta_of_delta &amp;&amp; delta_of_delta &lt;= 2048) {
+      tsdb_bstream_write_bits(enc-&gt;bs, 0x0e, 4);
+      tsdb_bstream_write_bits(enc-&gt;bs, (uint64_t)delta_of_delta, 12);
+    }
+    else {
+      tsdb_bstream_write_bits(enc-&gt;bs, 0x0f, 4);
+      tsdb_bstream_write_bits(enc-&gt;bs, (uint64_t)delta_of_delta, 64);
+    }
+    tsdb_encoder_float64(enc, pt-&gt;value);
+  }
+
+  enc-&gt;t = pt-&gt;ts;
+  enc-&gt;value = pt-&gt;value;
+  enc-&gt;delta = t_delta;
+#endif
+}
+
+tsdb_field_point_t *
+tsdb_decoder_point(tsdb_encoder_t *dec)
+{
+  tsdb_field_point_t *dst;
+
+  dst = xc_zalloc(tsdb_field_point_t);
+  if(!dst) return xc_null;
+
+  if (dec-&gt;read_nums == 0) {
+    tsdb_decoder_varint64(dec-&gt;bs, &amp;dec-&gt;t);
+
+    dec-&gt;value = tsdb_bstream_read_bits(dec-&gt;bs, 64);
+    dst-&gt;ts = dec-&gt;t;
+
+    dst-&gt;value = dec-&gt;value;
+    dec-&gt;read_nums++;
+    return dst;
+  }
+
+  if (dec-&gt;read_nums == 1) {
+    tsdb_decoder_varint64(dec-&gt;bs, &amp;dec-&gt;delta);
+    dec-&gt;t += dec-&gt;delta;
+
+    tsdb_decoder_float64(dec);
+
+    dst-&gt;ts = dec-&gt;t;
+    dst-&gt;value = dec-&gt;value;
+    dec-&gt;read_nums++;
+    return dst;
+  }
+
+  /* read delta-of-delta */
+  uint8_t delimiter = 0;
+  for (int i = 0; i &lt; 4; i++) {
+    delimiter &lt;&lt;= 1;
+
+    bit bit1 = tsdb_bstream_read_bits_fast(dec-&gt;bs, 1);
+    if (dec-&gt;bs-&gt;eof) {
+      bit1 = tsdb_bstream_read_bits(dec-&gt;bs, 1);
+      dec-&gt;bs-&gt;eof = false;
+    }
+    if (!bit1) break;
+
+    delimiter |= 1;
+  }
+  uint8_t sz = 0;
+  int64_t delta_of_delta = 0;
+
+  switch (delimiter) {
+  case 0x00:
+    break;
+  case 0x02:
+    sz = 7;
+    break;
+  case 0x06:
+    sz = 9;
+    break;
+  case 0x0e:
+    sz = 12;
+    break;
+  case 0x0f:
+    delta_of_delta = (int64_t)tsdb_bstream_read_bits(dec-&gt;bs, 64);
+    break;
+  default:
+    printf(&quot;unknown delimiter found\n&quot;);
+    break;
+  }
+
+  if (sz != 0) {
+    uint64_t bits = tsdb_bstream_read_bits_fast(dec-&gt;bs, sz);
+    if (dec-&gt;bs-&gt;eof) {
+      bits = tsdb_bstream_read_bits(dec-&gt;bs, sz);
+      dec-&gt;bs-&gt;eof = false;
+    }
+
+    if (bits &gt; (1 &lt;&lt; (sz - 1))) {
+      bits = bits - (1 &lt;&lt; sz);
+    }
+
+    delta_of_delta = (int64_t)bits;
+  }
+
+  dec-&gt;delta = (uint64_t)((int64_t)dec-&gt;delta + delta_of_delta);
+  dec-&gt;t += (int64_t)(dec-&gt;delta);
+
+  tsdb_decoder_float64(dec);
+  dst-&gt;ts = dec-&gt;t;
+  dst-&gt;value = dec-&gt;value;
+
+  return dst;
+#endif
+}
+</code></pre><h1 id="5-float64&#xFF1A;xor&#x7F16;&#x7801;">5. float64&#xFF1A;xor&#x7F16;&#x7801;</h1>
+<p>&#x65F6;&#x5E8F;&#x6570;&#x636E;&#x5F80;&#x5F80;&#x4E0D;&#x4F1A;&#x5927;&#x5E45;&#x6CE2;&#x52A8;&#xFF0C;&#x76F8;&#x90BB;&#x7684;&#x4E24;&#x4E2A;&#x503C;&#x76F8;&#x4F3C;&#xFF0C;&#x5F02;&#x6216;&#x503C;0&#x4F4D;&#x4F1A;&#x6BD4;&#x8F83;&#x591A;&#xFF0C;&#x5355;&#x72EC;&#x8BB0;&#x5F55;&#x524D;&#x540E;&#x5BFC;0&#x53EF;&#x4EE5;&#x63D0;&#x9AD8;&#x538B;&#x7F29;&#x7387;</p>
+<h3 id="51-&#x6D6E;&#x70B9;&#x6570;-ieee754&#x5B58;&#x50A8;&#x65B9;&#x5F0F;&#xFF1A;&#x4E8C;&#x8FDB;&#x5236;&#x7684;&#x79D1;&#x5B66;&#x8BA1;&#x6570;&#x6CD5;">5.1 &#x6D6E;&#x70B9;&#x6570; IEEE754&#x5B58;&#x50A8;&#x65B9;&#x5F0F;&#xFF1A;&#x4E8C;&#x8FDB;&#x5236;&#x7684;&#x79D1;&#x5B66;&#x8BA1;&#x6570;&#x6CD5;</h3>
+<p>float64 = num * 2^n &#xFF08;num&#x4E3A;1.xxxx&#xFF09;&#x901A;&#x8FC7;&#x4FDD;&#x5B58;&#x7B49;&#x53F7;&#x53F3;&#x8FB9;&#x7684;num&#x548C;n&#x6765;&#x8868;&#x793A;&#x4E00;&#x4E2A;float64</p>
+<p>|---|----|
+|&#x7B26;&#x53F7;&#x4F4D;|&#x6307;&#x6570;&#x4F4D;|&#x5C3E;&#x6570;&#x4F4D;|
+|1&#x4F4D;|11&#x4F4D;|52&#x4F4D;|</p>
+<p>&#x7B26;&#x53F7;&#x4F4D; 0&#x6B63;1&#x8D1F;
+&#x6307;&#x6570;&#x4F4D; n+1023
+&#x5C3E;&#x6570;&#x4E3A; nums 1.xxxx&#x5C0F;&#x6570;&#x70B9;&#x540E;&#x7684;xxxx</p>
+<h3 id="52-&#x5F02;&#x6216;&#x503C;xor&#x5B58;&#x50A8;&#x65B9;&#x5F0F;">5.2 &#x5F02;&#x6216;&#x503C;xor&#x5B58;&#x50A8;&#x65B9;&#x5F0F;</h3>
+<p>&#x539F;&#x7406;&#x662F; &#x5B58;&#x524D;&#x4E00;&#x4E2A;&#x6570;&#x4E0E;&#x5F53;&#x524D;&#x503C;&#x7684;&#x5F02;&#x6216;&#x503C;&#xFF0C;
+X^X=0 ----&gt; 0^X=X
+A^B=X ----&gt;B= A^X
+&#x7B2C;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#x662F;&#x6700;&#x7406;&#x60F3;&#x7684;&#xFF0C;&#x6570;&#x636E;&#x70B9;&#x7684;value&#x503C;&#x6CA1;&#x53D8;&#x5219;&#x53EA;&#x9700;&#x8981;&#x7528;&#x4E00;&#x4E2A;bit&#x5B58;0&#x5C31;&#x53EF;&#x4EE5;&#x8868;&#x793A;</p>
+<p>&#x5BF9;&#x4E8E;&#x7B2C;&#x4E8C;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x5B58;X&#xFF0C;&#x5B58;&#x50A8;&#x65B9;&#x5F0F;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF0C;&#x5C06;X&#x5212;&#x5206;&#x4E3A;&#x524D;&#x5BFC;0&#xFF0C;&#x6709;&#x6548;&#x4F4D;&#xFF0C;&#x540E;&#x5BFC;0&#xFF0C;&#x6BD4;&#x5982;
+X = &#x202D;0000000001100010011100000000000000000000000000000000000000000000
+&#x524D;&#x5BFC;0&#x6570;&#x91CF;&#x4E3A; 9 &#x540E;&#x5BFC;0&#x6570;&#x91CF;&#x4E3A; 44 &#x6709;&#x6548;&#x4F4D;&#x4E3A;11000100111&#xFF0C; &#x5C31;&#x5B58;&#x8FD9;&#x4E09;&#x4E2A;&#x91CF;&#xFF0C;9&#xFF0C;44&#xFF0C;11000100111
+|----|----|
+|&#x524D;&#x5BFC;0&#x6570;&#x91CF;|&#x540E;&#x5BFC;0&#x6570;&#x91CF;|&#x6709;&#x6548;&#x4F4D;|
+|5&#x4F4D;|6&#x4F4D;|11000100111|</p>
+<p>&#x6240;&#x4EE5;&#x5BF9;&#x4E8E;&#x7B2C;&#x4E8C;&#x79CD;&#x60C5;&#x51B5;&#x53C8;&#x53EF;&#x4EE5;&#x7EC6;&#x5206;&#x6210;&#x4E24;&#x79CD;&#x60C5;&#x51B5;
+&#x5F02;&#x6216;&#x503C;X&#x7684;&#x524D;&#x540E;&#x5BFC;0&#x6570;&#x91CF;&#x90FD;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;&#x524D;&#x4E00;&#x4E2A;&#x6570;&#xFF0C;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x53EF;&#x4EE5;&#x5F15;&#x5165;&#x5171;&#x4EAB;&#x4F4D;&#xFF0C;&#x7F6E;&#x4E3A;1&#x8868;&#x793A;&#x4E0E;&#x524D;&#x4E00;&#x4E2A;&#x6570;&#x5171;&#x4EAB;&#x524D;&#x540E;&#x5BFC;0&#xFF0C;X&#x6309;&#x7167;&#x5171;&#x4EAB;&#x4F4D;&#x6390;&#x5934;&#x53BB;&#x5C3E;&#x4E4B;&#x540E;&#x5373;&#x4E3A;&#x6709;&#x6548;&#x4F4D;
+&#x5F02;&#x6216;&#x503C;&#x7684;&#x524D;&#x540E;&#x5BFC;0&#x6570;&#x91CF;&#x5C0F;&#x4E8E;&#x524D;&#x4E00;&#x4E2A;&#x6570;&#xFF0C;&#x5219;&#x5C31;&#x6309;&#x7167;&#x4E0A;&#x9762;&#x7684;&#x683C;&#x5F0F;&#x5199;</p>
+<h3 id="53-&#x7B97;&#x6CD5;&#x6D41;&#x7A0B;">5.3 &#x7B97;&#x6CD5;&#x6D41;&#x7A0B;</h3>
+<p>&#x4E86;&#x89E3;&#x5B8C;5.2&#x7684;&#x5B58;&#x50A8;&#x65B9;&#x5F0F;&#x540E;&#xFF0C;&#x7B97;&#x6CD5;&#x6D41;&#x7A0B;&#x5C31;&#x662F;&#x5199;&#x5165;&#x7684;&#x503C;&#x4E0D;&#x65AD;&#x4E0E;&#x524D;&#x4E00;&#x4E2A;&#x503C;&#x53D6;&#x5F02;&#x6216;&#x503C;X&#xFF0C;&#x5224;&#x65AD;&#x5F02;&#x6216;&#x503C;&#x5C5E;&#x4E8E;5.2&#x79CD;&#x7684;&#x4E09;&#x79CD;&#x60C5;&#x51B5;&#x7684;&#x54EA;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x91C7;&#x7528;&#x5BF9;&#x5E94;&#x5B58;&#x50A8;&#x65B9;&#x5F0F;&#x5B58;&#x50A8;&#x5373;&#x53EF;&#xFF0C;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>struct tsdb_encoder_s
+{
+  tsdb_bstream_t           *bs;
+  xc_string_t                    *file_name;
+  FILE                           *fd;
+  int64_t                         t0;
+  int64_t                         t1;
+  int64_t                         t;
+  uint64_t                        delta;
+  double                          value;
+  uint64_t                        leading;
+  uint64_t                        trailing;
+  uint16_t                        read_nums;
+}tsdb_encoder_t;
+
+/* &#x7F16;&#x7801; */
+void
+tsdb_encoder_float64(tsdb_encoder_t *enc, double v)
+{
+  uint64_t *vp, *va, vdelta;
+
+  vp = (uint64_t*)&amp;v;
+  va = (uint64_t*)&amp;enc-&gt;value;
+  vdelta = *vp ^ *va;
+
+  if (vdelta == 0) {
+    tsdb_bstream_write_bit(enc-&gt;bs, 0);
+    return;
+  }
+
+  tsdb_bstream_write_bit(enc-&gt;bs, 1);
+
+  uint64_t leading = leading_zero64(vdelta);
+  uint64_t trailing = trailing_zero64(vdelta);
+  leading &amp;= 0x1F;
+  if (leading &gt;= 32)
+    leading = 31;
+
+  if (enc-&gt;leading != ~0 &amp;&amp; leading &gt;= enc-&gt;leading &amp;&amp;
+    trailing &gt;= enc-&gt;trailing) {
+    tsdb_bstream_write_bit(enc-&gt;bs, 0);
+    tsdb_bstream_write_bits(enc-&gt;bs, vdelta &gt;&gt; enc-&gt;trailing,
+      64 - enc-&gt;leading - enc-&gt;trailing);
+  }
+  else {
+    enc-&gt;leading = leading;
+    enc-&gt;trailing = trailing;
+
+    tsdb_bstream_write_bit(enc-&gt;bs, 1);
+    tsdb_bstream_write_bits(enc-&gt;bs, leading, 5);
+
+    uint64_t sigbits = 64 - leading - trailing;
+    tsdb_bstream_write_bits(enc-&gt;bs, sigbits, 6);
+    tsdb_bstream_write_bits(enc-&gt;bs, vdelta &gt;&gt; trailing, sigbits);
+  }
+}
+
+/* &#x89E3;&#x7801; */
+void
+tsdb_decoder_float64(tsdb_encoder_t *dec)
+{
+  bit bit1 = tsdb_bstream_read_bits_fast(dec-&gt;bs, 1);
+  if (dec-&gt;bs-&gt;eof) {
+    bit1 = tsdb_bstream_read_bits(dec-&gt;bs, 1);
+    dec-&gt;bs-&gt;eof = false;
+  }
+
+  if (bit1) {
+    bit1 = tsdb_bstream_read_bits_fast(dec-&gt;bs, 1);
+    if (dec-&gt;bs-&gt;eof) {
+      bit1 = tsdb_bstream_read_bits(dec-&gt;bs, 1);
+      dec-&gt;bs-&gt;eof = false;
+    }
+
+    if (bit1) {
+      uint64_t bits = tsdb_bstream_read_bits_fast(dec-&gt;bs, 5);
+      if (dec-&gt;bs-&gt;eof) {
+        bits = tsdb_bstream_read_bits(dec-&gt;bs, 5);
+        dec-&gt;bs-&gt;eof = false;
+      }
+
+      dec-&gt;leading = (uint8_t)bits;
+
+      bits = tsdb_bstream_read_bits_fast(dec-&gt;bs, 6);
+      if (dec-&gt;bs-&gt;eof) {
+        bits = tsdb_bstream_read_bits(dec-&gt;bs, 6);
+        dec-&gt;bs-&gt;eof = false;
+      }
+
+      uint8_t mbits = bits;
+      if (!mbits) mbits = 64;
+      dec-&gt;trailing = 64 - dec-&gt;leading - mbits;
+    }
+
+    uint8_t mbits = 64 - dec-&gt;leading - dec-&gt;trailing;
+
+    uint64_t bits = tsdb_bstream_read_bits_fast(dec-&gt;bs, mbits);
+    if (dec-&gt;bs-&gt;eof) {
+      bits = tsdb_bstream_read_bits(dec-&gt;bs, mbits);
+      dec-&gt;bs-&gt;eof = false;
+    }
+
+    int64_t *vbits = (int64_t*)&amp;(dec-&gt;value);
+    *vbits ^= bits &lt;&lt; dec-&gt;trailing;
+    dec-&gt;value = *(double*)vbits;
+  }
+}
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="存储与查询设计.html" class="navigation navigation-prev " aria-label="Previous page: 存储与查询设计">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="grafana监控搭建.html" class="navigation navigation-next " aria-label="Next page: grafana监控搭建">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"数据编码","level":"1.6.3","depth":2,"next":{"title":"grafana监控搭建","level":"1.6.4","depth":2,"path":"TSDB/grafana监控搭建.md","ref":"TSDB/grafana监控搭建.md","articles":[]},"previous":{"title":"存储与查询设计","level":"1.6.2","depth":2,"path":"TSDB/存储与查询设计.md","ref":"TSDB/存储与查询设计.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid-gb3","livereload"],"pluginsConfig":{"mermaid-gb3":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"TSDB/数据编码.md","mtime":"2022-05-11T06:35:43.215Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-05-30T11:47:46.925Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+
